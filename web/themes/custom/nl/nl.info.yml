@@ -1,0 +1,15 @@
+name: NationalLaw
+type: theme
+description: NL subtheme
+core: 8.x
+libraries:
+  - nl/global-styling
+  - nl/bootstrap_cdn
+# Defines the base theme
+base theme: bootstrap4
+regions:
+  navigation: 'Navigation'
+  header: 'Header'
+  content: 'Main content'
+  sidebar: 'Sidebar'
+  footer: 'Footer'

@@ -1,0 +1,42 @@
+uuid: 2c5e3062-8e3c-42a5-8b68-9b3f4c077c8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.practice_area.body
+    - field.field.node.practice_area.field_buried
+    - field.field.node.practice_area.field_categories
+    - field.field.node.practice_area.field_highlighted
+    - field.field.node.practice_area.field_image_banner
+    - field.field.node.practice_area.field_image_thumbnail
+    - field.field.node.practice_area.field_name
+    - node.type.practice_area
+  module:
+    - text
+    - user
+id: node.practice_area.teaser
+targetEntityType: node
+bundle: practice_area
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_buried: true
+  field_categories: true
+  field_highlighted: true
+  field_image_banner: true
+  field_image_thumbnail: true
+  field_name: true

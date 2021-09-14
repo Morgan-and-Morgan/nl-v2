@@ -1,0 +1,82 @@
+uuid: c385848c-981e-4343-9bbc-53b091e7e6bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.attorney.body
+    - field.field.node.attorney.field_attorney_image
+    - field.field.node.attorney.field_badges
+    - field.field.node.attorney.field_email
+    - field.field.node.attorney.field_header_text
+    - field.field.node.attorney.field_name
+    - field.field.node.attorney.field_phone
+    - node.type.attorney
+  module:
+    - text
+    - user
+id: node.attorney.default
+targetEntityType: node
+bundle: attorney
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_attorney_image:
+    type: entity_reference_entity_view
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_badges:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_email:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_header_text:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_phone:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

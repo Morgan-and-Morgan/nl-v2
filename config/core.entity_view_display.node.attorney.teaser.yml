@@ -1,0 +1,42 @@
+uuid: 9aceb32e-e296-4d9b-850a-edd15f717680
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.attorney.body
+    - field.field.node.attorney.field_attorney_image
+    - field.field.node.attorney.field_badges
+    - field.field.node.attorney.field_email
+    - field.field.node.attorney.field_header_text
+    - field.field.node.attorney.field_name
+    - field.field.node.attorney.field_phone
+    - node.type.attorney
+  module:
+    - text
+    - user
+id: node.attorney.teaser
+targetEntityType: node
+bundle: attorney
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_attorney_image: true
+  field_badges: true
+  field_email: true
+  field_header_text: true
+  field_name: true
+  field_phone: true

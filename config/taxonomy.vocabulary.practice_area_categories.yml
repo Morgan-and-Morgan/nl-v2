@@ -1,0 +1,8 @@
+uuid: e2f3c460-96be-4cef-921d-7a953b847b6b
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: practice_area_categories
+description: 'Use it to add Practice Area Category'
+weight: 0

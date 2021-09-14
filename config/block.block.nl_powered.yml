@@ -1,0 +1,22 @@
+uuid: 3818bf0b-d4ff-4ece-82e4-0fe986055844
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - nl
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: nl_powered
+theme: nl
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

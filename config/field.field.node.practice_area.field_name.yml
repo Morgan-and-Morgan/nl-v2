@@ -1,0 +1,19 @@
+uuid: 9a7e8d56-8534-483a-b059-32bc298c77f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name
+    - node.type.practice_area
+id: node.practice_area.field_name
+field_name: field_name
+entity_type: node
+bundle: practice_area
+label: Name
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: cc723f78-d1e5-4b5c-916d-a94d0cee71ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.attorney
+id: node.attorney.field_email
+field_name: field_email
+entity_type: node
+bundle: attorney
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -114,3 +114,16 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# Local services file.
+web/sites/services.local.yml
+
+# Node js modules.
+node_modules
+
+# JS & CSS compiled in custom theme.
+web/themes/custom/*/dist
+
+# Items associated with linting code.
+.vscode/settings.json
+phpcs.xml.dist

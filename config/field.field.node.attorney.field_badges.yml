@@ -1,0 +1,19 @@
+uuid: 8338154c-4074-4169-9e80-a75a1db96e9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_badges
+    - node.type.attorney
+id: node.attorney.field_badges
+field_name: field_badges
+entity_type: node
+bundle: attorney
+label: Badges
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

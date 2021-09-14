@@ -1,0 +1,23 @@
+uuid: 48f09765-c3eb-4c56-85de-3e89f510e644
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_buried
+    - node.type.practice_area
+id: node.practice_area.field_buried
+field_name: field_buried
+entity_type: node
+bundle: practice_area
+label: Buried
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

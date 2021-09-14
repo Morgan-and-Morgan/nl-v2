@@ -1,0 +1,30 @@
+.container-fluid {
+  padding: 0;
+
+  .panel.banner {
+    background: url(/themes/custom/nl/images/hero-min.jpg) no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 30px;
+    position: relative;
+
+    .content {
+      z-index: 1;
+      background: transparent;
+    }
+
+    img#protect-and-serve {
+      width: 250px;
+      padding-bottom: 30px;
+    }
+
+    .banner-header {
+      margin-top: 20px;
+      line-height: 1.3em;
+    }
+  }
+
+  .panel {
+    text-align: center;
+  }
+}
