@@ -1,0 +1,22 @@
+uuid: e980f240-0f4a-470e-8f04-a757f2915939
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: practice_area
+label: 'Practice Area'
+type: 'canonical_entities:node'
+pattern: '/practice-areas/[node:title]'
+selection_criteria:
+  cda69824-3a97-46a5-8c01-af93a0981a02:
+    id: node_type
+    bundles:
+      practice_area: practice_area
+    negate: false
+    context_mapping:
+      node: node
+    uuid: cda69824-3a97-46a5-8c01-af93a0981a02
+selection_logic: and
+weight: -5
+relationships: {  }
