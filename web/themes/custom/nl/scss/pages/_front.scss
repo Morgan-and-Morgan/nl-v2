@@ -152,6 +152,17 @@
       }
     }
   }
+
+  .panel.video {
+    background: url(/themes/custom/nl/images/banners/bg-img-we-the-people-min.jpg) no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+
+    iframe {
+      margin-top: 40px;
+      width: 50%;
+    }
+  }
 }
 
 .button.clear {

@@ -1,0 +1,16 @@
+footer {}
+
+.footer-container {
+  background: #252525;
+  padding: 60px 0 80px;
+
+  .footer-row {
+    color: #969696;
+    text-align: center;
+    padding: 10px 20px;
+
+    a {
+      color: #969696;
+    }
+  }
+}
