@@ -21,6 +21,16 @@
     .banner-header {
       margin-top: 20px;
       line-height: 1.3em;
+
+      h2 {
+        font-size: 3em;
+      }
+    }
+
+    .banner-subtext {
+      text-transform: uppercase;
+      margin-top: 20px;
+      font-size: 1.4em;
     }
   }
 

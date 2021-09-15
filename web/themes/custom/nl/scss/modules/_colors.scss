@@ -1,18 +1,17 @@
-$text-black: #333333;
+// text
 $text-white: #ffffff;
-$text-grey: #818181;
-$text-grey-title: #555555;
-$text-grey-light: #cccccc;
-$text-blockquotes: #333333;
+// generic
+$red: rgb(176, 23, 37);
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$dark-gray: rgb(37, 37, 37);
+$lightest-gray: rgb(236, 235, 232);
+$light-gray: rgb(195, 195, 195);
+$medium-gray: rgb(177, 177, 177);
+$medium-dark-gray: rgb(150, 150, 150);
+$dark-navy: rgb(4, 23, 67);
+$navy: rgb(8, 40, 87);
+$dark-teal: rgb(21, 109, 140);
 
-$background-light-grey: #f5f5f5;
-$background-medium-grey: #ebebeb;
-$background-dark-grey: #555555;
-
-$border-grey: #dddddd;
-
-$transparency-effect-275: rgba(255,255,255,0.275);
-$transparency-effect-225: rgba(255,255,255,0.225);
-$transparency-effect-7: rgba(255,255,255,0.7);
-$transparency-effect-6: rgba(255,255,255,0.6);
-$transparency-effect-5: rgba(255,255,255,0.5);
+// borders
+$gray-border: #ccc;
