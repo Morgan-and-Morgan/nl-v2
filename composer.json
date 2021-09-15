@@ -56,7 +56,12 @@
     "scripts": {
         "build-assets": [
             "@prepare-for-pantheon",
-            "composer install --optimize-autoloader --no-dev"
+            "composer install --optimize-autoloader --no-dev",
+            "@build-theme-nl"
+        ],
+        "dev": [
+            "composer install",
+            "@build-theme-nl"
         ],
         "lint": "find web/modules/custom web/themes/custom -name '*.php' -exec php -l {} \\;",
         "code-sniff": [
@@ -74,7 +79,11 @@
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-create-project-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "@build-theme-nl"
+        ],
+        "build-theme-nl": [
+            "cd web/themes/custom/nl && npm ci; npm run build:dev;"
         ]
     },
     "extra": {
