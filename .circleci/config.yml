@@ -122,6 +122,10 @@ jobs:
           command: /build-tools-ci/scripts/set-environment
 
       - run:
+          name: NPM login
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+
+      - run:
           name: run PHP build step
           command: ./.ci/build/php
 
@@ -292,14 +296,3 @@ workflows:
           requires:
             - deploy_to_pantheon
             - visual_regression_test
-
-  scheduled_update_check:
-    triggers:
-       - schedule:
-           cron: "0 0 * * *"
-           filters:
-             branches:
-              only:
-                - master
-    jobs:
-      - composer_lock_updater
