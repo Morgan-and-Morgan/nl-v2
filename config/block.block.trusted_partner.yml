@@ -1,0 +1,25 @@
+uuid: 9562f64d-0f3e-4154-88c6-60f299810836
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6d5c435e-951a-4b1e-843d-d76e6f6a9aa3'
+  module:
+    - block_content
+  theme:
+    - nl
+id: trusted_partner
+theme: nl
+region: content_bottom
+weight: 0
+provider: null
+plugin: 'block_content:6d5c435e-951a-4b1e-843d-d76e6f6a9aa3'
+settings:
+  id: 'block_content:6d5c435e-951a-4b1e-843d-d76e6f6a9aa3'
+  label: 'We''re your trusted partner'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: e0ea0ae9-9090-4022-a6ea-9aed564a3bd0
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - nl
+_core:
+  default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
+id: nl_search
+theme: nl
+region: header
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: node_search
+visibility: {  }

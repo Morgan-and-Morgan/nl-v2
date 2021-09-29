@@ -1,0 +1,23 @@
+uuid: e3fc3685-ebb0-4be2-802c-58bb6f236aba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_highlighted
+    - node.type.practice_area
+id: node.practice_area.field_highlighted
+field_name: field_highlighted
+entity_type: node
+bundle: practice_area
+label: Highlighted
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

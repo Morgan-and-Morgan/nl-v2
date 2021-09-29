@@ -1,0 +1,31 @@
+uuid: d98a778d-359e-4d4a-9197-2bc0523ec5df
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:results:f0d13238-8e52-4074-b101-dd73cdf3eba1'
+  module:
+    - block_content
+    - system
+  theme:
+    - nl
+id: ourresults
+theme: nl
+region: content
+weight: -7
+provider: null
+plugin: 'block_content:f0d13238-8e52-4074-b101-dd73cdf3eba1'
+settings:
+  id: 'block_content:f0d13238-8e52-4074-b101-dd73cdf3eba1'
+  label: 'Our Results'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /verdicts-and-settlements
+    negate: false
+    context_mapping: {  }

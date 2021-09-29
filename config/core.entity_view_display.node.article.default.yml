@@ -3,16 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
-    - field.field.node.article.comment
+    - field.field.node.article.field_attorney
+    - field.field.node.article.field_email
+    - field.field.node.article.field_featured_post
+    - field.field.node.article.field_header_text
     - field.field.node.article.field_image
+    - field.field.node.article.field_name
+    - field.field.node.article.field_phone
+    - field.field.node.article.field_popular_post
     - field.field.node.article.field_tags
-    - image.style.large
     - node.type.article
   module:
-    - comment
-    - image
     - text
     - user
 _core:
@@ -29,32 +31,82 @@ content:
     settings: {  }
     third_party_settings: {  }
     label: hidden
-  comment:
-    type: comment_default
-    weight: 110
+  field_attorney:
+    weight: 108
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
+  field_email:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_featured_post:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_header_text:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 101
     label: above
     settings:
       view_mode: default
-      pager_id: 0
+      link: false
     third_party_settings: {  }
-  field_image:
-    type: image
-    weight: -1
     region: content
+  field_name:
+    weight: 102
+    label: above
     settings:
-      image_style: large
-      image_link: ''
+      link_to_entity: false
     third_party_settings: {  }
-    label: hidden
-  field_tags:
-    type: entity_reference_label
-    weight: 10
+    type: string
     region: content
+  field_phone:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_popular_post:
+    weight: 109
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_tags:
+    weight: 106
     label: above
     settings:
       link: true
     third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   links:
     weight: 100
     region: content

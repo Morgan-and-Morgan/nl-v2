@@ -1,0 +1,22 @@
+uuid: ccb19501-e81e-414e-b20d-9615b0575b8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.results
+    - field.field.block_content.results.body
+  module:
+    - text
+id: block_content.results.default
+targetEntityType: block_content
+bundle: results
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

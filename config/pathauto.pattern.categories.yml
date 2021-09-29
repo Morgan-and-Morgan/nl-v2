@@ -1,0 +1,23 @@
+uuid: 52a2dea1-a62e-4f75-9ac6-cf96a6feadf7
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: categories
+label: Categories
+type: 'canonical_entities:taxonomy_term'
+pattern: '/[term:name]'
+selection_criteria:
+  7f96518d-34d2-4e0a-967c-ca851bd31dd9:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      practice_area_categories: practice_area_categories
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 7f96518d-34d2-4e0a-967c-ca851bd31dd9
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,23 @@
+uuid: 9d5a9bc5-c191-47fa-9ed4-3a76ceac7ed5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_post
+    - node.type.article
+id: node.article.field_featured_post
+field_name: field_featured_post
+entity_type: node
+bundle: article
+label: 'Featured Post'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,28 @@
+uuid: 2ab12227-7589-4870-b98a-04142f916030
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attorney_image
+    - media.type.image
+    - node.type.attorney
+id: node.attorney.field_attorney_image
+field_name: field_attorney_image
+entity_type: node
+bundle: attorney
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,31 @@
+uuid: 295e7e55-315d-46c4-9345-3845e670a61d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:315b4487-d416-45d2-bb9a-69759cc5cbae'
+  module:
+    - block_content
+    - system
+  theme:
+    - nl
+id: subscribe_to_our_newsletter
+theme: nl
+region: sidebar
+weight: -8
+provider: null
+plugin: 'block_content:315b4487-d416-45d2-bb9a-69759cc5cbae'
+settings:
+  id: 'block_content:315b4487-d416-45d2-bb9a-69759cc5cbae'
+  label: 'Subscribe To Our Newsletter'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '/blog/*'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,22 @@
+uuid: c39cc44f-f2a4-401c-a851-8394040ce318
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: attorney
+label: Attorney
+type: 'canonical_entities:node'
+pattern: '/attorneys/[node:title]'
+selection_criteria:
+  dc7acb0f-9b10-4057-95b3-464f31399677:
+    id: node_type
+    bundles:
+      attorney: attorney
+    negate: false
+    context_mapping:
+      node: node
+    uuid: dc7acb0f-9b10-4057-95b3-464f31399677
+selection_logic: and
+weight: -5
+relationships: {  }

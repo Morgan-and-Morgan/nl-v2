@@ -1,0 +1,33 @@
+.path-about {
+  .region-content {
+    padding: 0;
+
+    .about-container {
+      width: 70%;
+      margin: auto;
+      padding-top: 20px;
+
+      .topic {
+        text-align: center;
+        padding-bottom: 20px;
+
+        p {
+          text-align: left;
+        }
+
+        h3 {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+.informational-page-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  p {
+    line-height: 2.3;
+  }
+}

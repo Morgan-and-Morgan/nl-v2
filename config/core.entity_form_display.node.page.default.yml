@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_header_subtext
+    - field.field.node.page.field_header_text
     - node.type.page
   module:
     - path
@@ -31,6 +33,22 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_header_subtext:
+    weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_header_text:
+    weight: 121
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   path:
     type: path
     weight: 30

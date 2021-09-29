@@ -1,0 +1,70 @@
+uuid: bd925708-521a-4932-937b-d37bd57c271d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured
+    - field.field.node.article.body
+    - field.field.node.article.field_attorney
+    - field.field.node.article.field_email
+    - field.field.node.article.field_featured_post
+    - field.field.node.article.field_header_text
+    - field.field.node.article.field_image
+    - field.field.node.article.field_name
+    - field.field.node.article.field_phone
+    - field.field.node.article.field_popular_post
+    - field.field.node.article.field_tags
+    - node.type.article
+  module:
+    - media
+    - smart_trim
+    - user
+_core:
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
+id: node.article.featured
+targetEntityType: node
+bundle: article
+mode: featured
+content:
+  body:
+    type: smart_trim
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 200
+      trim_type: chars
+      trim_suffix: ...
+      wrap_class: trimmed
+      more_link: true
+      more_text: 'Continue Reading'
+      more_class: 'red caps bold'
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+    third_party_settings: {  }
+  field_image:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_attorney: true
+  field_email: true
+  field_featured_post: true
+  field_header_text: true
+  field_name: true
+  field_phone: true
+  field_popular_post: true
+  field_tags: true

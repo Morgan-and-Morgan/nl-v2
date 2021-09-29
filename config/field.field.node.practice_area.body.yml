@@ -1,0 +1,23 @@
+uuid: ba165adc-64ec-4abb-85f3-044b6d03c3d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.practice_area
+  module:
+    - text
+id: node.practice_area.body
+field_name: body
+entity_type: node
+bundle: practice_area
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,19 @@
+uuid: 5ffc021e-0463-416a-82f7-b240181a13b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_text
+    - node.type.attorney
+id: node.attorney.field_header_text
+field_name: field_header_text
+entity_type: node
+bundle: attorney
+label: 'Header text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

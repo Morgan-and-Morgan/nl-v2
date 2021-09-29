@@ -5,8 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.rss
     - field.field.node.article.body
-    - field.field.node.article.comment
+    - field.field.node.article.field_attorney
+    - field.field.node.article.field_email
+    - field.field.node.article.field_featured_post
+    - field.field.node.article.field_header_text
     - field.field.node.article.field_image
+    - field.field.node.article.field_name
+    - field.field.node.article.field_phone
+    - field.field.node.article.field_popular_post
     - field.field.node.article.field_tags
     - node.type.article
   module:
@@ -23,6 +29,12 @@ content:
     region: content
 hidden:
   body: true
-  comment: true
+  field_attorney: true
+  field_email: true
+  field_featured_post: true
+  field_header_text: true
   field_image: true
+  field_name: true
+  field_phone: true
+  field_popular_post: true
   field_tags: true

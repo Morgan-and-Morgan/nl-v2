@@ -1,0 +1,211 @@
+.page-node-type-article {
+  .region-content,
+  .region-sidebar,
+  .region-content-bottom {
+    padding: 0;
+  }
+
+  // Blog Node
+  .blog-post-container {
+    padding-top: 100px;
+
+    .main-content {
+      border-right: solid 1px #c3c3c3;
+
+      .title-row {
+        position: relative;
+
+        .title-subheader {
+          font-size: .7em;
+        }
+
+        .share-buttons-outer-container {
+          font-size: .8em;
+          text-align: right;
+          position: absolute;
+          right: 0;
+          top: -30px;
+
+          div.share.fb-share {
+            vertical-align: text-bottom;
+          }
+
+          div.share {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+
+      .image-row {
+        padding: 0 0 20px 0;
+
+        .image-container {
+          overflow: hidden;
+          height: 400px;
+          background-size: cover !important;
+          background-position: center center !important;
+        }
+      }
+
+      // Author Container
+      .author-blurb {
+        margin: 30px 5px 0 0;
+        padding: 10px;
+        border-top: solid 1px #c3c3c3;
+        border-bottom: solid 1px #c3c3c3;
+
+        .vcenter {
+          display: flex;
+          align-items: center;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .pagination-buttons {
+        padding: 10px 0;
+        margin-right: 5px;
+        border-bottom: solid 1px #c3c3c3;
+
+        a {
+          color: #252525;
+          text-decoration: none;
+        }
+      }
+    }
+
+
+    .right-bar {
+      padding-left: 5px;
+
+      .item-container.facebook-page {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+
+      .item-container {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: solid 1px #c3c3c3;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        // Newsletter Subscription Form
+        #mc_embed_signup {
+          background: #fff;
+          clear: left;
+          font: 14px Helvetica,Arial,sans-serif;
+
+          form {
+            display: block;
+            position: relative;
+            text-align: left;
+            padding: 10px 0 10px 3%;
+          }
+
+          .button {
+            clear: both;
+            background-color: #aaa;
+            border: 0 none;
+            border-radius: 4px;
+            transition: all 0.23s ease-in-out 0s;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 15px;
+            font-weight: normal;
+            height: 32px;
+            line-height: 32px;
+            margin: 0 5px 10px 0;
+            padding: 0 22px;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: top;
+            white-space: nowrap;
+            width: auto;
+          }
+
+          input {
+            border: 1px solid #ABB0B2;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+          }
+        }
+
+        .newsletter-subscription-form-container {
+          h3 {
+            font-size: 16px;
+            font-weight: bold;
+          }
+
+          #mc_embed_signup_scroll .mc-field-group {
+            width: 100%;
+          }
+
+          .button {
+            display: block;
+            width: 100% !important;
+          }
+        }
+
+
+        h2 {
+          padding-left: 20px;
+          font-size: 20px;
+        }
+
+        // Popular Post
+        .popular-posts-container {
+          text-align: left;
+
+          .post-container {
+            color: black;
+            text-decoration: none;
+            padding: 10px 0;
+
+            h5 {
+              margin-bottom: 0;
+            }
+
+            span {
+              font-size: .6em;
+            }
+
+            p {
+              font-size: .7em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Content Bottom Region
+  .trust-container {
+    padding: 60px 0 !important;
+    text-align: center;
+
+    h3 {
+      padding: 10px 0;
+    }
+
+    .logos-container {
+      padding: 40px 10px 40px 10px;
+      align-items: center;
+
+      .col-3 {
+        margin: 0 10px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

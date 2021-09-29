@@ -1,0 +1,19 @@
+uuid: c20d83f4-7b8a-440d-b135-35c948f91d8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.article
+id: node.article.field_phone
+field_name: field_phone
+entity_type: node
+bundle: article
+label: Phone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

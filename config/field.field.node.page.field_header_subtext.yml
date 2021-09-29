@@ -1,0 +1,19 @@
+uuid: e35f2781-c161-479f-b074-e3d4cf94c940
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_subtext
+    - node.type.page
+id: node.page.field_header_subtext
+field_name: field_header_subtext
+entity_type: node
+bundle: page
+label: 'Header Subtext'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

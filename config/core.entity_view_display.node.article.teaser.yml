@@ -5,14 +5,18 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
-    - field.field.node.article.comment
+    - field.field.node.article.field_attorney
+    - field.field.node.article.field_email
+    - field.field.node.article.field_featured_post
+    - field.field.node.article.field_header_text
     - field.field.node.article.field_image
+    - field.field.node.article.field_name
+    - field.field.node.article.field_phone
+    - field.field.node.article.field_popular_post
     - field.field.node.article.field_tags
-    - image.style.medium
     - node.type.article
   module:
-    - image
-    - text
+    - media
     - user
 _core:
   default_config_hash: 4NcL2hSQZBpJbYtNuh5jC6kyQTcAc1m5bQpTegEWEso
@@ -21,35 +25,27 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
+  field_image:
+    type: media_thumbnail
     weight: 0
     region: content
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
     label: hidden
-  field_image:
-    type: image
-    weight: -1
-    region: content
     settings:
-      image_style: medium
-      image_link: content
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    label: hidden
-  field_tags:
-    type: entity_reference_label
-    weight: 10
-    region: content
-    settings:
-      link: true
-    third_party_settings: {  }
-    label: above
   links:
-    weight: 100
+    weight: 1
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  comment: true
-  field_image: true
+  body: true
+  field_attorney: true
+  field_email: true
+  field_featured_post: true
+  field_header_text: true
+  field_name: true
+  field_phone: true
+  field_popular_post: true
   field_tags: true

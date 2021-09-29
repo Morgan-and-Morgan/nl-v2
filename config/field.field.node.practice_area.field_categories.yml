@@ -1,0 +1,29 @@
+uuid: b8ccec5d-75b5-4c01-a39d-a3eb19abddd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categories
+    - node.type.practice_area
+    - taxonomy.vocabulary.practice_area_categories
+id: node.practice_area.field_categories
+field_name: field_categories
+entity_type: node
+bundle: practice_area
+label: Categories
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      practice_area_categories: practice_area_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

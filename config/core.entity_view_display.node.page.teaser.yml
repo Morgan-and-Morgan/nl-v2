@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_header_subtext
+    - field.field.node.page.field_header_text
     - node.type.page
   module:
     - text
@@ -27,4 +29,6 @@ content:
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  field_header_subtext: true
+  field_header_text: true
