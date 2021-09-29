@@ -1,0 +1,122 @@
+.path-blog {
+  .region-content {
+    padding: 0;
+  }
+
+  .blog-index-container {
+    margin-top: 50px;
+
+    .new-post-container {
+      .post-header {
+        height: 400px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          opacity: .4;
+          background: linear-gradient(135deg, #000000, #777777);
+        }
+
+        .inner-content {
+          width: 70%;
+          text-align: center;
+          margin: 125px auto 0 auto;
+          padding: 30px 0;
+          border-top: solid 2px white;
+          border-bottom: solid 2px white;
+
+          h5 {
+            font-size: .5em;
+          }
+        }
+      }
+
+      .post-excerpt {
+        padding-top: 25px;
+      }
+    }
+
+    .other-posts-container {
+      margin-top: 80px;
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .post {
+        .img-container {
+          height: 250px;
+          overflow: hidden;
+          position: relative;
+          background-size: cover !important;
+          background-position: center center !important;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: .4;
+            background: linear-gradient(135deg, #000000, #777777);
+          }
+        }
+
+        h3 {
+          font-size: 1.2em;
+          padding-top: 8px;
+        }
+
+        h6 {
+          font-size: .4em;
+        }
+      }
+    }
+
+    .button-container {
+      background: #ecebe8;
+      text-align: right;
+      margin-top: 30px;
+      width: 100%;
+
+      .pager {
+        padding: 0;
+        margin: 0;
+
+        .pager__item {
+          padding: 0;
+          margin: 0;
+        }
+
+        a.button {
+          color: #b01725;
+          text-transform: uppercase;
+          text-decoration: underline;
+          font-size: 1.4em;
+          padding: 5px;
+          padding-right: 30px;
+          cursor: pointer;
+          font-family: 'Old Standard Regular';
+        }
+      }
+
+      span {
+        text-decoration: underline;
+        font-size: 1.4em;
+        padding: 5px;
+        padding-right: 30px;
+        cursor: pointer;
+        font-family: 'Old Standard Regular';
+      }
+    }
+  }
+}
