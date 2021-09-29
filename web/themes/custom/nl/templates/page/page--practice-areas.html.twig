@@ -43,7 +43,7 @@
  */
 #}
 
-<div class="container-fluid">
+<div class="container-fluid practice-areas-page">
 
   {% include '@nl/includes/header.html.twig' %}
 
@@ -76,32 +76,28 @@
     </div>
   </div>
 
-  <div class="row">
-    <main role="main">
-      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-      <div>
+    <div class="row">
+      <div class="col-sm-12">
         {% if page.breadcrumb %}
           {{ page.breadcrumb }}
         {% endif %}
 
+        {{ page.content }}
+      </div>
+    </div>
+
+    <div class="row">
+      {% if page.content_bottom %}
         <div class="col-sm-12">
-          <div class="about-container">
-              {{ page.content }}
-          </div>
+          {{ page.content_bottom }}
         </div>
-      </div>
+      {% endif %}
+    </div>
 
-      <div class="row">
-          {% if page.content_bottom %}
-            <div class="col-sm-12">
-                {{ page.content_bottom }}
-            </div>
-          {% endif %}
-      </div>
-
-    </main>
-  </div>
+  </main>
 
   {% include '@nl/includes/footer.html.twig' %}
 

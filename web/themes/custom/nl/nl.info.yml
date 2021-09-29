@@ -10,6 +10,8 @@ base theme: bootstrap4
 regions:
   navigation: 'Navigation'
   header: 'Header'
+  breadcrumb: 'Breadcrumb'
   content: 'Main content'
-  sidebar: 'Sidebar'
+  sidebar: 'Right Sidebar'
+  content_bottom: 'Content Bottom'
   footer: 'Footer'

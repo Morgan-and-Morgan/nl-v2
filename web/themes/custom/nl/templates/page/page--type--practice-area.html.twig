@@ -47,61 +47,49 @@
 
   {% include '@nl/includes/header.html.twig' %}
 
-  <div class="row">
-    <div class="col-sm-12">
-      <!-- Below the Nav -->
-      <div class="header-container container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-sm-5 bar blue"></div>
-        </div>
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-        {% if node.field_header_subtext.value %}
-          <h4 class="white light caps small header-subtext">{{ node.field_header_subtext.value }}</h4>
-        {% endif %}
-
-        <h2 class="white caps header-main">
-          {% if node.field_header_text.value %}
-            {{ node.field_header_text.value }}
-          {% elseif node.title.value %}
-            {{ node.title.value }}
-          {% elseif page['#title'] %}
-            {{ page['#title'] }}
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="practice-area-container container">
+          {% if page.breadcrumb %}
+            <div class="row breadcrumbs">
+              <div class="col-sm-12">
+                {{ page.breadcrumb }}
+              </div>
+            </div>
           {% endif %}
-        </h2>
 
-        <div class="row justify-content-center">
-          <div class="col-sm-5 bar blue"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <div class="row inner">
 
-  <div class="row">
-    <main role="main">
-      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+            <nav class="col-sm-2 left-nav hidden-sm-down">
+              <a href="/practice-areas/all/">All Practices</a>
+              <a href="/practice-areas/insurance-claims/" class="selected">Insurance Claims</a>
+              <a href="/practice-areas/motor-vehicles/">Motor Vehicle Accidents</a>
+              <a href="/practice-areas/personal-injury/">Personal Injury</a>
+              <a href="/practice-areas/personal-injury/slip-and-fall/">Slip and Fall</a>
+              <a href="/practice-areas/personal-injury/wrongful-death/">Wrongful Death</a>
+            </nav>
 
-      <div>
-        {% if page.breadcrumb %}
-          {{ page.breadcrumb }}
-        {% endif %}
-
-        <div class="col-sm-12">
-          <div class="about-container">
+            <div class="col-sm-10 center-content">
               {{ page.content }}
+            </div>
+
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-          {% if page.content_bottom %}
-            <div class="col-sm-12">
-                {{ page.content_bottom }}
-            </div>
-          {% endif %}
-      </div>
+    <div class="row">
+      {% if page.content_bottom %}
+        <div class="col-sm-12">
+          {{ page.content_bottom }}
+        </div>
+      {% endif %}
+    </div>
 
-    </main>
-  </div>
+  </main>
 
   {% include '@nl/includes/footer.html.twig' %}
 

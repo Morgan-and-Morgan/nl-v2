@@ -1,4 +1,6 @@
-footer {}
+footer {
+  padding: 0;
+}
 
 .footer-container {
   background: #252525;
@@ -12,5 +14,40 @@ footer {}
     a {
       color: #969696;
     }
+  }
+
+  .social-row a {
+    width: 20px;
+    padding: 0 5px;
+
+    img {
+      width: 20px;
+    }
+  }
+
+  nav.menu--footer {
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      li {
+        a {
+          border-left: solid 1px #969696;
+          padding: 0 10px;
+        }
+
+        &:last-child {
+          a {
+            border-right: solid 1px #969696;
+          }
+        }
+      }
+    }
+  }
+
+  .disclaimer {
+    font-size: 11px;
+    color: #b1b1b1;
   }
 }

@@ -78,14 +78,50 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.white {
-  color: white;
-}
-
+// Font styles
 .caps {
   text-transform: uppercase;
 }
 
+.light {
+  font-family: 'OpenSans Light';
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.large {
+  font-size: 3em;
+  letter-spacing: 3px;
+}
+
+.center {
+  text-align: center;
+}
+
+
+// Colours
+.white {
+  color: white;
+}
+
 .red {
   color: #b01725;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.black {
+  color: black;
+}
+
+.dark-gray {
+  color: #252525;
+}
+
+.pull-left {
+  float: left;
 }
