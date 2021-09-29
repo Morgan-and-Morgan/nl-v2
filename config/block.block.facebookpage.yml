@@ -1,0 +1,31 @@
+uuid: 8cf58236-296d-4cf3-ab15-cfaf7fbd9d6f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c1b93cd8-263a-4a27-a585-3a056eb930b4'
+  module:
+    - block_content
+    - system
+  theme:
+    - nl
+id: facebookpage
+theme: nl
+region: sidebar
+weight: 0
+provider: null
+plugin: 'block_content:c1b93cd8-263a-4a27-a585-3a056eb930b4'
+settings:
+  id: 'block_content:c1b93cd8-263a-4a27-a585-3a056eb930b4'
+  label: 'Facebook Page Plugin'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '/blog/*'
+    negate: false
+    context_mapping: {  }

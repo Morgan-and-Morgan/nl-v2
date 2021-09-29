@@ -1,0 +1,15 @@
+uuid: 3931b53b-8143-4ba3-83a8-0d6098da1d56
+langcode: en
+status: true
+dependencies: {  }
+name: popular_post_teaser
+label: 'Popular Post Teaser (110x110)'
+effects:
+  7cf437f5-a547-465f-b8a4-e9e1f0a47eae:
+    uuid: 7cf437f5-a547-465f-b8a4-e9e1f0a47eae
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 110
+      height: 110
+      anchor: center-center

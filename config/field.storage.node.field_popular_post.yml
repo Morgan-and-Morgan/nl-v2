@@ -1,0 +1,18 @@
+uuid: eef223f5-505d-4001-9cd5-d1a4ef95e29a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_popular_post
+field_name: field_popular_post
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

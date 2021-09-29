@@ -1,0 +1,31 @@
+uuid: 53f150e7-61e5-4252-827f-8c6a204ae74a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ee1a62f3-a462-4a3a-9c9d-6b54297e8209'
+  module:
+    - block_content
+    - system
+  theme:
+    - nl
+id: practiceareas
+theme: nl
+region: content
+weight: -5
+provider: null
+plugin: 'block_content:ee1a62f3-a462-4a3a-9c9d-6b54297e8209'
+settings:
+  id: 'block_content:ee1a62f3-a462-4a3a-9c9d-6b54297e8209'
+  label: 'Practice Areas'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /practice-areas
+    negate: false
+    context_mapping: {  }

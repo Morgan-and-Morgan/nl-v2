@@ -1,0 +1,8 @@
+uuid: 579b6cb0-75b8-4ce7-8922-ce1b5b982aae
+langcode: en
+status: true
+dependencies: {  }
+id: results
+label: Results
+revision: 0
+description: 'Use ''Results'' blog on Our Results page'
