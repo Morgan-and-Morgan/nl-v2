@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if id is defined and class is defined %}
+  <script>
+    window.MM.forms.push(
+      {
+        formId: '{{ id }}',
+        target: '{{ class }}'
+      }
+    );
+  </script>
+{% endif %}
+<form{{ attributes }}>
+  {{ children }}
+</form>

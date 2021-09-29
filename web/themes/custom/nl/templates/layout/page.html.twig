@@ -87,6 +87,14 @@
       {{ page.content }}
     </div>
 
+    <div class="row">
+      {% if page.content_bottom %}
+        <div class="col-sm-12">
+          {{ page.content_bottom }}
+        </div>
+      {% endif %}
+    </div>
+
   </main>
 
   {% include '@nl/includes/footer.html.twig' %}

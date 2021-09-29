@@ -45,7 +45,7 @@
 
 <div class="container-fluid">
   {% include '@nl/includes/header.html.twig' %}
-  
+
   <main role="main">
 
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
@@ -159,6 +159,23 @@
           </iframe>
         </div>
       </div>
+    </div>
+
+    <div class="form row homepage-form">
+      <div class="case-evaluation-form-container">
+
+      </div>
+    </div>
+    <div class="hidden">
+      {% include '@nl/includes/intake-form.html.twig' with {'id': 3, 'class': '.case-evaluation-form-container'} %}
+    </div>
+
+    <div class="row">
+      {% if page.content_bottom %}
+        <div class="col-sm-12">
+          {{ page.content_bottom }}
+        </div>
+      {% endif %}
     </div>
 
   </main>

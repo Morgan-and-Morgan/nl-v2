@@ -42,6 +42,11 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
+
+    <script>
+      window.MM = window.MM || {};
+      window.MM.forms = window.MM.forms || [];
+    </script>
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     {#
