@@ -2,6 +2,7 @@ name: NationalLaw
 type: theme
 description: NL subtheme
 core: 8.x
+core_version_requirement: ^8 || ^9
 libraries:
   - nl/global-styling
   - nl/bootstrap_cdn

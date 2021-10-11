@@ -27,7 +27,7 @@ parser_configuration:
 processor: 'entity:node'
 processor_configuration:
   langcode: en
-  update_existing: 0
+  update_existing: 2
   update_non_existent: _keep
   expire: -1
   owner_feed_author: false
