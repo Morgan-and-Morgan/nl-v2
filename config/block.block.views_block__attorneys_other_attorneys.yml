@@ -1,0 +1,41 @@
+uuid: e00bf48f-c199-4756-b750-426dde45b81c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.attorneys
+  module:
+    - ctools
+    - node
+    - views
+  theme:
+    - nl
+id: views_block__attorneys_other_attorneys
+theme: nl
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:attorneys-other_attorneys'
+settings:
+  id: 'views_block:attorneys-other_attorneys'
+  label: 'Our Other Great Attorneys'
+  provider: views
+  label_display: visible
+  views_label: 'Our Other Great Attorneys'
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      attorney: attorney
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      attorney: attorney
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

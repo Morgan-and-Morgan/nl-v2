@@ -1,0 +1,19 @@
+uuid: 82aa8adf-37c6-4d4a-848c-90a64f9c2538
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.field_youtube
+field_name: field_youtube
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

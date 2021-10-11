@@ -1,0 +1,29 @@
+uuid: 161624fc-d503-4203-9663-844305531ac0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.video
+    - field.field.block_content.video.body
+    - field.field.block_content.video.field_youtube
+  module:
+    - link
+id: block_content.video.default
+targetEntityType: block_content
+bundle: video
+mode: default
+content:
+  field_youtube:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 200
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+hidden:
+  body: true

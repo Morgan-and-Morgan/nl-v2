@@ -1,23 +1,23 @@
-uuid: 53f150e7-61e5-4252-827f-8c6a204ae74a
+uuid: fed020be-1141-4839-9dc6-a9509abc951d
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:ee1a62f3-a462-4a3a-9c9d-6b54297e8209'
+    - 'block_content:video:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
   module:
     - block_content
     - system
   theme:
     - nl
-id: practiceareas
+id: nationlawvideos
 theme: nl
 region: content
-weight: -6
+weight: -9
 provider: null
-plugin: 'block_content:ee1a62f3-a462-4a3a-9c9d-6b54297e8209'
+plugin: 'block_content:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
 settings:
-  id: 'block_content:ee1a62f3-a462-4a3a-9c9d-6b54297e8209'
-  label: 'Practice Areas'
+  id: 'block_content:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
+  label: 'Nation Law Videos'
   provider: block_content
   label_display: '0'
   status: true
@@ -26,6 +26,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /practice-areas
+    pages: /video-gallery
     negate: false
     context_mapping: {  }

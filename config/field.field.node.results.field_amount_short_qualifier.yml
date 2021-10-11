@@ -1,0 +1,19 @@
+uuid: 70b699d1-d29c-4bee-b86b-88bb3c3689f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amount_short_qualifier
+    - node.type.results
+id: node.results.field_amount_short_qualifier
+field_name: field_amount_short_qualifier
+entity_type: node
+bundle: results
+label: 'Amount Short Qualifier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
