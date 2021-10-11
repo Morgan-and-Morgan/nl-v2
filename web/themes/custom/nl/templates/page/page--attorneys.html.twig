@@ -47,44 +47,19 @@
 
   {% include '@nl/includes/header.html.twig' %}
 
-  <div class="row">
-    <div class="col-sm-12">
-      <!-- Below the Nav -->
-      <div class="header-container container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-sm-5 bar blue"></div>
-        </div>
-
-        {% if node.field_header_subtext.value %}
-          <h4 class="white light caps small header-subtext">{{ node.field_header_subtext.value }}</h4>
-        {% endif %}
-
-        <h2 class="white caps header-main">
-          {% if node.field_header_text.value %}
-            {{ node.field_header_text.value }}
-          {% elseif node.title.value %}
-            {{ node.title.value }}
-          {% elseif page['#title'] %}
-            {{ page['#title'] }}
-          {% endif %}
-        </h2>
-
-        <div class="row justify-content-center">
-          <div class="col-sm-5 bar blue"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="container">
+    <div class="row">
       {% if page.breadcrumb %}
         {{ page.breadcrumb }}
       {% endif %}
 
-      {{ page.content }}
+      <div class="col-sm-12">
+        <div class="container">
+          {{ page.content }}
+        </div>
+      </div>
     </div>
 
     <div class="row">

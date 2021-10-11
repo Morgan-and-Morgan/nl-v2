@@ -1,3 +1,22 @@
+@import "../modules/fonts";
+
+// Generic
+.medium-headline {
+  @include headline-font(800);
+
+  &.light {
+    @include normal-font(100);
+  }
+}
+
+.large-headline {
+  @include headline-font(800);
+}
+
+.small-headline {
+  @include normal-font(100);
+}
+
 .container-fluid {
   padding: 0;
 

@@ -55,18 +55,18 @@
           <div class="col-sm-5 bar blue"></div>
         </div>
 
-        {% if node.field_header_subtext.value %}
-          <h4 class="white light caps small header-subtext">{{ node.field_header_subtext.value }}</h4>
-        {% endif %}
+          {% if node.field_header_subtext.value %}
+            <h4 class="white light caps small header-subtext">{{ node.field_header_subtext.value }}</h4>
+          {% endif %}
 
         <h2 class="white caps header-main">
-          {% if node.field_header_text.value %}
-            {{ node.field_header_text.value }}
-          {% elseif node.title.value %}
-            {{ node.title.value }}
-          {% elseif page['#title'] %}
-            {{ page['#title'] }}
-          {% endif %}
+            {% if node.field_header_text.value %}
+                {{ node.field_header_text.value }}
+            {% elseif node.title.value %}
+                {{ node.title.value }}
+            {% elseif page['#title'] %}
+                {{ page['#title'] }}
+            {% endif %}
         </h2>
 
         <div class="row justify-content-center">
@@ -79,12 +79,26 @@
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="container">
-      {% if page.breadcrumb %}
-        {{ page.breadcrumb }}
-      {% endif %}
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="attorney-container container">
+          <div class="row breadcrumbs">
+            <ul>
+              <li><a href="/attorneys/">All Attorneys</a></li>
+              <li> &gt; </li>
+              <li>
+                {% if node.title.value %}
+                  {{ node.title.value }}
+                {% elseif page['#title'] %}
+                  {{ page['#title'] }}
+                {% endif %}
+              </li>
+            </ul>
+          </div>
 
-      {{ page.content }}
+          {{ page.content }}
+        </div>
+      </div>
     </div>
 
     <div class="row">

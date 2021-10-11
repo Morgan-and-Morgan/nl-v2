@@ -79,12 +79,18 @@
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="container">
-      {% if page.breadcrumb %}
-        {{ page.breadcrumb }}
-      {% endif %}
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="outer-container">
+          <div class="container">
+              {% if page.breadcrumb %}
+                {{ page.breadcrumb }}
+              {% endif %}
 
-      {{ page.content }}
+              {{ page.content }}
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="row">

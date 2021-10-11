@@ -1,6 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap');
+// sizes
+$small-font: .8em;
+$medium-font: 1.4em;
+$large-font: 3em;
 
+@font-face {
+  font-family: "Old Standard TT Bold";
+  src: url("../../fonts/OldStandard-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Old Standard Regular";
+  src: url("../../fonts/OldStandard-Regular.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans Bold";
+  src: url("../../fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans Regular";
+  src: url("../../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans Light";
+  src: url("../../fonts/OpenSans-Light.ttf");
+}
+
+// fonts
+@mixin normal-font($weight: 400) {
+  @if $weight == 100 {
+    font-family: 'OpenSans Light';
+  } @else if $weight == 400 {
+    font-family: 'OpenSans Regular';
+  } @else if $weight == 600 {
+    font-family: 'OpenSans Bold';
+  } @else {
+    font-family: 'OpenSans Regular';
+  }
+}
+
+
+@mixin headline-font($weight: 400) {
+  @if $weight == 400 {
+    font-family: 'Old Standard Regular';
+  } @else if $weight == 800 {
+    font-family: 'Old Standard TT Bold';
+  } @else {
+    font-family: 'Old Standard Regular';
+  }
+}
+
+p, span, .light {
+  @include normal-font($weight: 100);
+}
+
+// default fonts
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a, button {
+  @include normal-font($weight: 400);
+}
+
+strong {
+  @include normal-font($weight: 600);
+}
+
+h1, h2, h3, h4, h5, h6, .headline {
+  @include headline-font;
+}
+
+// font weight
+.bold {
+  font-weight: bold;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+// font size
 .small {
-  font-size: 0.8em;
+  font-size: $small-font;
+}
+.medium {
+  font-size: $medium-font;
+  letter-spacing: 2px;
+}
+.large {
+  font-size: $large-font;
+  letter-spacing: 3px;
 }
