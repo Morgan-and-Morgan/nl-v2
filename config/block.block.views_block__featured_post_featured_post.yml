@@ -12,7 +12,7 @@ dependencies:
 id: views_block__featured_post_featured_post
 theme: nl
 region: content
-weight: -10
+weight: -12
 provider: null
 plugin: 'views_block:featured_post-featured_post'
 settings:

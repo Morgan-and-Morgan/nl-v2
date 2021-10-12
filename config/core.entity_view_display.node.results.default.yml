@@ -1,0 +1,57 @@
+uuid: c6ba0b81-04a3-4e1b-b562-932338b265bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.results.body
+    - field.field.node.results.feeds_item
+    - field.field.node.results.field_amount
+    - field.field.node.results.field_amount_short
+    - field.field.node.results.field_amount_short_qualifier
+    - node.type.results
+  module:
+    - text
+    - user
+id: node.results.default
+targetEntityType: node
+bundle: results
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_amount:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_amount_short:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_amount_short_qualifier:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  feeds_item: true

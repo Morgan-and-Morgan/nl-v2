@@ -1,0 +1,43 @@
+uuid: 6d6c1604-7a4f-431a-a0a9-155bc02e5d53
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.video
+    - field.field.block_content.video.body
+    - field.field.block_content.video.field_youtube
+  module:
+    - link
+    - text
+id: block_content.video.default
+targetEntityType: block_content
+bundle: video
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_youtube:
+    weight: 26
+    settings:
+      placeholder_url: 'Embed URL: https://www.youtube.com/embed/rcKQG39ltx4'
+      placeholder_title: 'Video Title'
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

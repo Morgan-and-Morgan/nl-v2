@@ -5,4 +5,4 @@ dependencies: {  }
 id: results
 label: Results
 revision: 0
-description: 'Use ''Results'' blog on Our Results page'
+description: 'Use ''Results'' block on Our Results page'

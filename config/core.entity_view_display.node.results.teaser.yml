@@ -1,0 +1,70 @@
+uuid: afb6237b-0b7c-438a-a007-2b97dd1c6b97
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.results.body
+    - field.field.node.results.feeds_item
+    - field.field.node.results.field_amount
+    - field.field.node.results.field_amount_short
+    - field.field.node.results.field_amount_short_qualifier
+    - node.type.results
+  module:
+    - smart_trim
+    - user
+id: node.results.teaser
+targetEntityType: node
+bundle: results
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 4
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      wrap_output: false
+      more_link: false
+      trim_options:
+        text: false
+        trim_zero: false
+    third_party_settings: {  }
+    region: content
+  field_amount:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_amount_short:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_amount_short_qualifier:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  feeds_item: true

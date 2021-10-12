@@ -1,0 +1,31 @@
+uuid: fed020be-1141-4839-9dc6-a9509abc951d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:video:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
+  module:
+    - block_content
+    - system
+  theme:
+    - nl
+id: nationlawvideos
+theme: nl
+region: content
+weight: -8
+provider: null
+plugin: 'block_content:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
+settings:
+  id: 'block_content:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
+  label: 'Nation Law Videos'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /video-gallery
+    negate: false
+    context_mapping: {  }

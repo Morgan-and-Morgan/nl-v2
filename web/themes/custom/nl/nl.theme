@@ -28,7 +28,7 @@ function nl_theme_suggestions_page_alter(array &$suggestions, array $variables) 
  */
 function nl_preprocess_html(&$variables) {
   $current_path = \Drupal::service('path.current')->getPath();
-  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
   $path_alias = ltrim($path_alias, '/');
   $variables['attributes']['class'][] = 'path-' . Html::cleanCssIdentifier($path_alias);
   if (isset($variables['node_type'])) {

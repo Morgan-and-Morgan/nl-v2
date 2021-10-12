@@ -1,0 +1,96 @@
+uuid: 7efde474-60fb-4980-a3e1-f450fae78f5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.results.body
+    - field.field.node.results.field_amount
+    - field.field.node.results.field_amount_short
+    - field.field.node.results.field_amount_short_qualifier
+    - node.type.results
+  module:
+    - node
+id: results
+label: 'Out Results'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml json'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ;
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: results
+custom_sources:
+  more_results_amount:
+    label: more_results.amount
+    value: more_results.amount
+    machine_name: more_results_amount
+  more_results_amount_short:
+    label: more_results.amount_short
+    value: more_results.amount_short
+    machine_name: more_results_amount_short
+  more_results_amount_short_qualifier:
+    label: more_results.amount_short_qualifier
+    value: more_results.amount_short_qualifier
+    machine_name: more_results_amount_short_qualifier
+  more_results_description:
+    label: more_results.description
+    value: more_results.description
+    machine_name: more_results_description
+  more_results_title:
+    label: more_results.title
+    value: more_results.title
+    machine_name: more_results_title
+mappings:
+  -
+    target: field_amount
+    map:
+      value: more_results_amount
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_amount_short
+    map:
+      value: more_results_amount_short
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_amount_short_qualifier
+    map:
+      value: more_results_amount_short_qualifier
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: more_results_description
+      summary: ''
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: title
+    map:
+      value: more_results_title
+    unique: {  }
+    settings:
+      language: null

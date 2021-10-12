@@ -20,11 +20,15 @@ module:
   dynamic_page_cache: 0
   editor: 0
   entity_type_clone: 0
+  feeds: 0
+  feeds_ex: 0
+  feeds_tamper: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
   fontawesome: 0
+  google_tag: 0
   help: 0
   history: 0
   image: 0
@@ -33,16 +37,20 @@ module:
   media_library: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
+  metatag_open_graph: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
   rdf: 0
+  redirect: 0
   search: 0
   shortcut: 0
   smart_trim: 0
   system: 0
+  tamper: 0
   taxonomy: 0
   text: 0
   token: 0
@@ -50,9 +58,11 @@ module:
   tour: 0
   twig_tweak: 0
   update: 0
+  upgrade_status: 0
   user: 0
   views_infinite_scroll: 0
   views_ui: 0
+  youtube: 0
   pathauto: 1
   views: 10
   standard: 1000

@@ -1,0 +1,30 @@
+uuid: 67d6c237-bc52-4b2c-bcab-ad557910531a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.results
+  module:
+    - system
+    - views
+  theme:
+    - nl
+id: views_block__results_home_results
+theme: nl
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:results-home_results'
+settings:
+  id: 'views_block:results-home_results'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

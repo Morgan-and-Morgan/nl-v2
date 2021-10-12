@@ -1,0 +1,8 @@
+uuid: 6eb49b85-479b-45a0-85a6-3857ef112217
+langcode: en
+status: true
+dependencies: {  }
+id: video
+label: Video
+revision: 0
+description: 'Use this block to create Video Gallery'
