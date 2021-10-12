@@ -1,0 +1,30 @@
+uuid: f6e4d3b0-bcaf-412d-ae61-454f41ebc37c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.results
+  module:
+    - system
+    - views
+  theme:
+    - nl
+id: views_block__results_our_results
+theme: nl
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:results-our_results'
+settings:
+  id: 'views_block:results-our_results'
+  label: 'More Results'
+  provider: views
+  label_display: visible
+  views_label: 'More Results'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /verdicts-and-settlements
+    negate: false
+    context_mapping: {  }
