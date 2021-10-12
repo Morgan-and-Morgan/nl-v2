@@ -4,9 +4,11 @@ global-styling:
       dist/style.css: {preprocess: false}
   js:
     js/lib/slick.min.js: { }
+    js/home.js: { }
     dist/main-min.js: { defer: true, async: true }
   dependencies:
     - core/jquery
+
 bootstrap_cdn:
   js:
     //maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js: { external: true }
