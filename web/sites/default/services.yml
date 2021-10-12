@@ -158,7 +158,7 @@ parameters:
    # Read https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
    # for more information about the topic in general.
    # Note: By default the configuration is disabled.
-  cors.config:ssss
+  cors.config:
     enabled: true
     # Specify allowed headers, like 'x-allowed-header'.
     allowedHeaders: ['x-csrf-token','authorization','content-type','accept','origin','x-requested-with', 'access-control-allow-origin','x-allowed-header','*']
