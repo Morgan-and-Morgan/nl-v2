@@ -9,7 +9,7 @@ nav.menu--main {
       left: -50px;
 
       li {
-        display: list-item;
+        display: block !important;
         text-align: -webkit-match-parent;
         border-bottom: solid 1px #ccc;
         font-size: .8em;
@@ -22,12 +22,13 @@ nav.menu--main {
           padding: 5px 15px;
 
           &:hover {
-            color: white;
+            color: #ffffff !important;
           }
         }
 
         &:hover {
           background: #041743;
+          color: #ffffff !important;
         }
 
         &:last-child {
