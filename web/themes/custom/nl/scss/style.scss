@@ -11,6 +11,10 @@
 @import "modules/breakpoints";
 @import "modules/fonts";
 
+// Lib
+@import "lib/slick";
+@import "lib/slick-theme";
+
 // Pages
 @import "pages/article";
 @import "pages/attorneys";
