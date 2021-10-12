@@ -1,11 +1,9 @@
 import { createForm } from '@morgan-morgan/core';
 
-require("./components/form-intake-registration");
+// require("./components/form-intake-registration");
 
-function currentYear() {
-    const date = new Date();
-    return date.getFullYear();
-}
+// Welcome to Abo-V2 console message.
+console.log('Welcome to NationLaw V2!');
 
 console.log(` * * ${window.MM.forms.length} forms * * `);
 window.MM.forms.forEach((f) => {

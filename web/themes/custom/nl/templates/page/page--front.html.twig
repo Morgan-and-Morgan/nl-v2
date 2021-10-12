@@ -92,29 +92,7 @@
 
       <div class="panel results row">
         <div class="col-sm-12">
-          <h3 class="medium-headline light">Verdicts & Settlement Success</h3>
-          <h3 class="medium-headline caps">We're committed to helping you win</h3>
-
-          <div class="litigation-results row justify-content-center">
-              {#{% assign verdicts=site.data.verdicts.more_results | slice:0,10 %}#}
-
-              {#{% for lr in verdicts %}#}
-              {#<div class="litigation-result{% if forloop.index0 < 3 %} mobile{% endif %}">#}
-              {#<h2 class="large red bold">{{ lr.amount_short }}</h2>#}
-              {#<h4 class="medium-headline light caps red">{{ lr.amount_short_qualifier }}</h4>#}
-
-              {#<div class="result-description">#}
-              {#<h5 class="black small caps">{{ lr.title }}</h5>#}
-
-              {#<p class="small">#}
-              {#{{ lr.description | truncatewords:20 }}#}
-              {#</p>#}
-              {#</div>#}
-              {#</div>#}
-              {#{% endfor %}#}
-          </div>
-
-          <a class="button red caps" href="/verdicts-and-settlements">See our results</a>
+          {{ page.content }}
         </div>
       </div>
 
@@ -167,7 +145,15 @@
       </div>
     </div>
     <div class="hidden">
-      {% include '@nl/includes/intake-form.html.twig' with {'id': 3, 'class': '.case-evaluation-form-container'} %}
+      {#{% include '@nl/includes/intake-form.html.twig' with {'id': 3, 'class': '.case-evaluation-form-container'} %}#}
+      <script type="text/javascript">
+        window.MM.forms.push(
+          {
+            formId: '5',
+            target: '.case-evaluation-form-container'
+          }
+        );
+      </script>
     </div>
 
     <div class="row">

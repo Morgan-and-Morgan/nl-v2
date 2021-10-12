@@ -9,7 +9,7 @@ _core:
 id: nl_local_tasks
 theme: nl
 region: content
-weight: -5
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

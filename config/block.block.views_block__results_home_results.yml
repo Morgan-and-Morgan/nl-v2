@@ -1,22 +1,22 @@
-uuid: 0aa70606-afda-4a2c-8b2a-03bc6e2366f2
+uuid: 67d6c237-bc52-4b2c-bcab-ad557910531a
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.attorneys
+    - views.view.results
   module:
     - system
     - views
   theme:
     - nl
-id: views_block__attorneys_attorneys
+id: views_block__results_home_results
 theme: nl
 region: content
-weight: -1
+weight: -9
 provider: null
-plugin: 'views_block:attorneys-attorneys'
+plugin: 'views_block:results-home_results'
 settings:
-  id: 'views_block:attorneys-attorneys'
+  id: 'views_block:results-home_results'
   label: ''
   provider: views
   label_display: '0'
@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /attorneys
+    pages: '<front>'
     negate: false
     context_mapping: {  }
