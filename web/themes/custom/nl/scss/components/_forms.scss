@@ -117,3 +117,50 @@
     }
   }
 }
+
+.contact-page {
+  .form-container {
+    .outer-form-container {
+      .container {
+        padding: 0;
+
+        .icarus-form {
+          .icarus-layout {
+            .icarus-layout-static {
+              .icarus-field {
+                width: 50%;
+                float: left;
+                padding: 5px 10px 5px 0 !important;
+
+                label {
+                  display: none;
+                  color: #666;
+                  margin-bottom: 0;
+                }
+              }
+
+              .icarus-field.field-lead_details,
+              .icarus-field.field-postal_code_billing {
+                width: 100%;
+              }
+            }
+          }
+
+          .submit-btn {
+            background: #b01725;
+            border-radius: 5px;
+            text-align: center;
+            color: white !important;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 0 !important;
+            width: 100%;
+            float: none;
+            font-family: inherit;
+          }
+        }
+      }
+    }
+  }
+}
