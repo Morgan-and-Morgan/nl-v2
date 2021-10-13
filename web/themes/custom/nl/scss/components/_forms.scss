@@ -31,6 +31,10 @@
   h1 {
     font-size: 60px;
     color: white;
+
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+    }
   }
 
   .richtext-body {
@@ -43,6 +47,10 @@
 
   button {
     background: #082857;
+  }
+
+  .icarus .icarus-form .icarus-layout .icarus-layout-static .icarus-field .icarus-field-error span {
+    color: #c3c3c3;
   }
 }
 

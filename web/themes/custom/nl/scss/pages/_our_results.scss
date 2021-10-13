@@ -19,6 +19,12 @@
 
         li {
           padding: 20px 0;
+
+          .read-more {
+            color: #b01725;
+            font-size: 16px;
+            cursor: pointer;
+          }
         }
       }
     }
