@@ -1,6 +1,7 @@
 api_version: 1
 web_docroot: true
 php_version: 7.4
+# Drupal 9 require Drush version 10.
 drush_version: 10
 database:
   version: 10.4
