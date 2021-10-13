@@ -10,4 +10,18 @@
         });
     });
 
+    // Our Results Read More.
+    $(".view-results .read-more").click(function(e) {
+        let short = $(".inner-text .short-text");
+        let long = $(".inner-text .long-text");
+
+        short.addClass("hide");
+        short.removeClass("show");
+
+        long.addClass("show");
+        long.removeClass("hide");
+
+        $(".read-more").hide();
+    });
+
 })(jQuery, Drupal);

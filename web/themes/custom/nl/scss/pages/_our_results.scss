@@ -25,6 +25,18 @@
   }
 }
 
+.view-results {
+  .inner-text {
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+  }
+}
+
 .featured-result {
   color: white;
   margin: 30px 0;
