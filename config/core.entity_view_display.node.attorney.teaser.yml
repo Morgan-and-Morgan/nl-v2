@@ -27,9 +27,9 @@ content:
     type: smart_trim
     weight: 3
     settings:
-      trim_length: 205
-      trim_type: chars
-      trim_suffix: ''
+      trim_length: 25
+      trim_type: words
+      trim_suffix: ...
       wrap_class: trimmed
       more_text: More
       more_class: more-link

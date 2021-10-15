@@ -16,12 +16,24 @@ footer {
     }
   }
 
+  .footer-row.logo {
+    margin-top: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
   .social-row a {
     width: 20px;
     padding: 0 5px;
 
     img {
       width: 20px;
+
+      @media screen and (max-width: 767px) {
+        width: 30px;
+      }
     }
   }
 

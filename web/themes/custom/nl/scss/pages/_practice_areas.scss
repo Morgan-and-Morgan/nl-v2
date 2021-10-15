@@ -1,3 +1,5 @@
+@import "../modules/fonts";
+
 .practice-areas-page {
   .region-content {
     padding: 0;
@@ -21,7 +23,7 @@
       top: 115px;
       width: 100%;
       font-size: 35px;
-      //font-family: 'OpenSans Bold';
+      @include normal-font(600);
     }
 
     &:not(.all) {
@@ -34,6 +36,14 @@
         left: 0;
         opacity: .4;
         background: linear-gradient(135deg, #b01725, #041743);
+      }
+    }
+  }
+
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
       }
     }
   }
@@ -94,6 +104,18 @@
           border-top: solid 2px white;
           border-bottom: solid 2px white;
           padding: 20px 0;
+
+          @media screen and (max-width: 991px) {
+            width: 350px;
+            margin-left: -175px;
+            top: 60px;
+            font-size: 35px;
+          }
+
+          @media screen and (max-width: 767px) {
+            font-size: 30px;
+            top: 100px;
+          }
         }
       }
 
@@ -118,6 +140,35 @@
         display: block;
         padding-top: 6px;
         font-size: 15px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .left-nav.hidden-sm-down {
+        display: none !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    padding: 0;
+
+    .region-content {
+      padding: 0;
+    }
+
+    .row.inner {
+      padding-top: 0;
+    }
+  }
+}
+
+
+.page-node-type-practice-area {
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
       }
     }
   }

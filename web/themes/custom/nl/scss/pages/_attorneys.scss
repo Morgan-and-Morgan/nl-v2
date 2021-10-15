@@ -1,3 +1,5 @@
+@import "../modules/fonts";
+
 .path-attorneys {
   .region-content {
     padding: 0;
@@ -7,6 +9,14 @@
     .below-header {
       padding: 30px 0 60px;
       text-align: center;
+
+      @media screen and (max-width: 767px) {
+        padding: 20px 10px 20px 10px;
+
+        h3 {
+          font-size: 18px;
+        }
+      }
     }
 
     .mn-container {
@@ -25,13 +35,40 @@
 
           img {
             width: 100%;
+            height: auto;
+          }
+
+
+          @media screen and (max-width: 991px) {
+            position: relative;
+
+            img {
+              left: 0;
+              bottom: 0;
+              height: auto;
+            }
+          }
+
+          @media screen and (max-width: 767px) {
+            max-height: 300px;
+            margin-top: 5px;
+            position: relative;
+            left: -100px;
+
+            img {
+              position: static;
+            }
           }
         }
       }
 
       .mn-description {
         padding: 80px 0 30px;
-        font-family: 'OpenSans Light';
+        @include normal-font(100);
+
+        @media screen and (max-width: 767px) {
+          padding-top: 0;
+        }
 
         p a {
           text-decoration: underline;
@@ -100,14 +137,20 @@
           }
         }
 
+        .field--name-body {
+          @include normal-font(100);
+        }
+
         span svg {
           padding-right: 3px;
           min-width: 1.5rem;
+          @include normal-font(100);
         }
 
         .email {
           a {
             color: #292b2c;
+            @include normal-font(100);
 
             &:focus,
             &:hover {
@@ -115,6 +158,14 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
       }
     }
   }
@@ -174,6 +225,18 @@
           }
         }
       }
+
+      @media screen and (max-width: 767px) {
+        .col-sm-4 {
+          padding-bottom: 20px;
+        }
+      }
+
+      .col-sm-8 {
+        ul li {
+          @include normal-font(100);
+        }
+      }
     }
 
     // Other Attorney views
@@ -209,6 +272,14 @@
           display: block;
           text-align: center;
         }
+      }
+    }
+  }
+
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
       }
     }
   }

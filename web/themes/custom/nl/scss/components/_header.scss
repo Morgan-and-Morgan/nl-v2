@@ -1,3 +1,5 @@
+@import "../modules/fonts";
+
 header {
   .call-bar-container {
     background: #252525;
@@ -15,6 +17,11 @@ header {
       &:last-child {
         border-right: none;
       }
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .call-bar-container.hidden-md-down {
+      display: none !important;
     }
   }
 
