@@ -86,11 +86,21 @@
         text-transform: uppercase;
         display: inline-block;
         font-size: 20px;
+        @include headline-font($weight: 400);
+
+        @media screen and (max-width: 767px) {
+          font-size: 12px;
+        }
       }
 
       .svg-inline--fa {
         font-size: 20px;
         margin-left: 20px;
+
+        @media screen and (max-width: 767px) {
+          font-size: 12px;
+          margin-left: 5px;
+        }
       }
     }
   }
@@ -142,11 +152,20 @@
       width: 70%;
       margin: auto;
 
+      @media screen and (max-width: 991px) {
+        width: 90%;
+      }
+
       h3 {
         font-size: 60px;
         width: 80%;
         margin: auto;
         padding: 10px 0;
+
+        @media screen and (max-width: 991px) {
+          font-size: 30px;
+          width: 95%;
+        }
       }
 
       h4 {
@@ -156,6 +175,10 @@
       h5 {
         padding: 10px 0;
         font-weight: 100;
+      }
+
+      img {
+        padding-bottom: 50px;
       }
     }
   }
@@ -178,6 +201,14 @@
 
         img {
           max-height: 350px;
+        }
+      }
+
+      @media screen and (max-width: 575px) {
+        right: 70px;
+
+        img {
+          max-height: 280px;
         }
       }
     }
@@ -206,6 +237,15 @@
 
         h3 {
           font-size: 15px;
+        }
+      }
+
+      @media screen and (max-width: 575px) {
+        text-align: center;
+        padding: 30px 20px 10px 25px;
+
+        h3 {
+          font-size: 13px;
         }
       }
     }
@@ -246,6 +286,10 @@
       img {
         width: 100%;
       }
+
+      @media screen and (max-width: 767px) {
+        margin: 0 0;
+      }
     }
   }
 }
@@ -258,6 +302,10 @@
   padding: 10px;
   border: solid 1px #ffffff;
   cursor: pointer;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
 }
 
 .button.red {
@@ -268,4 +316,14 @@
   padding: 10px;
   border: solid 1px #ffffff;
   cursor: pointer;
+
+  @media screen and (max-width: 991px) {
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+  }
 }

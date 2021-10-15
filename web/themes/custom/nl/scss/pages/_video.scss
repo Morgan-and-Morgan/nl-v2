@@ -1,3 +1,5 @@
+@import "../modules/fonts";
+
 .path-video-gallery {
   .region-content {
     padding: 0;
@@ -35,7 +37,7 @@
           text-align: center;
           width: 100%;
           font-size: 30px;
-          font-family: 'OpenSans Bold';
+          @include normal-font(600);
         }
 
         iframe {
@@ -51,6 +53,14 @@
             display: block;
           }
         }
+      }
+    }
+  }
+
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
       }
     }
   }

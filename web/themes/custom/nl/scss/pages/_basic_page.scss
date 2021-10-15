@@ -1,3 +1,5 @@
+@import "../modules/fonts";
+
 .path-about {
   .region-content {
     padding: 0;
@@ -17,8 +19,33 @@
 
         h3 {
           padding-bottom: 20px;
+          @include normal-font($weight: 600);
         }
       }
+
+      @media screen and (max-width: 767px) {
+        width: 90%;
+      }
+    }
+  }
+
+  .case-evaluation-form-container {
+    .container {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .trust-container {
+    .field--name-body {
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 }

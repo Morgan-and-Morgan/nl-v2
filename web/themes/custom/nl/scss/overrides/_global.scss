@@ -76,7 +76,11 @@ h1, h2, h3, h4, h5, h6 {
 
   .header-main {
     font-size: 50px;
-    font-family: "Old Standard Regular";
+    @include headline-font($weight: 400);
+
+    @media screen and (max-width: 767px) {
+      font-size: 30px;
+    }
   }
 }
 
@@ -86,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .light {
-  font-family: 'OpenSans Light';
+  @include normal-font($weight: 100);
 }
 
 .large {
