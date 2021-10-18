@@ -47,44 +47,44 @@
 
   {% include '@nl/includes/header.html.twig' %}
 
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- Below the Nav -->
+      <div class="header-container container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-sm-5 bar blue"></div>
+        </div>
+
+        {% if node.field_header_subtext.value %}
+          <h4 class="white light caps small header-subtext">{{ node.field_header_subtext.value }}</h4>
+        {% endif %}
+
+        <h2 class="white caps header-main">
+          {% if node.field_header_text.value %}
+            {{ node.field_header_text.value }}
+          {% elseif node.title.value %}
+            {{ node.title.value }}
+          {% elseif page['#title'] %}
+            {{ page['#title'] }}
+          {% endif %}
+        </h2>
+
+        <div class="row justify-content-center">
+          <div class="col-sm-5 bar blue"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="practice-area-container container">
-          <div class="row breadcrumbs">
-            <ul class="col-sm-12">
-              <li><a href="/practice-areas/">Practice Areas</a></li>
-              <li> &gt; </li>
-              <li>
-                {% if node.field_name.value %}
-                  {{ node.field_name.value }}
-                {% elseif page['#title'] %}
-                  {{ page['#title'] }}
-                {% endif %}
-              </li>
-            </ul>
-          </div>
+    <div class="container">
+      {% if page.breadcrumb %}
+        {{ page.breadcrumb }}
+      {% endif %}
 
-          <div class="row inner">
-
-            <nav class="col-sm-2 left-nav hidden-sm-down">
-              <a href="/practice-areas/all/">All Practices</a>
-              <a href="/practice-areas/insurance-claims/">Insurance Claims</a>
-              <a href="/practice-areas/motor-vehicles/">Motor Vehicle Accidents</a>
-              <a href="/practice-areas/personal-injury/">Personal Injury</a>
-              <a href="/practice-areas/personal-injury/slip-and-fall/">Slip and Fall</a>
-              <a href="/practice-areas/personal-injury/wrongful-death/">Wrongful Death</a>
-            </nav>
-
-            <div class="col-sm-10 center-content">
-              {{ page.content }}
-            </div>
-
-          </div>
-        </div>
-      </div>
+      {{ page.content }}
     </div>
 
     <div class="case-evaluation-form-container">
@@ -100,7 +100,7 @@
     </div>
 
     <div class="hidden">
-      {% include '@nl/includes/intake-form.html.twig' with {'id': 3, 'class': '.case-evaluation-form-container .form-container'} %}
+        {% include '@nl/includes/intake-form.html.twig' with {'id': 3, 'class': '.case-evaluation-form-container .form-container'} %}
     </div>
 
     <div class="row">

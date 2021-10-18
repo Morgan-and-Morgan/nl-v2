@@ -55,7 +55,7 @@
     padding: 0;
   }
 
-  .breadcrumb {
+  .breadcrumbs {
     padding: 0;
     background: none;
     border: none;
@@ -63,6 +63,7 @@
     li {
       float: left;
       padding: 10px 5px 0;
+      list-style: none;
     }
   }
 
@@ -172,4 +173,51 @@
       }
     }
   }
+}
+
+.view-practice-areas {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  a {
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: 100%;
+    color: #464a4c;
+    @include normal-font(400);
+
+    &:first-child {
+      border-top-right-radius: 0.25rem;
+      border-top-left-radius: 0.25rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom-right-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    &:hover,
+    &:focus {
+      color: #464a4c;
+      text-decoration: none;
+      background-color: #f7f7f9;
+    }
+  }
+}
+
+.block-views-blockpractice-areas-practice-areas {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  padding: 50px 0;
 }
