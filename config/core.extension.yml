@@ -17,6 +17,7 @@ module:
   dblog: 0
   devel: 0
   devel_kint_extras: 0
+  drupal_ftp_global_vars: 0
   dynamic_page_cache: 0
   editor: 0
   entity_type_clone: 0
@@ -62,6 +63,7 @@ module:
   upgrade_status: 0
   user: 0
   views_infinite_scroll: 0
+  views_show_more: 0
   views_ui: 0
   youtube: 0
   pathauto: 1

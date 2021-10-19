@@ -1,0 +1,30 @@
+uuid: 9630cfa3-f9d0-4e1f-937a-25c04d4f6333
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.testimonials
+  module:
+    - system
+    - views
+  theme:
+    - nl
+id: views_block__testimonials_testimonials_list
+theme: nl
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:testimonials-testimonials_list'
+settings:
+  id: 'views_block:testimonials-testimonials_list'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /testimonials
+    negate: false
+    context_mapping: {  }

@@ -22,11 +22,9 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "webpack-stream": "^5.2.1",
-    "backbone": "^1.4.0",
     "date-fns": "^1.28.3",
     "jquery-smooth-scroll": "^2.1.2",
     "js-cookie": "^2.1.4",
-    "slick-carousel": "^1.8.1",
-    "underscore": "^1.13.1"
+    "slick-carousel": "^1.8.1"
   }
 }
