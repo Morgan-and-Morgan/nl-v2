@@ -141,6 +141,11 @@
             "file-mapping": {
                 "[project-root]/.editorconfig": false
             }
+        },
+        "patches": {
+            "drupal/core": {
+                "Uncaught TypeError: Cannot read property 'replace' of undefined": "https://www.drupal.org/files/issues/2018-06-27/drupal-uninitialized_variable_url-2922677-8.patch"
+            }
         }
     },
     "config": {
