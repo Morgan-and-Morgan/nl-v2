@@ -32,22 +32,6 @@
                 }
             ]
         });
-
-        // Our Results Read More.
-        $( ".view-results .read-more" ).each(function() {
-            $(this).click(function () {
-                let short = $(".inner-text .short-text");
-                let long = $(".inner-text .long-text");
-
-                short.addClass("hide");
-                short.removeClass("show");
-
-                long.addClass("show");
-                long.removeClass("hide");
-
-                $(this).closest(".read-more").hide();
-            });
-        });
     });
 
 })(jQuery, Drupal);
