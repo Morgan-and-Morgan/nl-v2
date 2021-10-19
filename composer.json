@@ -49,6 +49,7 @@
         "drupal/twig_tweak": "^2.9",
         "drupal/upgrade_status": "^3.11",
         "drupal/views_infinite_scroll": "^1.9",
+        "drupal/views_show_more": "^1.0",
         "drupal/youtube": "^1.2",
         "drush-ops/behat-drush-endpoint": "^9",
         "drush/drush": "^10",
@@ -140,6 +141,11 @@
             },
             "file-mapping": {
                 "[project-root]/.editorconfig": false
+            }
+        },
+        "patches": {
+            "drupal/core": {
+                "Uncaught TypeError: Cannot read property 'replace' of undefined": "https://www.drupal.org/files/issues/2018-06-27/drupal-uninitialized_variable_url-2922677-8.patch"
             }
         }
     },

@@ -5,9 +5,14 @@ global-styling:
   js:
     js/lib/slick.min.js: { }
     js/home.js: { }
+    js/testimonials.js: { }
     dist/main-min.js: { defer: true, async: true }
   dependencies:
     - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/backbone
 
 bootstrap_cdn:
   js:

@@ -23,7 +23,7 @@ content:
     type: smart_trim
     weight: 4
     settings:
-      trim_length: 600
+      trim_length: 1000
       trim_type: chars
       trim_suffix: ''
       wrap_class: trimmed
