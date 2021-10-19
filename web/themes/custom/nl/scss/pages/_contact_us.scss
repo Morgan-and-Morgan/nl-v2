@@ -66,5 +66,11 @@
   .text-container h4 {
     @include normal-font(600);
     font-size: 16px;
+
+    span {
+      display: block;
+      padding-top: 3px;
+      font-family: inherit;
+    }
   }
 }
