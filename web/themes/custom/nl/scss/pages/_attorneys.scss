@@ -74,6 +74,10 @@
           text-decoration: underline;
           cursor: pointer;
           color: #ffffff;
+
+          &:hover {
+            color: #014c8c;
+          }
         }
 
         .awards-container {
@@ -96,7 +100,11 @@
 
           a {
             cursor: pointer;
-            color: white;
+            color: #ffffff;
+
+            &:hover {
+              color: #014c8c;
+            }
           }
         }
       }
@@ -234,7 +242,13 @@
 
       .col-sm-8 {
         ul li {
-          @include normal-font(100);
+          font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+          p {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+          }
         }
       }
     }
