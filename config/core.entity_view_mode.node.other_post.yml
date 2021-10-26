@@ -1,0 +1,10 @@
+uuid: e8d3f8b8-0d3a-414d-afab-3332ed030537
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.other_post
+label: 'Other Post'
+targetEntityType: node
+cache: true
