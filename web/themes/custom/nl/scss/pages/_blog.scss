@@ -1,3 +1,5 @@
+@import "../modules/fonts";
+
 .path-blog {
   .region-content {
     padding: 0;
@@ -32,6 +34,10 @@
           border-top: solid 2px white;
           border-bottom: solid 2px white;
 
+          @media screen and (max-width: 767px) {
+            width: 95%;
+          }
+
           h5 {
             font-size: .5em;
           }
@@ -40,6 +46,15 @@
 
       .post-excerpt {
         padding-top: 25px;
+
+        .field--name-body {
+          margin-top: 0;
+          @include normal-font($weight: 100);
+        }
+
+        .red.caps.bold {
+          margin-top: 1rem;
+        }
       }
     }
 
@@ -52,6 +67,8 @@
       }
 
       .post {
+        margin-top: 20px;
+
         .img-container {
           height: 250px;
           overflow: hidden;
@@ -105,7 +122,7 @@
           padding: 5px;
           padding-right: 30px;
           cursor: pointer;
-          font-family: 'Old Standard Regular';
+          @include headline-font($weight: 400);
         }
       }
 
@@ -115,7 +132,7 @@
         padding: 5px;
         padding-right: 30px;
         cursor: pointer;
-        font-family: 'Old Standard Regular';
+        @include headline-font($weight: 400);
       }
     }
   }

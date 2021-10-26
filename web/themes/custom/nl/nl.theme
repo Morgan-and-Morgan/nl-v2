@@ -7,6 +7,11 @@
  * Place your custom PHP code in this file.
  */
 
+use Drupal\field\Entity\FieldConfig;
+use Drupal\media\Entity\Media;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\file\Entity\File;
+use Drupal\node\NodeInterface;
 use Drupal\Component\Utility\Html;
 
 /**
@@ -34,5 +39,45 @@ function nl_preprocess_html(&$variables) {
   if (isset($variables['node_type'])) {
     // Add node-TYPE class to the <body> element.
     $variables['attributes']['class'][] = 'node-type-' . $variables['node_type'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function nl_preprocess_node(&$variables) {
+  $n = $variables['node'];
+
+  if ($n instanceof NodeInterface) {
+    if ($n->getType() === 'article') {
+      if (!$n->field_attorney->isEmpty()) {
+        $referencedEntity = $n->get('field_attorney')
+          ->first()
+          ->get('entity')
+          ->getTarget()
+          ->getValue();
+        if (!$referencedEntity->body->isEmpty()) {
+          $variables['attorney_body'] = $referencedEntity->body->getString();
+          if ($referencedEntity->body->summary) {
+            $variables['attorney_body_summary'] = $referencedEntity->body->summary;
+          }
+        }
+
+        if (!$referencedEntity->field_attorney_image->isEmpty()) {
+          $field_attorney_image = $referencedEntity->field_attorney_image->getValue();
+          $mid = $field_attorney_image[0]['target_id'];
+          $media_file = Media::load($mid);
+          $fid = $media_file->field_media_image->target_id;
+          $file = File::load($fid);
+          $image_style_url = ImageStyle::load('medium')->buildUrl($file->getFileUri());
+          if (!empty($image_style_url)) {
+            $variables['attorney_image_url'] = $image_style_url;
+          }
+          else {
+            $variables['attorney_image_url'] = $file->url();
+          }
+        }
+      }
+    }
   }
 }

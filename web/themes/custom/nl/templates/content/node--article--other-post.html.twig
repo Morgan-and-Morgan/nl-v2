@@ -72,7 +72,9 @@
 #}
 {%
   set classes = [
+    'col-12 col-md-6 col-lg-4 post',
     'node',
+    'post',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
@@ -87,92 +89,13 @@
   {% set imageUrl = file_url(node.field_image.entity.field_media_image.entity.fileuri) %}
 {% endif %}
 
-{% if content.field_attorney|render|striptags|trim is not empty %}
-  {% set blog_author = node.field_attorney.entity.field_name.value %}
-{% else %}
- {% set blog_author = 'Nation Law' %}
-{% endif %}
-
-{% if attorney_body_summary is not empty %}
-  {% set attorney_info = attorney_body_summary %}
-{% elseif attorney_body %}
-  {% set attorney_info = attorney_body|length > 200 ? attorney_body|slice(0, 200)|raw|striptags ~ '...' : attorney_body|raw|striptags %}
-{% else %}
-  {% set attorney_info = 'Mark A. Nation is Board Certified in Civil Trial Law, and also in Business Litigation Law by the Florida Bar. Although there are over 100,000 attorneys in Florida, less than 100 hold these two Board Certifications.' %}
-{% endif %}
-
-{% if attorney_image_url is not empty %}
-  {% set attorney_img_url = attorney_image_url %}
-{% else %}
-  {% set attorney_img_url = '/sites/default/files/styles/large/public/2021-09/MarkNation-small.jpg' %}
-{% endif %}
-
 {{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }} style="width: 100%; display: inline-block;">
 
-<article{{ attributes.addClass(classes) }}>
-
-  <h2>{{ node.label }}</h2>
-
-  <div class="row title-row">
-    <div class="col-sm-6 title-subheader">
-      By <span class="red">{{ blog_author }}</span> on <span>{{ createdDate }}</span>
-    </div>
-
-    <div class="col-sm-5 share-buttons-outer-container">
-      {% include '@nl/includes/share-buttons.html.twig' with {'orientation': 'horizontal'} %}
-    </div>
-  </div>
-
-  <div class="row image-row">
-    <div class="col-sm-12">
-      <div class="image-container" style="background:url({{ imageUrl }}) no-repeat;">
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-      {{ content.body }}
-    </div>
-  </div>
-
-  <div class="row author-blurb">
-    <div class="col-4 col-sm-5 col-lg-3 vcenter">
-      {#<img class="rounded-circle" src="{{ attorney_img_url }}" alt="Attorney">#}
-      <img class="rounded-circle" src="/sites/default/files/styles/large/public/2021-09/MarkNation-small.jpg" alt="Attorney">
-    </div>
-
-    <div class="col-8 col-sm-7 col-lg-9 vcenter">
-      <p>
-        {{ attorney_info }}
-      </p>
-    </div>
-  </div>
-
-  <div class="row pagination-buttons">
-    <div class="col-sm-12">
-
-      {% if content.prevnext_previous['#url'] is not empty and content.prevnext_previous['#url'] != '/node' %}
-      <div class="pull-left">
-        <a href="{{ content.prevnext_previous['#url'] }}">
-          <i class="fa fa-angle-left"></i>
-          Previous Post
-        </a>
-      </div>
-      {% endif %}
-
-      {% if content.prevnext_next['#url'] is not empty and content.prevnext_next['#url'] != '/node' %}
-      <div class="pull-right">
-        <a href="{{ content.prevnext_next['#url'] }}">
-          Next Post
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </div>
-      {% endif %}
-
-    </div>
-  </div>
-
-  {{ drupal_view('featured_post', 'other_posts') }}
+  <a href="{{ url }}" tabindex="0">
+    <div class="img-container" style="background: url({{ imageUrl }}) no-repeat;"></div>
+    <h5 class="caps">{{ node.label }}</h5>
+    <span>{{ createdDate }}</span>
+  </a>
 
 </article>
