@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_attorney
     - node.type.article
     - node.type.attorney
+  content:
+    - 'node:attorney:dbfe4035-0f3a-4898-bc94-39ec5836b3ca'
 id: node.article.field_attorney
 field_name: field_attorney
 entity_type: node
@@ -14,7 +16,9 @@ label: Attorney
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: dbfe4035-0f3a-4898-bc94-39ec5836b3ca
 default_value_callback: ''
 settings:
   handler: 'default:node'
