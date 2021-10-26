@@ -102,7 +102,7 @@ $(document).ready(() => {
     // Testimonials Read More.
     $('.testimonials-container .results-list li article .inner-text .field--name-body').each(function() {
         createReadMore(this, {
-            maxChars: isMobile() ? 150 : 300
+            maxChars: isMobile() ? 150 : 285
         });
     });
 

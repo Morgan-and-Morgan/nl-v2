@@ -35,6 +35,11 @@ footer {
         width: 30px;
       }
     }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
   }
 
   nav.menu--footer {
@@ -47,6 +52,11 @@ footer {
         a {
           border-left: solid 1px #969696;
           padding: 0 10px;
+
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
         }
 
         &:last-child {

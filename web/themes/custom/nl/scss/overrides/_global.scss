@@ -8,6 +8,16 @@ body {
   color: #212529;
   text-align: left;
   background-color: #ffffff;
+
+  > .container-fluid {
+    overflow-x: hidden;
+  }
+
+  > div.dialog-off-canvas-main-canvas {
+    > .container-fluid {
+      overflow-x: hidden;
+    }
+  }
 }
 
 h2, .h2 {
