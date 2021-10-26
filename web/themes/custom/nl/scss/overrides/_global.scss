@@ -8,6 +8,16 @@ body {
   color: #212529;
   text-align: left;
   background-color: #ffffff;
+
+  > .container-fluid {
+    overflow-x: hidden;
+  }
+
+  > div.dialog-off-canvas-main-canvas {
+    > .container-fluid {
+      overflow-x: hidden;
+    }
+  }
 }
 
 h2, .h2 {
@@ -31,10 +41,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-}
-
-.container-fluid {
-  overflow-x: hidden;
 }
 
 @media (min-width: 576px) {
