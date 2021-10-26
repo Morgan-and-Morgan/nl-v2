@@ -33,6 +33,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
 }
 
+.container-fluid {
+  overflow-x: hidden;
+}
+
 @media (min-width: 576px) {
   .container {
     width: 540px;
