@@ -45,7 +45,7 @@
         <div class="yt-container">
           <div class="overlay"></div>
           <h6 class="title caps">{{ item.content['#title'] }}</h6>
-          <iframe type="text/html" src="{{ item.content['#url_title'] }}?enablejsapi=1&controls=0&fs=0&showinfo=0" frameborder="0">
+          <iframe type="text/html" src="{{ item.content['#url_title'] }}?enablejsapi=1&controls=1&fs=0&showinfo=0" frameborder="0">
           </iframe>
         </div>
       </div>
@@ -62,7 +62,7 @@
   </div>
 
   <script type="text/template" id="video-template">
-    <iframe type="text/html" src="https://www.youtube.com/embed/<%= video_id %>?enablejsapi=1&controls=0&fs=0&showinfo=0&autoplay=1" frameborder="0">
+    <iframe type="text/html" src="https://www.youtube.com/embed/<%= video_id %>?enablejsapi=1&controls=1&fs=0&showinfo=0&autoplay=1" frameborder="0">
     </iframe>
   </script>
 {% else %}
