@@ -914,7 +914,7 @@ display:
           click_sort_column: value
           type: smart_trim
           settings:
-            trim_length: 1000
+            trim_length: 3000
             trim_type: chars
             trim_suffix: ''
             wrap_output: false
