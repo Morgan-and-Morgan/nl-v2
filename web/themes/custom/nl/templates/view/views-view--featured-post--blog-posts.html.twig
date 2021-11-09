@@ -69,14 +69,11 @@
     </div>
   {% endif %}
 
-  {#{% if pager %}#}
-    {#<div class="button-container">#}
-      {#{{ pager }}#}
-    {#</div>#}
-  {#{% endif %}#}
-  <div class="button-container">
-    <span class="red caps btn-load-more">Older Posts</span>
-  </div>
+  {% if pager %}
+    <div class="button-container">
+      {{ pager }}
+    </div>
+  {% endif %}
 
   {% if attachment_after %}
     <div class="attachment attachment-after">

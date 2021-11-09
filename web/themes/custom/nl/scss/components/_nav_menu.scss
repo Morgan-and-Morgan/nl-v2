@@ -28,6 +28,28 @@
         margin-left: 5px;
         cursor: pointer;
       }
+
+      ul {
+        background: rgb(4, 23, 66);
+        top: 3.5em;
+        border-radius: 0.25rem;
+
+        li.sf-depth-2 {
+          padding: 0 !important;
+
+          a {
+            padding: 10px 20px 10px 15px !important;
+            width: 100%;
+            border-bottom: solid 0.5px #ffffff;
+          }
+
+          &:last-child {
+            a {
+              border-bottom: none;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -35,14 +57,69 @@
 ul.sf-menu.sf-accordion.sf-expanded {
   position: fixed;
   left: 0 !important;
-  top: 50px !important;
+  top: 53px !important;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
   padding: 10px 20px;
   border-bottom: solid 2px #222;
   margin-top: 15px;
 
+  li.sf-depth-1 {
+    padding: 5px 0;
+    border-bottom: solid 1px #999;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  }
+
   a {
     color: #041743;
+  }
+}
+
+.toolbar-vertical ul.sf-menu.sf-accordion.sf-expanded {
+  top: 90px !important;
+}
+
+.block-superfishmain {
+  .sf-accordion-toggle {
+    width: 30px;
+    height: 25px;
+    float: right;
+
+    #superfish-main-toggle {
+      position: relative;
+      display: block;
+      width: 100%;
+
+      span {
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        content: "";
+
+        &:before {
+          content: "";
+          position: absolute;
+          right: 0;
+          font-size: 30px;
+          top: 0.15em;
+          width: 1em;
+          height: 0.1em;
+          background: white;
+          box-shadow: 0 0.25em 0 0 white,
+          0 0.5em 0 0 white;
+        }
+      }
+    }
   }
 }
