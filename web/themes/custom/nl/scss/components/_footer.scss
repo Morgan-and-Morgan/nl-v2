@@ -71,5 +71,15 @@ footer {
   .disclaimer {
     font-size: 11px;
     color: #b1b1b1;
+    max-width: 850px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      max-width: 450px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      max-width: 650px;
+    }
   }
 }
