@@ -153,3 +153,9 @@ h1, h2, h3, h4, h5, h6 {
 .rounded-circle {
   border-radius: 50%;
 }
+
+@media screen and (min-width: 992px) {
+  .hidden-lg-up {
+    display: none !important;
+  }
+}
