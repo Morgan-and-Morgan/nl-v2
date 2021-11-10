@@ -82,6 +82,10 @@
       display: block;
       color: #ffffff;
 
+      &:hover {
+        text-decoration: none;
+      }
+
       h3 {
         text-transform: uppercase;
         display: inline-block;
@@ -218,6 +222,10 @@
       text-align: right;
       padding-top: 80px;
 
+      h3 {
+        font-weight: bold;
+      }
+
       p {
         margin-top: 0;
         margin-bottom: 1rem;
@@ -303,7 +311,7 @@
   border: solid 1px #ffffff;
   cursor: pointer;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 991px) {
     font-size: 12px;
   }
 }
@@ -316,14 +324,30 @@
   padding: 10px;
   border: solid 1px #ffffff;
   cursor: pointer;
-
-  @media screen and (max-width: 991px) {
-    font-size: 12px;
-  }
+  margin-right: 0;
+  margin-left: 10px;
 
   @media screen and (max-width: 767px) {
     margin-left: 0;
     margin-right: 0;
     margin-top: 10px;
+  }
+}
+
+.buttons-container {
+  .button.red {
+    @media screen and (max-width: 991px) {
+      font-size: 12px;
+    }
+  }
+}
+
+* {
+  scroll-behavior: smooth !important;
+}
+
+.slick-dots li {
+  @media screen and (max-width: 420px) {
+    margin: 0 3px;
   }
 }

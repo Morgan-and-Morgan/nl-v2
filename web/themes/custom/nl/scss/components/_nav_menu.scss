@@ -41,6 +41,7 @@
             padding: 10px 20px 10px 15px !important;
             width: 100%;
             border-bottom: solid 0.5px #ffffff;
+            text-transform: initial;
           }
 
           &:last-child {
@@ -122,4 +123,8 @@ ul.sf-menu.sf-accordion.sf-expanded {
       }
     }
   }
+}
+
+header .spacer {
+  padding-top: 65px;
 }

@@ -113,6 +113,10 @@
         color: white !important;
         padding: 10px;
         cursor: pointer;
+
+        @media screen and (max-width: 767px) {
+          width: 75%;
+        }
       }
     }
   }
