@@ -966,7 +966,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<li>\r\n  <strong>{{ field_amount }} - {{ title }}</strong>\r\n\r\n   <div class=\"inner-text\">\r\n       {{ body }}\r\n    </div>\r\n</li>"
+            text: "<li class=\"blogBox moreBox\" style=\"display: none;\">\r\n  <strong>{{ field_amount }} - {{ title }}</strong>\r\n\r\n   <div class=\"inner-text\">\r\n       {{ body }}\r\n    </div>\r\n</li>"
             make_link: false
             path: ''
             absolute: false
