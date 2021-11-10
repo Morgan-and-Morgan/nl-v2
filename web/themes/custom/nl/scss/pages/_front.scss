@@ -346,8 +346,18 @@
   scroll-behavior: smooth !important;
 }
 
-.slick-dots li {
-  @media screen and (max-width: 420px) {
-    margin: 0 3px;
+.slick-dots {
+  li {
+    @media screen and (max-width: 420px) {
+      margin: 0 3px;
+    }
+  }
+}
+
+.litigation-results {
+  .slick-dots {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
