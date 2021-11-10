@@ -56,5 +56,12 @@ header {
         }
       }
     }
+
+    @media screen and (max-width: 991px) {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
   }
 }
