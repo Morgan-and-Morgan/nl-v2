@@ -37,6 +37,11 @@
         opacity: .4;
         background: linear-gradient(135deg, #b01725, #041743);
       }
+      &:hover {
+        &:before {
+          background: linear-gradient(50deg, #b01725, #b01725);
+        }
+      }
     }
   }
 
@@ -53,9 +58,20 @@
 .practice-area-container {
   .region-breadcrumb {
     padding: 0;
+
+    nav ol.breadcrumb {
+      background: none;
+      padding: 0;
+
+      .breadcrumb-item + .breadcrumb-item {
+        &:before {
+          content: ">";
+        }
+      }
+    }
   }
 
-  .breadcrumbs {
+  .breadcrumbs.row {
     padding: 0;
     background: none;
     border: none;
@@ -141,6 +157,11 @@
         display: block;
         padding-top: 6px;
         font-size: 15px;
+      }
+
+      a.active {
+        font-weight: bold;
+        font-size: 18px;
       }
     }
 

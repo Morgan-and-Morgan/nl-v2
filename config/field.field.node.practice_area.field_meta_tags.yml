@@ -1,0 +1,21 @@
+uuid: bc86a3d6-0f19-4806-ae00-25d7d052ba0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.practice_area
+  module:
+    - metatag
+id: node.practice_area.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: practice_area
+label: 'Meta tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag
