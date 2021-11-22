@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.practice_area.field_highlighted
     - field.field.node.practice_area.field_image_banner
     - field.field.node.practice_area.field_image_thumbnail
+    - field.field.node.practice_area.field_meta_tags
     - field.field.node.practice_area.field_name
     - node.type.practice_area
   module:
@@ -54,4 +55,5 @@ hidden:
   field_buried: true
   field_categories: true
   field_highlighted: true
+  field_meta_tags: true
   field_name: true

@@ -1,0 +1,4 @@
+entity_type_groups:
+  node:
+    practice_area:
+      basic: basic

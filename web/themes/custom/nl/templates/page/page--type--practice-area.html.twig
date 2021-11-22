@@ -54,28 +54,22 @@
       <div class="col-sm-12">
         <div class="practice-area-container container">
           <div class="row breadcrumbs">
-            <ul class="col-sm-12">
-              <li><a href="/practice-areas/">Practice Areas</a></li>
-              <li> &gt; </li>
-              <li>
-                {% if node.field_name.value %}
-                  {{ node.field_name.value }}
-                {% elseif page['#title'] %}
-                  {{ page['#title'] }}
-                {% endif %}
-              </li>
-            </ul>
+            <div class="col-sm-12">
+              {% if page.breadcrumb %}
+                {{ page.breadcrumb }}
+              {% endif %}
+            </div>
           </div>
 
           <div class="row inner">
 
             <nav class="col-sm-2 left-nav hidden-sm-down">
-              <a href="/practice-areas/all/">All Practices</a>
-              <a href="/practice-areas/insurance-claims/">Insurance Claims</a>
-              <a href="/practice-areas/motor-vehicles/">Motor Vehicle Accidents</a>
-              <a href="/practice-areas/personal-injury/">Personal Injury</a>
-              <a href="/practice-areas/personal-injury/slip-and-fall/">Slip and Fall</a>
-              <a href="/practice-areas/personal-injury/wrongful-death/">Wrongful Death</a>
+              <a href="/practice-areas/all/" class="pa-link">All Practices</a>
+              <a href="/practice-areas/insurance-claims/" class="pa-link">Insurance Claims</a>
+              <a href="/practice-areas/motor-vehicles/" class="pa-link">Motor Vehicle Accidents</a>
+              <a href="/practice-areas/personal-injury/" class="pa-link">Personal Injury</a>
+              <a href="/practice-areas/personal-injury/slip-and-fall/" class="pa-link">Slip and Fall</a>
+              <a href="/practice-areas/personal-injury/wrongful-death/" class="pa-link">Wrongful Death</a>
             </nav>
 
             <div class="col-sm-10 center-content">

@@ -34,6 +34,7 @@
         "drupal/core-recommended": "8.9.19",
         "drupal/devel": "^4.1",
         "drupal/devel_kint_extras": "^1.0",
+        "drupal/easy_breadcrumb": "^2.0",
         "drupal/entity_type_clone": "^1.7",
         "drupal/feeds": "^3.0@alpha",
         "drupal/feeds_ex": "^1.0@alpha",
