@@ -1,0 +1,10 @@
+uuid: cd2ea0f7-a716-4686-b3f6-b001e7420132
+langcode: en
+status: true
+dependencies: {  }
+id: node__practice_area
+label: 'Content: Practice Area'
+tags:
+  canonical_url: '[node:url]'
+  description: '[node:summary]'
+  title: '[node:title] | [site:name]'
