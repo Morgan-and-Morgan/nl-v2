@@ -156,6 +156,18 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       sorts:
+        field_name_value:
+          id: field_name_value
+          table: node__field_name
+          field: field_name_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
         title:
           id: title
           table: node_field_data

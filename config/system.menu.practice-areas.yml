@@ -1,0 +1,8 @@
+uuid: 0e2c945f-ef7d-412e-aa57-997f2258b3f3
+langcode: en
+status: true
+dependencies: {  }
+id: practice-areas
+label: 'Practice Areas'
+description: ''
+locked: false
