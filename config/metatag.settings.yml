@@ -2,3 +2,5 @@ entity_type_groups:
   node:
     practice_area:
       basic: basic
+      advanced: advanced
+      open_graph: open_graph
