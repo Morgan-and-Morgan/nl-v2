@@ -152,6 +152,16 @@
     .left-nav {
       padding-left: 0;
 
+      ul.nav.navbar-nav {
+        li.nav-item {
+          a {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+
       a {
         color: #041743;
         display: block;
