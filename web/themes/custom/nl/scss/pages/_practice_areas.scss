@@ -92,6 +92,10 @@
     .center-content {
       padding: 0;
 
+      .region.region-content {
+        padding: 0;
+      }
+
       .banner {
         height: 300px;
         position: relative;
@@ -165,7 +169,7 @@
       a {
         color: #041743;
         display: block;
-        padding-top: 6px;
+        padding: 6px 0 0 0;
         font-size: 15px;
       }
 
