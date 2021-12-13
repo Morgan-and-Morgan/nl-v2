@@ -41,3 +41,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_name: true
+  langcode: true

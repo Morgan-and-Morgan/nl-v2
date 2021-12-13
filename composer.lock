@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18b1324c45200187abf632c438fe9c9f",
+    "content-hash": "fb5b8d046885b765d6fb6420d6ccc5cb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3619,6 +3619,58 @@
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
+            "name": "drupal/trailing_slash",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/trailing_slash.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/trailing_slash-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "354aa5776eca5272f28c4cf73f050061e0c4d220"
+            },
+            "require": {
+                "drupal/core": "^8"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1536320880",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Akaoni",
+                    "homepage": "https://www.drupal.org/user/1053088"
+                },
+                {
+                    "name": "SAVEL",
+                    "homepage": "https://www.drupal.org/user/680690"
+                },
+                {
+                    "name": "mgzrobles",
+                    "homepage": "https://www.drupal.org/user/1361176"
+                }
+            ],
+            "description": "Adds trailing slashes to Drupal URLs.",
+            "homepage": "https://www.drupal.org/project/trailing_slash",
+            "support": {
+                "source": "https://git.drupalcode.org/project/trailing_slash"
             }
         },
         {
