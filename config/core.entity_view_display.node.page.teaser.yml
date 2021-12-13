@@ -45,3 +45,4 @@ content:
 hidden:
   field_header_subtext: true
   field_header_text: true
+  langcode: true

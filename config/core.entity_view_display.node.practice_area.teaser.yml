@@ -42,3 +42,4 @@ hidden:
   field_image_thumbnail: true
   field_meta_tags: true
   field_name: true
+  langcode: true

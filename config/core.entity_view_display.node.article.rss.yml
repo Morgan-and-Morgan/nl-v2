@@ -27,6 +27,16 @@ content:
   links:
     weight: 100
     region: content
+  prevnext_next:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  prevnext_previous:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   body: true
   field_attorney: true
@@ -38,3 +48,4 @@ hidden:
   field_phone: true
   field_popular_post: true
   field_tags: true
+  langcode: true
