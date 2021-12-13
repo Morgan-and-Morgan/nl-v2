@@ -74,3 +74,4 @@ hidden:
   field_badges: true
   field_header_text: true
   field_phone: true
+  langcode: true

@@ -63,5 +63,6 @@ hidden:
   field_phone: true
   field_popular_post: true
   field_tags: true
+  langcode: true
   prevnext_next: true
   prevnext_previous: true
