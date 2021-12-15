@@ -1,0 +1,13 @@
+uuid: 1d680571-98a5-4247-8831-e3d21822acef
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.nl_key
+  module:
+    - real_aes
+id: nl_2fa
+label: 'NL 2FA'
+encryption_method: real_aes
+encryption_key: nl_key
+encryption_method_configuration: {  }
