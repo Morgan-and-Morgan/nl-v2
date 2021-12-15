@@ -27,27 +27,27 @@ mode: teaser
 content:
   field_image:
     type: media_thumbnail
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
+    weight: 0
+    region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 1
     region: content
-    settings: {  }
-    third_party_settings: {  }
   prevnext_next:
-    weight: 50
     settings: {  }
     third_party_settings: {  }
+    weight: 50
     region: content
   prevnext_previous:
-    weight: 50
     settings: {  }
     third_party_settings: {  }
+    weight: 50
     region: content
 hidden:
   body: true

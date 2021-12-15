@@ -11,12 +11,12 @@ pattern: '/attorneys/[node:title]'
 selection_criteria:
   dc7acb0f-9b10-4057-95b3-464f31399677:
     id: node_type
-    bundles:
-      attorney: attorney
     negate: false
+    uuid: dc7acb0f-9b10-4057-95b3-464f31399677
     context_mapping:
       node: node
-    uuid: dc7acb0f-9b10-4057-95b3-464f31399677
+    bundles:
+      attorney: attorney
 selection_logic: and
 weight: -5
 relationships: {  }

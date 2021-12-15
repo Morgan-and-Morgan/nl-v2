@@ -18,14 +18,14 @@ plugin: 'block_content:9cc5f580-f5d8-4a79-beae-48d904c4623c'
 settings:
   id: 'block_content:9cc5f580-f5d8-4a79-beae-48d904c4623c'
   label: 'More Results'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: /verdicts-and-settlements
     negate: false
     context_mapping: {  }
+    pages: /verdicts-and-settlements

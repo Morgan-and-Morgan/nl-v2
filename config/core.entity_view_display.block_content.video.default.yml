@@ -14,7 +14,7 @@ bundle: video
 mode: default
 content:
   field_youtube:
-    weight: 2
+    type: link_separate
     label: hidden
     settings:
       trim_length: 200
@@ -23,7 +23,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link_separate
+    weight: 2
     region: content
 hidden:
   body: true

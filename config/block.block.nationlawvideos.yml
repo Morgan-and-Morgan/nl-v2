@@ -18,14 +18,14 @@ plugin: 'block_content:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
 settings:
   id: 'block_content:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
   label: 'Nation Law Videos'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: /video-gallery
     negate: false
     context_mapping: {  }
+    pages: /video-gallery
