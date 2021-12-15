@@ -18,14 +18,14 @@ plugin: 'block_content:ee1a62f3-a462-4a3a-9c9d-6b54297e8209'
 settings:
   id: 'block_content:ee1a62f3-a462-4a3a-9c9d-6b54297e8209'
   label: 'Practice Areas'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: /practice-areas
     negate: false
     context_mapping: {  }
+    pages: /practice-areas

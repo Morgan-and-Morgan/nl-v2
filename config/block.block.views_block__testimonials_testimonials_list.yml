@@ -18,13 +18,13 @@ plugin: 'views_block:testimonials-testimonials_list'
 settings:
   id: 'views_block:testimonials-testimonials_list'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: /testimonials
     negate: false
     context_mapping: {  }
+    pages: /testimonials

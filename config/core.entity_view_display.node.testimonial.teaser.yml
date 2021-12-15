@@ -16,29 +16,29 @@ bundle: testimonial
 mode: teaser
 content:
   body:
-    label: hidden
     type: smart_trim
-    weight: 101
+    label: hidden
     settings:
       trim_length: 1000
       trim_type: chars
       trim_suffix: ''
-      wrap_class: trimmed
-      more_text: More
-      more_class: more-link
-      summary_handler: ignore
       wrap_output: false
+      wrap_class: trimmed
       more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: ignore
       trim_options:
         text: false
         trim_zero: false
     third_party_settings: {  }
+    weight: 101
     region: content
   links:
-    weight: 100
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
   field_name: true
   langcode: true

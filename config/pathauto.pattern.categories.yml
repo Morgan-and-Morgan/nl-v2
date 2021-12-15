@@ -12,12 +12,12 @@ pattern: '/[term:name]'
 selection_criteria:
   7f96518d-34d2-4e0a-967c-ca851bd31dd9:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      practice_area_categories: practice_area_categories
     negate: false
+    uuid: 7f96518d-34d2-4e0a-967c-ca851bd31dd9
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 7f96518d-34d2-4e0a-967c-ca851bd31dd9
+    bundles:
+      practice_area_categories: practice_area_categories
 selection_logic: and
 weight: -5
 relationships: {  }

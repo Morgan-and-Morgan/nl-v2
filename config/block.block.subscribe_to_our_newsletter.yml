@@ -18,14 +18,14 @@ plugin: 'block_content:315b4487-d416-45d2-bb9a-69759cc5cbae'
 settings:
   id: 'block_content:315b4487-d416-45d2-bb9a-69759cc5cbae'
   label: 'Subscribe To Our Newsletter'
-  provider: block_content
   label_display: visible
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: '/blog/*'
     negate: false
     context_mapping: {  }
+    pages: '/blog/*'

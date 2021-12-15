@@ -9,5 +9,5 @@ dependencies:
 id: nl_2fa
 label: 'NL 2FA'
 encryption_method: real_aes
-encryption_key: nl_key
 encryption_method_configuration: {  }
+encryption_key: nl_key

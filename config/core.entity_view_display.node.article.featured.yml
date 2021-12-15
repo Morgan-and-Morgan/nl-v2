@@ -28,47 +28,47 @@ mode: featured
 content:
   body:
     type: smart_trim
-    weight: 1
-    region: content
     label: hidden
     settings:
       trim_length: 200
       trim_type: chars
       trim_suffix: ...
+      wrap_output: false
       wrap_class: trimmed
       more_link: true
-      more_text: 'Continue Reading'
       more_class: 'red caps bold'
+      more_text: 'Continue Reading'
       summary_handler: full
       trim_options:
         text: true
         trim_zero: false
-      wrap_output: false
     third_party_settings: {  }
+    weight: 1
+    region: content
   field_image:
     type: media_thumbnail
-    weight: 0
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
+    weight: 0
     region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 2
     region: content
-    settings: {  }
-    third_party_settings: {  }
   prevnext_next:
-    weight: 50
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 50
+    region: content
   prevnext_previous:
-    weight: 50
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 50
+    region: content
 hidden:
   field_attorney: true
   field_email: true
