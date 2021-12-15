@@ -1,0 +1,16 @@
+Index: trailing_slash.info.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- trailing_slash.info.yml	(date 1633180271000)
++++ trailing_slash.info.yml	(date 1639586512000)
+@@ -1,7 +1,7 @@
+ name: Trailing Slash
+ description: Adds trailing slashes to Drupal URLs.
+ type: module
+-core: 8.x
++# core: 8.x
+ core_version_requirement: ^8 || ^9
+ dependencies:
+   - drupal:language
