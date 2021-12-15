@@ -21,6 +21,7 @@ module:
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
+  encrypt: 0
   entity_type_clone: 0
   feeds: 0
   feeds_ex: 0
@@ -30,10 +31,12 @@ module:
   file: 0
   filter: 0
   fontawesome: 0
+  ga_login: 0
   google_tag: 0
   help: 0
   history: 0
   image: 0
+  key: 0
   language: 0
   link: 0
   media: 0
@@ -50,6 +53,7 @@ module:
   path_alias: 0
   prevnext: 0
   rdf: 0
+  real_aes: 0
   redirect: 0
   search: 0
   shortcut: 0
@@ -60,6 +64,7 @@ module:
   tamper: 0
   taxonomy: 0
   text: 0
+  tfa: 0
   token: 0
   toolbar: 0
   tour: 0
