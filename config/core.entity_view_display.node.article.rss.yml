@@ -28,14 +28,14 @@ content:
     weight: 100
     region: content
   prevnext_next:
-    weight: 50
     settings: {  }
     third_party_settings: {  }
+    weight: 50
     region: content
   prevnext_previous:
-    weight: 50
     settings: {  }
     third_party_settings: {  }
+    weight: 50
     region: content
 hidden:
   body: true

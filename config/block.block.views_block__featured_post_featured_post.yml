@@ -18,13 +18,13 @@ plugin: 'views_block:featured_post-featured_post'
 settings:
   id: 'views_block:featured_post-featured_post'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: /blog
     negate: false
     context_mapping: {  }
+    pages: /blog

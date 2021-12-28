@@ -1,10 +1,12 @@
+_core:
+  default_config_hash: u7p3NmO6bhU5_RUl10fiH2cmJXfIUSXX40d_Otn_xKc
 max_links: 2000
 cron_generate: true
 cron_generate_interval: 6
 generate_duration: 10000
-entities_per_queue_item: 50
 remove_duplicates: true
 skip_untranslated: true
+disable_language_hreflang: false
 xsl: true
 base_url: ''
 default_variant: default
@@ -13,6 +15,4 @@ excluded_languages: {  }
 enabled_entity_types:
   - node
   - menu_link_content
-_core:
-  default_config_hash: u7p3NmO6bhU5_RUl10fiH2cmJXfIUSXX40d_Otn_xKc
-disable_language_hreflang: false
+entities_per_queue_item: 50

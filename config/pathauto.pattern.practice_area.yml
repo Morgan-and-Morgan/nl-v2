@@ -11,12 +11,12 @@ pattern: '/practice-areas/[node:title]'
 selection_criteria:
   cda69824-3a97-46a5-8c01-af93a0981a02:
     id: node_type
-    bundles:
-      practice_area: practice_area
     negate: false
+    uuid: cda69824-3a97-46a5-8c01-af93a0981a02
     context_mapping:
       node: node
-    uuid: cda69824-3a97-46a5-8c01-af93a0981a02
+    bundles:
+      practice_area: practice_area
 selection_logic: and
 weight: -5
 relationships: {  }
