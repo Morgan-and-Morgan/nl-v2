@@ -104,6 +104,10 @@
             }
           }
 
+          .icarus-field.field-nationlaw_terms_of_service {
+            font-size: 13px;
+            padding-bottom: 0;
+          }
         }
       }
 
@@ -146,6 +150,12 @@
               .icarus-field.field-lead_details,
               .icarus-field.field-postal_code_billing {
                 width: 100%;
+              }
+
+              .icarus-field.field-ftp_terms_of_service {
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
               }
             }
           }
