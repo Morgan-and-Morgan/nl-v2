@@ -10,8 +10,8 @@ dependencies:
     - node.type.results
   module:
     - node
-label: 'Out Results'
 id: results
+label: 'Out Results'
 description: ''
 help: ''
 import_period: -1
@@ -36,27 +36,33 @@ processor_configuration:
   expire: -1
   owner_feed_author: false
   owner_id: 1
+  insert_new: 1
 custom_sources:
   more_results_amount:
     value: more_results.amount
     label: more_results.amount
     machine_name: more_results_amount
+    type: csv
   more_results_amount_short:
     value: more_results.amount_short
     label: more_results.amount_short
     machine_name: more_results_amount_short
+    type: csv
   more_results_amount_short_qualifier:
     value: more_results.amount_short_qualifier
     label: more_results.amount_short_qualifier
     machine_name: more_results_amount_short_qualifier
+    type: csv
   more_results_description:
     value: more_results.description
     label: more_results.description
     machine_name: more_results_description
+    type: csv
   more_results_title:
     value: more_results.title
     label: more_results.title
     machine_name: more_results_title
+    type: csv
 mappings:
   -
     target: field_amount
