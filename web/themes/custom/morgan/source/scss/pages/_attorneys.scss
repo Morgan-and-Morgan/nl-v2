@@ -1,0 +1,300 @@
+@import "../modules/fonts";
+
+.path-attorneys {
+  .region-content {
+    padding: 0;
+  }
+
+  .container {
+    .below-header {
+      padding: 30px 0 60px;
+      text-align: center;
+
+      @media screen and (max-width: 767px) {
+        padding: 20px 10px 20px 10px;
+
+        h3 {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .mn-container {
+      background: url("/themes/custom/nl/images/bg-image-featured-attorney-mark-nation-min.jpg") no-repeat;
+      background-size: cover;
+
+      .inner-container {
+        margin: 15px;
+        border-top: solid 1px #c3c3c3;
+        border-bottom: solid 1px #c3c3c3;
+
+        .img-container {
+          max-height: 375px;
+          overflow-y: hidden;
+          margin-top: 20px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+
+          @media screen and (max-width: 991px) {
+            position: relative;
+
+            img {
+              left: 0;
+              bottom: 0;
+              height: auto;
+            }
+          }
+
+          @media screen and (max-width: 767px) {
+            max-height: 300px;
+            margin-top: 5px;
+            position: relative;
+            left: -100px;
+
+            img {
+              position: static;
+            }
+          }
+        }
+      }
+
+      .mn-description {
+        padding: 80px 0 30px;
+        @include normal-font(100);
+
+        @media screen and (max-width: 767px) {
+          padding-top: 0;
+        }
+
+        p a {
+          text-decoration: underline;
+          cursor: pointer;
+          color: #ffffff;
+
+          &:hover {
+            color: #014c8c;
+          }
+        }
+
+        .awards-container {
+          padding: 10px;
+
+          img {
+            height: 65px;
+            padding: 0 5px;
+            width: auto;
+          }
+        }
+
+        .contact-container {
+          color: white;
+
+          svg {
+            padding-right: 5px;
+            width: 1.5rem;
+          }
+
+          a {
+            cursor: pointer;
+            color: #ffffff;
+
+            &:hover {
+              color: #014c8c;
+            }
+          }
+        }
+      }
+    }
+
+    // List of Attorneys
+    .attorneys-container {
+      padding-top: 100px;
+      text-align: center;
+
+      .col {
+        margin-bottom: 50px;
+
+        .img-container {
+          width: 200px;
+          height: 200px;
+          display: inline-block;
+          overflow-y: hidden;
+          border: solid 8px #c3c3c3;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        h3 {
+          padding: 30px 0 5px;
+
+          a {
+            color: inherit;
+            text-decoration: inherit;
+
+            &:hover,
+            &:focus {
+              color: #014c8c;
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .field--name-body {
+          @include normal-font(100);
+        }
+
+        span svg {
+          padding-right: 3px;
+          min-width: 1.5rem;
+          @include normal-font(100);
+        }
+
+        .email {
+          a {
+            color: #292b2c;
+            @include normal-font(100);
+
+            &:focus,
+            &:hover {
+              color: #014c8c;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+// Attorney Node
+.page-node-type-attorney {
+  .region-content {
+    padding: 0;
+  }
+
+  .breadcrumbs ul {
+    list-style-type: none;
+
+    li {
+      float: left;
+      padding: 10px 5px 0;
+
+      a {
+        color: #292b2c;
+
+        &:focus,
+        &:hover {
+          color: #014c8c;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .attorney-container {
+    padding-top: 10px;
+
+    h3 {
+      padding: 30px 0;
+    }
+
+    .inner-container {
+      padding: 50px 0;
+      border-bottom: solid 1px #252525;
+
+      img {
+        width: 100%;
+      }
+
+      .badges-row {
+        padding: 20px 0;
+      }
+
+      .contact-row {
+        a {
+          color: #292b2c;
+
+          &:focus,
+          &:hover {
+            color: #014c8c;
+          }
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .col-sm-4 {
+          padding-bottom: 20px;
+        }
+      }
+
+      .col-sm-8 {
+        ul li {
+          font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+          p {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    // Other Attorney views
+    .other-attorneys {
+      padding: 10px 0 50px;
+
+      .headshot-container {
+        text-align: center;
+        margin: 10px 0;
+
+        a {
+          color: #292b2c;
+
+          &:focus,
+          &:hover {
+            color: #014c8c;
+          }
+        }
+
+        .img-container {
+          overflow: hidden;
+          display: inline-block;
+          width: 150px;
+          height: 150px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        span {
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+  }
+}
