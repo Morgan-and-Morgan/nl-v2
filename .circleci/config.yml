@@ -2,7 +2,7 @@
 defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:8.x-php7.4
-  working_directory: ~/example_drops_8_composer
+  working_directory: ~/mm_drupal_site_template_d9
   environment:
     #=========================================================================
     # In addition to the environment variables defined in this file, also
@@ -77,8 +77,35 @@ jobs:
           paths:
             - bash_env.txt
 
+  static_tests:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - composer-cache-{{ checksum "composer.lock" }}
+            - composer-cache-
+
+      - run:
+          # Set TERMINUS_ENV and related environment variables.
+          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
+          name: setup-environment-vars
+          command: /build-tools-ci/scripts/set-environment
+
+      - run:
+          name: run static tests
+          command: ./.ci/test/static/run
+
+      - save_cache:
+          key: composer-cache-{{ checksum "composer.lock" }}
+          paths:
+            - $HOME/.composer/cache
+
   build_php:
     <<: *defaults
+    resource_class: large
     steps:
       - checkout
 
@@ -96,8 +123,19 @@ jobs:
           command: /build-tools-ci/scripts/set-environment
 
       - run:
-          name: NPM login
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+          name: Swap node versions
+          command: |
+            ls /usr/bin
+            node -v
+            set +e
+            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+            nvm install v10.15.3
+            nvm alias default v10.15.3
+            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
+            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
 
       - run:
           name: run PHP build step
@@ -118,6 +156,7 @@ jobs:
   deploy_to_pantheon:
     <<: *defaults
     steps:
+      - run: git config --global core.autocrlf false
       - checkout
 
       # Attach the workspace
@@ -133,14 +172,16 @@ jobs:
       # Rsync the build artifact pieces web directory
       - run:
           name: sync build artifact
-          command: rsync -rz /tmp/web /tmp/vendor /tmp/drush .
+          command: ./.ci/deploy/pantheon/dev-sync-build-artifact
 
       # Deploy to Pantheon
       - run:
           name: deploy to Pantheon
+          no_output_timeout: 30m
           command: ./.ci/deploy/pantheon/dev-multidev
 
   behat_test:
+    parallelism: 4
     <<: *defaults
     steps:
       - checkout
@@ -153,25 +194,25 @@ jobs:
       - run:
           # Set TERMINUS_ENV and related environment variables.
           # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
-          name: setup-environment-vars
+          name: Setup environment vars
           command: /build-tools-ci/scripts/set-environment
 
       - run:
           # Uncomment line 26 in .ci/test/behat/initialize to create a backup
           # prior to running Behat tests. This is useful to reset the multidev
           # environment to the previous state after Behat tests have run.
-          name: prepare for Behat testing
+          name: Prepare for Behat testing
           command: ./.ci/test/behat/initialize
 
       - run:
-          name: run acceptance tests with Behat
+          name: Run acceptance tests with Behat
           command: ./.ci/test/behat/run
 
       - run:
           # Uncomment line 13 in .ci/test/behat/cleanup to restore a backup
           # after running Behat tests. This is useful to reset the multidev
           # environment to the previous state after Behat tests have run.
-          name: clean up after Behat
+          name: Clean up after Behat
           command: ./.ci/test/behat/cleanup
           when: always
 
@@ -209,25 +250,6 @@ jobs:
           path: /tmp/artifacts
           destination: artifacts
 
-  composer_lock_updater:
-    <<: *defaults
-    steps:
-      - checkout
-
-      - run:
-          # Set TERMINUS_ENV and related environment variables.
-          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
-          name: setup-environment-vars
-          command: /build-tools-ci/scripts/set-environment
-
-      - run:
-          name: Authenticate with Terminus
-          command: terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
-
-      - run:
-          name: run composer lock updater
-          command: set -e && terminus project:clu $TERMINUS_SITE
-
   npm_build_theme:
     docker:
       - image: node:10.15.3
@@ -237,24 +259,33 @@ jobs:
           name: NPM login
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run:
-          name: install npm dependencies in a custom Drupal theme
-          command: cd web/themes/custom/nl && npm ci
+          name: Install npm dependencies in the Morgan Base theme
+          command: cd web/profiles/contrib/mm_drupal_core_d9_shared_infra/themes/morgan_base && npm ci
       - run:
-          name: Compile Assets
-          command: cd web/themes/custom/nl && npm run build
+          name: Compile Base Theme Assets
+          command: cd web/profiles/contrib/mm_drupal_core_d9_shared_infra/themes/morgan_base && npm run build;
+      - run:
+          name: Install npm dependencies in the Morgan Subtheme
+          command: cd web/themes/custom/morgan && npm ci
+      - run:
+          name: Compile Subtheme Assets
+          command: cd web/themes/custom/morgan && npm run build
       - persist_to_workspace:
           root: .
           paths:
-            - web/themes/custom/nl/dist
+            - web/profiles/contrib/mm_drupal_core_d9_shared_infra/themes/morgan_base/dist
+            - web/themes/custom/morgan/dist
 
 workflows:
   version: 2
   build_deploy_and_test:
     jobs:
       - configure_env_vars
+      - static_tests
       - build_php
       - deploy_to_pantheon:
           requires:
+            - static_tests
             - build_php
       - visual_regression_test:
           requires:

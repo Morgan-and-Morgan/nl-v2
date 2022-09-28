@@ -20,3 +20,4 @@ composer -n run-script lint
 
 # Check coding standards
 composer -n run-script code-sniff
+

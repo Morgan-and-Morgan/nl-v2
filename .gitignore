@@ -10,6 +10,7 @@
 /drush/Commands/
 /vendor/
 /web/core/
+/web/libraries/
 /web/modules/contrib/
 /web/modules/README.txt
 /web/themes/contrib/
@@ -18,6 +19,7 @@
 /web/profiles/README.txt
 /web/private/scripts/quicksilver
 /console/
+composer.phar
 
 # Ignore scaffold files
 .drush-lock-update
@@ -35,7 +37,6 @@ web/.htaccess
 web/.ht.router.php
 web/autoload.php
 web/index.php
-web/robots.txt
 web/sites/default/default.services.pantheon.preproduction.yml
 web/sites/default/default.services.yml
 web/sites/default/default.settings.php
@@ -46,6 +47,8 @@ web/sites/example.sites.php
 web/sites/README.txt
 web/update.php
 web/web.config
+
+node_modules
 
 # Add directories containing build assets below.
 # Keep all additions above the "cut" line.
@@ -115,6 +118,9 @@ Thumbs.db
 ##########
 .sass-cache
 
+# M&M Custom Additions #
+########################
+
 # Local services file.
 web/sites/services.local.yml
 
@@ -123,7 +129,14 @@ node_modules
 
 # JS & CSS compiled in custom theme.
 web/themes/custom/*/dist
+web/themes/custom/*/dist/amp-page-css
+
+# Tests output.
+web/themes/custom/*/tests_output
 
 # Items associated with linting code.
 .vscode/settings.json
 phpcs.xml.dist
+
+# Ignore composer.lock file, it's annoying...
+#composer.lock

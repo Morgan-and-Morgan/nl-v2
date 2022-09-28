@@ -1,0 +1,12 @@
+name: nl-v2
+recipe: pantheon
+config:
+  webroot: web
+  framework: drupal8
+  drush: 10
+  php: '7.4'
+  env: dev
+  site: nl-v2
+  id: 6c7e8e57-272f-4318-8426-6660b72b1b51
+  # xdebug: true
+  #  Breaks on newer Lando: https://github.com/lando/lando/issues/580

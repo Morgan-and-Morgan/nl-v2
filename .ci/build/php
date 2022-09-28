@@ -10,3 +10,14 @@ set -eo pipefail
 
 # Build Composer Assets
 composer -n build-assets
+
+# Login to NPM
+echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+
+# Build Morgan Base Theme
+composer run-script mm:build-theme
+
+# Build Morgan Theme
+composer build-theme
+
+rm -rf web/themes/custom/morgan/node_modules

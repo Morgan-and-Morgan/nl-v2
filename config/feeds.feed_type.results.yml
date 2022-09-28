@@ -29,6 +29,7 @@ processor_configuration:
   values:
     type: results
   langcode: en
+  insert_new: 1
   update_existing: 2
   update_non_existent: _keep
   skip_hash_check: false
@@ -36,7 +37,6 @@ processor_configuration:
   expire: -1
   owner_feed_author: false
   owner_id: 1
-  insert_new: 1
 custom_sources:
   more_results_amount:
     value: more_results.amount
