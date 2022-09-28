@@ -43,15 +43,13 @@
   "scripts": {
     "build-assets": [
       "@prepare-for-pantheon",
-      "composer install --optimize-autoloader --no-dev",
-      "@build-theme-nl"
+      "composer install --optimize-autoloader --no-dev"
     ],
     "dev": [
       "composer install",
       "@mm:build-theme",
-      "@build-theme-nl"
+      "@build-theme"
     ],
-    "lint": "find web/modules/custom web/themes/custom -name '*.php' -exec php -l {} \\;",
     "prepare-for-pantheon": "DrupalProject\\composer\\ScriptHandler::prepareForPantheon",
     "post-install-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
@@ -62,10 +60,10 @@
     "post-create-project-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
       "@mm:build-theme",
-      "@build-theme-nl"
+      "@build-theme"
     ],
-    "build-theme-nl": [
-      "cd web/themes/custom/nl && npm ci; npm run build;"
+    "build-theme": [
+      "cd web/themes/custom/morgan; npm -v; node -v; npm install --unsafe-perm; npm rebuild node-sass; npm run build;"
     ],
     "nuke-profile": [
       "rm -Rf web/profiles/contrib/ vendor/ composer.lock"

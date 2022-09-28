@@ -53,6 +53,7 @@ module:
   path: 0
   path_alias: 0
   prevnext: 0
+  profile_switcher: 0
   rdf: 0
   real_aes: 0
   redirect: 0
@@ -79,7 +80,7 @@ module:
   pathauto: 1
   trailing_slash: 1
   views: 10
-  standard: 1000
+  mm_drupal_core_d9_shared_infra: 1000
 theme:
   stable: 0
   classy: 0
@@ -87,4 +88,6 @@ theme:
   seven: 0
   bootstrap4: 0
   nl: 0
-profile: standard
+  morgan_base: 0
+  morgan: 0
+profile: mm_drupal_core_d9_shared_infra

@@ -1,0 +1,40 @@
+nav.menu--main {
+  li.menu-item {
+    ul.dropdown-menu {
+      position: absolute;
+      background: white;
+      list-style-type: none;
+      width: 150px;
+      margin-top: 4px;
+      left: -50px;
+
+      li {
+        display: block !important;
+        text-align: -webkit-match-parent;
+        border-bottom: solid 1px #ccc;
+        font-size: .8em;
+
+        a {
+          display: block;
+          cursor: pointer;
+          color: black !important;
+          text-decoration: none;
+          padding: 5px 15px;
+
+          &:hover {
+            color: #ffffff !important;
+          }
+        }
+
+        &:hover {
+          background: #041743;
+          color: #ffffff !important;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

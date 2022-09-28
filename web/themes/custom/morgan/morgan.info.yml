@@ -1,0 +1,29 @@
+name: 'Morgan & Morgan'
+type: theme
+description: 'Morgan & Morgan subtheme based on Bootstrap 4 theme.'
+core_version_requirement: '^8.8 || ^9'
+base theme: morgan_base
+
+libraries:
+  - morgan/global-styling
+  - morgan/pages
+  - morgan/bootstrap_cdn
+#  - morgan/front-js
+#  - morgan/about-js
+
+# # Override parent theme libraries.
+# libraries-override:
+#   # Remove Morgan base global styling
+#   morgan_base/global-styling:
+#     css:
+#       theme:
+#         /profiles/contrib/mm_drupal_core_d9_shared_infra/themes/dist/css/global/global-styles.css: false
+
+regions:
+  navigation: 'Navigation'
+  header: 'Header'
+  breadcrumb: 'Breadcrumb'
+  content: 'Main content'
+  sidebar: 'Right Sidebar'
+  content_bottom: 'Content Bottom'
+  footer: 'Footer'

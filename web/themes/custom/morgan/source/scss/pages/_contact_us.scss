@@ -1,0 +1,76 @@
+@import "../modules/fonts";
+
+.lower-container {
+  padding: 40px 0;
+
+  .hidden-sm-down {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .form-container {
+
+    .address-container {
+      padding-bottom: 20px;
+
+      @media screen and (max-width: 767px) {
+        text-align: center;
+      }
+
+      p {
+        margin-bottom: .2rem;
+      }
+    }
+
+    .outer-form-container {
+      @media screen and (max-width: 767px) {
+        width: 95%;
+        margin: auto;
+        text-align: center;
+      }
+    }
+
+    .contact-form-container {
+      .icarus .icarus-form .icarus-layout .icarus-layout-static {
+
+        .icarus-field {
+          @media screen and (max-width: 767px) {
+            width: 100%;
+          }
+        }
+
+        .icarus-field input,
+        .icarus-field textarea {
+          display: block;
+          width: 100% !important;
+          padding: 0.5rem 0.75rem;
+          font-size: 1rem;
+          line-height: 1.25;
+          color: #464a4c;
+          background-color: white;
+          background-image: none;
+          background-clip: padding-box;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+          border-radius: 0.25rem;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        }
+
+        .icarus-field.error input {
+          border: solid 1px #d62717;
+        }
+      }
+    }
+  }
+
+  .text-container h4 {
+    @include normal-font(600);
+    font-size: 16px;
+
+    span {
+      display: block;
+      padding-top: 3px;
+      font-family: inherit;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+uuid: cc0cc1e3-104b-43ea-b6ca-bd4d99cdefbe
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:9cc5f580-f5d8-4a79-beae-48d904c4623c'
+  module:
+    - block_content
+    - system
+  theme:
+    - morgan_base
+id: morgan_base_moreresults
+theme: morgan_base
+region: content
+weight: -6
+provider: null
+plugin: 'block_content:9cc5f580-f5d8-4a79-beae-48d904c4623c'
+settings:
+  id: 'block_content:9cc5f580-f5d8-4a79-beae-48d904c4623c'
+  label: 'More Results'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /verdicts-and-settlements

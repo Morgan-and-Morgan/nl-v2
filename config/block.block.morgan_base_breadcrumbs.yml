@@ -1,0 +1,28 @@
+uuid: cf596c4f-5337-4dc6-9dc1-046ba8ddfd95
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - morgan_base
+id: morgan_base_breadcrumbs
+theme: morgan_base
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      practice_area: practice_area

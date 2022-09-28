@@ -1,0 +1,25 @@
+uuid: b366aa65-5a34-4f57-95ec-8dc9c304f006
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - morgan_base
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: morgan_base_branding
+theme: morgan_base
+region: header
+weight: -3
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

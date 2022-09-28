@@ -1,0 +1,31 @@
+uuid: c853529a-ec7d-440f-9e15-dd2198e55b4a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c1b93cd8-263a-4a27-a585-3a056eb930b4'
+  module:
+    - block_content
+    - system
+  theme:
+    - morgan_base
+id: morgan_base_facebookpage
+theme: morgan_base
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:c1b93cd8-263a-4a27-a585-3a056eb930b4'
+settings:
+  id: 'block_content:c1b93cd8-263a-4a27-a585-3a056eb930b4'
+  label: 'Facebook Page Plugin'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '/blog/*'

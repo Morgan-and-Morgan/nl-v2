@@ -1,0 +1,180 @@
+@import "../modules/fonts";
+
+.case-evaluation-form-container {
+  padding: 30px 0;
+  text-align: center;
+  background: #c3c3c3;
+
+  h1 {
+    color: #b01725;
+  }
+
+  .richtext-body {
+    color: #292b2c;
+
+    a {
+      color: #292b2c;
+    }
+  }
+
+  button {
+    background: #b01725;
+  }
+}
+
+.path-frontpage .case-evaluation-form-container {
+  background: url("/themes/custom/nl/images/bg-img-courthouse-min.jpg") no-repeat;
+  background-size: cover;
+  padding: 80px 0;
+  text-align: center;
+
+  h1 {
+    font-size: 60px;
+    color: white;
+
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+    }
+  }
+
+  .richtext-body {
+    color: white;
+
+    a {
+      color: white;
+    }
+  }
+
+  button {
+    background: #082857;
+  }
+
+  .icarus .icarus-form .icarus-layout .icarus-layout-static .icarus-field .icarus-field-error span {
+    color: #c3c3c3;
+  }
+}
+
+.container-fluid {
+  .case-evaluation-form-container {
+    h1 {
+      font-weight: bold;
+      padding-bottom: 20px;
+      @include normal-font($weight: 400);
+    }
+
+    .icarus-form {
+      .icarus-layout-dynamic {
+        height: 100%;
+        position: relative;
+      }
+
+      .icarus-field.hidden {
+        display: none;
+      }
+
+      .icarus-layout {
+        .icarus-layout-static {
+          .icarus-field {
+            label {
+              display: none;
+              color: #666;
+              margin-bottom: 0;
+            }
+
+            input,
+            textarea {
+              display: block;
+              width: 100% !important;
+              padding: 0.5rem 0.75rem;
+              font-size: 1rem;
+              line-height: 1.25;
+              color: #464a4c;
+              background-color: white;
+              background-image: none;
+              background-clip: padding-box;
+              border: 1px solid rgba(0, 0, 0, 0.15);
+              border-radius: 0.25rem;
+              transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            }
+
+            .richtext-body {
+              a {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .icarus-field.field-nationlaw_terms_of_service {
+            font-size: 13px;
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      button {
+        margin-top: 20px;
+        width: 50%;
+        color: white !important;
+        padding: 10px;
+        cursor: pointer;
+
+        @media screen and (max-width: 767px) {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+.contact-page {
+  .form-container {
+    .outer-form-container {
+      .container {
+        padding: 0;
+
+        .icarus-form {
+          .icarus-layout {
+            .icarus-layout-static {
+              .icarus-field {
+                width: 50%;
+                float: left;
+                padding: 5px 10px 5px 0 !important;
+
+                label {
+                  display: none;
+                  color: #666;
+                  margin-bottom: 0;
+                }
+              }
+
+              .icarus-field.field-lead_details,
+              .icarus-field.field-postal_code_billing {
+                width: 100%;
+              }
+
+              .icarus-field.field-ftp_terms_of_service {
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+              }
+            }
+          }
+
+          .submit-btn {
+            background: #b01725;
+            border-radius: 5px;
+            text-align: center;
+            color: white !important;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 0 !important;
+            width: 100%;
+            float: none;
+            font-family: inherit;
+          }
+        }
+      }
+    }
+  }
+}

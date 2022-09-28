@@ -1,0 +1,33 @@
+# Morgan theme libraries, be sure to add weight >1 to override
+# Morgan base theme libraries.
+global-styling:
+  css:
+    theme:
+      dist/css/global/global-styles.css: { weight: 10 }
+  js:
+    js/lib/slick.min.js: { }
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/backbone
+
+pages:
+  css:
+    theme:
+      dist/css/pages/pages.css: { weight: 10 }
+home-js:
+  js:
+    dist/__ENV_LIB=dev|prod__/front.js: {}
+testimonials-js:
+  js:
+    dist/__ENV_LIB=dev|prod__/about.js: {}
+
+global-js:
+  js:
+    dist/__ENV_LIB=dev|prod__/global.js: {}
+
+bootstrap_cdn:
+  js:
+    //maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js: { external: true }
