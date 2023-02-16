@@ -1,11 +1,11 @@
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const sourcemaps = require("gulp-sourcemaps");
 const webpack = require("webpack-stream");
 
 /** SASS TASKS **/
-gulp.task("sass:build", function (cb) {
+gulp.task("sass:build", gulp.series(function (cb) {
   gulp
     .src("./scss/style.scss")
     // .pipe(sourcemaps.init())
@@ -14,12 +14,12 @@ gulp.task("sass:build", function (cb) {
     // .pipe(concat('index.css'))
     .pipe(gulp.dest("./dist"));
   cb();
-});
+}));
 
-gulp.task("sass:watch", function (cb) {
+gulp.task("sass:watch", gulp.series(function (cb) {
   gulp.watch(["./scss/style.scss", "./scss/*/*.scss"], gulp.series("sass:build"));
   cb();
-});
+}));
 
 /** JS TASKS **/
 gulp.task("js:build-main-js", function (cb) {
