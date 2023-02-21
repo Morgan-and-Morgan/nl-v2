@@ -95,20 +95,20 @@ jobs:
           name: setup-environment-vars
           command: /build-tools-ci/scripts/set-environment
 
-      - run:
-          name: Swap node versions
-          command: |
-            ls /usr/bin
-            node -v
-            set +e
-            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-            nvm install v10.15.3
-            nvm alias default v10.15.3
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+      # - run:
+      #     name: Swap node versions
+      #     command: |
+      #       ls /usr/bin
+      #       node -v
+      #       set +e
+      #       wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+      #       export NVM_DIR="$HOME/.nvm"
+      #       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      #       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+      #       nvm install v10.15.3
+      #       nvm alias default v10.15.3
+      #       echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
+      #       echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
 
       - run:
           name: NPM login
@@ -245,7 +245,7 @@ jobs:
 
   npm_build_theme:
     docker:
-      - image: node:10.15.3
+      - image: node:16.17.1
     steps:
       - checkout
       - run:
