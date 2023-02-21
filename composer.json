@@ -83,7 +83,7 @@
             "@build-theme-nl"
         ],
         "build-theme-nl": [
-            "cd web/themes/custom/nl && npm ci; npm run build;"
+            "cd web/themes/custom/nl; npm -v; node -v; npm install --unsafe-perm; npm rebuild node-sass; npm run build;"
         ],
         "nuke-profile": [
             "rm -Rf web/profiles/contrib/ vendor/ composer.lock"
