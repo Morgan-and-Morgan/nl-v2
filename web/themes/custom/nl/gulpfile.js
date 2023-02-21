@@ -6,13 +6,13 @@ const webpack = require("webpack-stream");
 
 /** SASS TASKS **/
 gulp.task("sass:build", gulp.series(function (cb) {
-  gulp
-    .src("./scss/style.scss")
-    // .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'compressed' }).on("error", sass.logError))
-    // .pipe(sourcemaps.write())
-    // .pipe(concat('index.css'))
-    .pipe(gulp.dest("./dist"));
+  // gulp
+  //   .src("./scss/style.scss")
+  //   // .pipe(sourcemaps.init())
+  //   .pipe(sass({ outputStyle: 'compressed' }).on("error", sass.logError))
+  //   // .pipe(sourcemaps.write())
+  //   // .pipe(concat('index.css'))
+  //   .pipe(gulp.dest("./dist"));
   cb();
 }));
 
@@ -43,7 +43,7 @@ gulp.task("js:build-main-js", gulp.series(function (cb) {
 }));
 
 /* watch js directory for changes */
-gulp.task("js:watch", function (cb) {
+gulp.task("js:watch", [function (cb) {
   gulp.watch(
     "./js/*.js",
     gulp.series(
@@ -51,7 +51,7 @@ gulp.task("js:watch", function (cb) {
     )
   );
   cb();
-});
+}]);
 
 /** ASSETS WATCH **/
 gulp.task(
