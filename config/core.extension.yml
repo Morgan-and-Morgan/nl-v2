@@ -17,8 +17,6 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
-  devel: 0
-  devel_kint_extras: 0
   drupal_ftp_global_vars: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
@@ -48,12 +46,14 @@ module:
   menu_ui: 0
   metatag: 0
   metatag_open_graph: 0
+  mysql: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
   prevnext: 0
+  profile_switcher: 0
   rdf: 0
   real_aes: 0
   redirect: 0
@@ -80,7 +80,7 @@ module:
   pathauto: 1
   trailing_slash: 1
   views: 10
-  standard: 1000
+  mm_drupal_core_d9_shared_infra: 1000
 theme:
   stable: 0
   classy: 0
@@ -88,4 +88,4 @@ theme:
   seven: 0
   bootstrap4: 0
   nl: 0
-profile: standard
+profile: mm_drupal_core_d9_shared_infra

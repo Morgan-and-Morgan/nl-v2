@@ -37,6 +37,7 @@
         "drupal/redirect": "^1.6",
         "drupal/superfish": "^1.4",
         "drupal/upgrade_status": "^3.13",
+        "drupal/profile_switcher": "^1.0@alpha",
         "morgan-and-morgan/drupal_ftp_global_vars": "1.0.2"
     },
     "require-dev": {
