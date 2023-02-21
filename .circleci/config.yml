@@ -230,7 +230,7 @@ jobs:
 
   npm_build_theme:
     docker:
-      - image: node:10.15.3
+      - image: node:16.17.1
     steps:
       - checkout
       - run:
