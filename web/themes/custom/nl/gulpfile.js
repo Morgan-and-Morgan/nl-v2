@@ -47,7 +47,7 @@ gulp.task("js:watch", function (cb) {
   gulp.watch(
     "./js/*.js",
     gulp.series(
-      "js:build-main-js"
+      ["js:build-main-js"]
     )
   );
   cb();
@@ -56,19 +56,19 @@ gulp.task("js:watch", function (cb) {
 /** ASSETS WATCH **/
 gulp.task(
   "assets:watch",
-  gulp.series(
+  gulp.series([
     "sass:build",
     "sass:watch",
     "js:build-main-js",
     "js:watch"
-  )
+  ])
 );
 
 /** ASSETS BUILD **/
 gulp.task(
   "assets:build",
-  gulp.series(
+  gulp.series([
     "sass:build",
-    "js:build-main-js",
-  )
+    "js:build-main-js"
+  ])
 );
