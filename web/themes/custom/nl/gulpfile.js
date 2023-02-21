@@ -22,7 +22,7 @@ gulp.task("sass:watch", gulp.series(function (cb) {
 }));
 
 /** JS TASKS **/
-gulp.task("js:build-main-js", function (cb) {
+gulp.task("js:build-main-js", gulp.series(function (cb) {
   gulp
     .src("./js/main.js")
     .pipe(
@@ -40,7 +40,7 @@ gulp.task("js:build-main-js", function (cb) {
     )
     .pipe(gulp.dest("./dist"));
   cb();
-});
+}));
 
 /* watch js directory for changes */
 gulp.task("js:watch", function (cb) {
