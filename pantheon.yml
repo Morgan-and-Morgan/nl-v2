@@ -1,9 +1,14 @@
 api_version: 1
 web_docroot: true
-# update build tools....
+# update build tools.
 php_version: 7.4
 # Drupal 9 require Drush version 10.
 drush_version: 10
 database:
   version: 10.4
-
+workflows:
+  sync_code:
+    after:
+      - type: webphp
+        description: Push changes back to GitHub if needed
+        script: private/scripts/quicksilver/quicksilver-pushback/push-back.php
