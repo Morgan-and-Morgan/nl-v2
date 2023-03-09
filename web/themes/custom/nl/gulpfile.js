@@ -1,11 +1,11 @@
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const sourcemaps = require("gulp-sourcemaps");
 const webpack = require("webpack-stream");
 
 /** SASS TASKS **/
-gulp.task("sass:build", function (cb) {
+gulp.task("sass:build", gulp.series(function (cb) {
   gulp
     .src("./scss/style.scss")
     // .pipe(sourcemaps.init())
@@ -14,15 +14,15 @@ gulp.task("sass:build", function (cb) {
     // .pipe(concat('index.css'))
     .pipe(gulp.dest("./dist"));
   cb();
-});
+}));
 
-gulp.task("sass:watch", function (cb) {
+gulp.task("sass:watch", gulp.series(function (cb) {
   gulp.watch(["./scss/style.scss", "./scss/*/*.scss"], gulp.series("sass:build"));
   cb();
-});
+}));
 
 /** JS TASKS **/
-gulp.task("js:build-main-js", function (cb) {
+gulp.task("js:build-main-js", gulp.series(function (cb) {
   gulp
     .src("./js/main.js")
     .pipe(
@@ -40,14 +40,14 @@ gulp.task("js:build-main-js", function (cb) {
     )
     .pipe(gulp.dest("./dist"));
   cb();
-});
+}));
 
 /* watch js directory for changes */
 gulp.task("js:watch", function (cb) {
   gulp.watch(
     "./js/*.js",
     gulp.series(
-      "js:build-main-js"
+      ["js:build-main-js"]
     )
   );
   cb();
@@ -56,19 +56,19 @@ gulp.task("js:watch", function (cb) {
 /** ASSETS WATCH **/
 gulp.task(
   "assets:watch",
-  gulp.series(
+  gulp.series([
     "sass:build",
     "sass:watch",
     "js:build-main-js",
     "js:watch"
-  )
+  ])
 );
 
 /** ASSETS BUILD **/
 gulp.task(
   "assets:build",
-  gulp.series(
+  gulp.series([
     "sass:build",
-    "js:build-main-js",
-  )
+    "js:build-main-js"
+  ])
 );

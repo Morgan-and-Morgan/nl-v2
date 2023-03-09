@@ -1,0 +1,8 @@
+name: Nation Law Common
+description: 'Nation Law Common module'
+type: module
+core: 8.x
+version: 1.0
+package: Nation Law
+core_version_requirement: ^8 || ^9
+project: 'nl_common'
