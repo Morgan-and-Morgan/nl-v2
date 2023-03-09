@@ -10,11 +10,7 @@
 /drush/Commands/
 /vendor/
 /web/core/
-<<<<<<< HEAD
-web/libraries/
-=======
 /web/libraries/
->>>>>>> nl-prep
 /web/modules/contrib/
 /web/modules/README.txt
 /web/themes/contrib/
