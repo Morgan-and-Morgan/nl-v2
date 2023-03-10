@@ -30,12 +30,9 @@ fi
 
 # Update the Drupal database
 terminus -n drush "$TERMINUS_SITE.$MDE_ENVIRONMENT" -- updatedb -y
-<<<<<<< HEAD
 
 # Clear Drupal cache
 terminus -n drush "$TERMINUS_SITE.$MDE_ENVIRONMENT" -- cr
-=======
->>>>>>> nl-prep
 
 # If exported configuration is available, then import it.
 if [ -f "config/sync/system.site.yml" ] ; then
