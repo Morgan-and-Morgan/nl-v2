@@ -10,6 +10,7 @@
 /drush/Commands/
 /vendor/
 /web/core/
+/web/libraries/
 /web/modules/contrib/
 /web/modules/README.txt
 /web/themes/contrib/
@@ -35,7 +36,6 @@ web/.htaccess
 web/.ht.router.php
 web/autoload.php
 web/index.php
-web/robots.txt
 web/sites/default/default.services.pantheon.preproduction.yml
 web/sites/default/default.services.yml
 web/sites/default/default.settings.php
