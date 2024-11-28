@@ -25,6 +25,14 @@ include __DIR__ . "/settings.pantheon.php";
  */
 // $settings['skip_permissions_hardening'] = TRUE;
 
+// Global 301 redirect to HTTPS protocol.
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'on') {
+  $secure_url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+  header('HTTP/1.1 301 Moved Permanently');
+  header('Location: ' . $secure_url);
+  exit();
+}
+
 /**
  * If there is a local settings file, then include it
  */
