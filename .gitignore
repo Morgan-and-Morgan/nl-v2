@@ -10,6 +10,7 @@
 /drush/Commands/
 /vendor/
 /web/core/
+/web/libraries/
 /web/modules/contrib/
 /web/modules/README.txt
 /web/themes/contrib/
@@ -46,6 +47,9 @@ web/sites/example.sites.php
 web/sites/README.txt
 web/update.php
 web/web.config
+
+# Ignore lando and dev files.
+.lando.yml
 
 # Add directories containing build assets below.
 # Keep all additions above the "cut" line.
