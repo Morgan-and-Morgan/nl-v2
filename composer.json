@@ -10,16 +10,16 @@
         }
     ],
     "require": {
-        "php": ">=7.3",
+        "php": ">=8.1",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.0",
         "drupal/betterlt": "^1.3",
         "drupal/bootstrap": "^3.23",
         "drupal/bootstrap4": "^2.1",
-        "drupal/core-composer-scaffold": "^9",
-        "drupal/core-project-message": "^9",
-        "drupal/core-recommended": "^9",
+        "drupal/core-composer-scaffold": "9.5.11",
+        "drupal/core-project-message": "9.5.11",
+        "drupal/core-recommended": "9.5.11",
         "drupal/devel": "^4.1",
         "drupal/devel_kint_extras": "^1.0",
         "drupal/easy_breadcrumb": "^2.0",
@@ -36,14 +36,13 @@
         "drupal/prevnext": "^2.0",
         "drupal/real_aes": "^2.3",
         "drupal/redirect": "^1.6",
-        "drupal/simple_sitemap": "^4.0",
+        "drupal/simple_sitemap": "^4.1",
         "drupal/smart_trim": "^1.3",
         "drupal/superfish": "^1.4",
         "drupal/tamper": "^1.0@alpha",
         "drupal/tfa": "^1.0@alpha",
         "drupal/trailing_slash": "1.x-dev#4b95f676",
         "drupal/twig_tweak": "^2.9",
-        "drupal/upgrade_status": "^3.13",
         "drupal/views_infinite_scroll": "^1.9",
         "drupal/views_show_more": "^1.0",
         "drupal/youtube": "^1.2",
@@ -59,6 +58,7 @@
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
         "dmore/behat-chrome-extension": "^1.3",
         "drupal/coder": "^8.3.1",
+        "drupal/core-dev": "9.5.11",
         "drupal/drupal-driver": "^2.1",
         "drupal/drupal-extension": "^4",
         "genesis/behat-fail-aid": "^2.1",
@@ -66,7 +66,7 @@
         "mikey179/vfsstream": "^1.2",
         "phpunit/phpunit": "^9",
         "squizlabs/php_codesniffer": "^3.4.0",
-        "symfony/css-selector": "^2.8"
+        "symfony/css-selector": "^4.4"
     },
     "conflict": {
             "drupal/drupal": "*"
@@ -153,7 +153,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "platform": {
-            "php": "7.3"
+            "php": "8.1"
         },
         "allow-plugins": {
             "composer/installers": true,
