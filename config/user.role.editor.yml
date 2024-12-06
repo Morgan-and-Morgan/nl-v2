@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - feeds.feed_type.results
     - filter.format.full_html
     - filter.format.restricted_html
     - media.type.audio
@@ -20,6 +21,7 @@ dependencies:
     - taxonomy.vocabulary.tags
   module:
     - block
+    - block_content
     - comment
     - contact
     - contextual
@@ -27,6 +29,7 @@ dependencies:
     - file
     - filter
     - google_tag
+    - help
     - language
     - media
     - node
@@ -45,15 +48,19 @@ weight: 3
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access block library'
   - 'access content overview'
   - 'access contextual links'
   - 'access feed overview'
   - 'access files overview'
+  - 'access help pages'
   - 'access media overview'
   - 'access site reports'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
+  - 'administer block content'
+  - 'administer block types'
   - 'administer blocks'
   - 'administer contact forms'
   - 'administer google tag manager'
@@ -99,6 +106,7 @@ permissions:
   - 'delete own attorney content'
   - 'delete own audio media'
   - 'delete own document media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own page content'
   - 'delete own practice_area content'

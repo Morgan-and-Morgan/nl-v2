@@ -53,5 +53,6 @@
   </li>
 
   {% set output = output ~ _context['output'] %}
+{% endfor %}
 
 {{ output|trim }} {# Output all items, joined without spaces, and trim the result #}
