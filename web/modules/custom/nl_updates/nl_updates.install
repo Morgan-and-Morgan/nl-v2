@@ -6,30 +6,35 @@
  */
 
 /**
- * Remove the 'module_to_delete' module from the system.
+ * Remove the all needed $modules_to_delete from the system.
  */
 function nl_updates_update_9001() {
-  $module_to_remove = 'drupal_ftp_global_vars';
+  $modules_to_remove = [
+    'drupal_ftp_global_vars'
+  ];
 
-  // Remove the module from the 'core.extension' configuration.
-  $config = \Drupal::configFactory()->getEditable('core.extension');
-  $installed_modules = $config->get('module');
+  foreach ($modules_to_remove as $module_name) {
+    // Execute the SQL query to retrieve data from the key_value table.
+    $query = \Drupal::database()->select('key_value', 'kv')
+      ->fields('kv', ['name'])
+      ->condition('collection', 'system.schema')
+      ->condition('name', $module_name)
+      ->execute();
 
-  if (isset($installed_modules[$module_to_remove])) {
-    unset($installed_modules[$module_to_remove]);
-    $config->set('module', $installed_modules)->save();
-    drupal_set_message(t('The %module module has been removed from core.extension.', ['%module' => $module_to_remove]));
+    // Fetch the results.
+    $results = $query->fetchAll();
+
+    // Log the results to the watchdog for debugging purposes.
+    if (!empty($results)) {
+      foreach ($results as $record) {
+        \Drupal::logger('mymodule')->info('Module found: @module', ['@module' => $record->name]);
+      }
+    }
+    else {
+      \Drupal::logger('mymodule')->warning('No modules found in the "system.schema" collection.');
+    }
   }
 
-  // Drop the module's database tables.
-  $schema = \Drupal::service('database')->schema();
-  if ($schema->tableExists('example_table')) {
-    $schema->dropTable('example_table');
-    drupal_set_message(t('Dropped table example_table for module %module.', ['%module' => $module_to_remove]));
-  }
-
-  // Optional: Remove custom configurations provided by the module.
-  \Drupal::service('config.storage')->deleteCollection($module_to_remove);
-
-  drupal_set_message(t('Module %module has been uninstalled.', ['%module' => $module_to_remove]));
+  // Return an informative message.
+  return t('Checked and logged modules in the "system.schema" collection.');
 }
