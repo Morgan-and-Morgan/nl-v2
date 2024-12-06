@@ -10,6 +10,7 @@
 /drush/Commands/
 /vendor/
 /web/core/
+/web/libraries
 /web/modules/contrib/
 /web/modules/README.txt
 /web/themes/contrib/

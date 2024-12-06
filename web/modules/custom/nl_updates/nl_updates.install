@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Nationlaw Updates module.
+ */
+
+/**
+ * Remove the 'module_to_delete' module from the system.
+ */
+function nl_updates_update_9001() {
+  $module_to_remove = 'drupal_ftp_global_vars';
+
+  // Remove the module from the 'core.extension' configuration.
+  $config = \Drupal::configFactory()->getEditable('core.extension');
+  $installed_modules = $config->get('module');
+
+  if (isset($installed_modules[$module_to_remove])) {
+    unset($installed_modules[$module_to_remove]);
+    $config->set('module', $installed_modules)->save();
+    drupal_set_message(t('The %module module has been removed from core.extension.', ['%module' => $module_to_remove]));
+  }
+
+  // Drop the module's database tables.
+  $schema = \Drupal::service('database')->schema();
+  if ($schema->tableExists('example_table')) {
+    $schema->dropTable('example_table');
+    drupal_set_message(t('Dropped table example_table for module %module.', ['%module' => $module_to_remove]));
+  }
+
+  // Optional: Remove custom configurations provided by the module.
+  \Drupal::service('config.storage')->deleteCollection($module_to_remove);
+
+  drupal_set_message(t('Module %module has been uninstalled.', ['%module' => $module_to_remove]));
+}
