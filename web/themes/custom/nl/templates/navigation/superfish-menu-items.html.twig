@@ -20,9 +20,9 @@
 #}
 
 {% set classes = [] %}
-{% spaceless %}
-{% for item in menu_items %}
+{% set output = '' %}  {# Initialize an empty string to store the output #}
 
+{% for item in menu_items %}
   {% if item.children is not empty %}
     {% set item_class = item.item_class ~ ' menuparent' %}
     {% if item.multicolumn_column %}
@@ -30,9 +30,9 @@
     {% endif %}
   {% endif %}
 
-  <li{{ item.attributes }}>
-    {% if item.multicolumn_column %}
-    <div class="sf-multicolumn-column">
+<li{{ item.attributes }}>
+  {% if item.multicolumn_column %}
+  <div class="sf-multicolumn-column">
     {% endif %}
     {% if item.children is not empty %}
       {{ item.link_menuparent }}
@@ -41,16 +41,17 @@
       {{ item.link }}
     {% endif %}
     {% if item.multicolumn_wrapper %}<ul class="sf-multicolumn">
-    <li class="sf-multicolumn-wrapper {{ item.item_class }}">
+      <li class="sf-multicolumn-wrapper {{ item.item_class }}">
+        {% endif %}
+        {% if item.children is not empty %}
+        {% if item.multicolumn_content %}<ol>{% else %}<ul>{% endif %}
+            {{ item.children }}
+          {% if item.multicolumn_content %}</ol>{% else %}</ul>{% endif %}
     {% endif %}
-    {% if item.children is not empty %}
-      {% if item.multicolumn_content %}<ol>{% else %}<ul>{% endif %}
-      {{ item.children }}
-      {% if item.multicolumn_content %}</ol>{% else %}</ul>{% endif %}
-    {% endif %}
-    {% if item.multicolumn_wrapper %}</li></ul>{% endif %}
-    {% if item.multicolumn_column %}</div>{% endif %}
+  {% if item.multicolumn_wrapper %}</li></ul>{% endif %}
+  {% if item.multicolumn_column %}</div>{% endif %}
   </li>
 
-{% endfor %}
-{% endspaceless %}
+  {% set output = output ~ _context['output'] %}
+
+{{ output|trim }} {# Output all items, joined without spaces, and trim the result #}
