@@ -83,6 +83,7 @@ module:
   views: 10
   standard: 1000
 theme:
+  stable9: 0
   stable: 0
   classy: 0
   bartik: 0
