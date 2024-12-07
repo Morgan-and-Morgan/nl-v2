@@ -12,6 +12,7 @@ dependencies:
     - search
     - shortcut
     - system
+    - tfa
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated
@@ -25,6 +26,7 @@ permissions:
   - 'access site-wide contact form'
   - 'post comments'
   - 'search content'
+  - 'setup own tfa'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'

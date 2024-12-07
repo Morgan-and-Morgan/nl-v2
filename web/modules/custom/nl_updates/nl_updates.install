@@ -1,0 +1,103 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Nationlaw Updates module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function nl_updates_schema() {
+  $schema['nl_updates_example'] = [
+    'description' => 'Table description.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique record ID.',
+      ],
+      'uid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The {users}.uid of the user who created the record.',
+      ],
+      'status' => [
+        'description' => 'Boolean indicating whether this record is active.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+      ],
+      'type' => [
+        'type' => 'varchar_ascii',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Type of the record.',
+      ],
+      'created' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Timestamp when the record was created.',
+      ],
+      'data' => [
+        'type' => 'blob',
+        'not null' => TRUE,
+        'size' => 'big',
+        'description' => 'The arbitrary data for the item.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'type' => ['type'],
+      'uid' => ['uid'],
+      'status' => ['status'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Nationlaw Updates module.
+ */
+
+/**
+ * Remove the all needed $modules_to_delete from the system.
+ */
+function nl_updates_update_9001()
+{
+  $modules_to_remove = [
+    'drupal_ftp_global_vars'
+  ];
+
+  foreach ($modules_to_remove as $module_name) {
+    // Execute the SQL query to retrieve data from the key_value table.
+    $query = \Drupal::database()->select('key_value', 'kv')
+      ->fields('kv', ['name'])
+      ->condition('collection', 'system.schema')
+      ->condition('name', $module_name)
+      ->execute();
+
+    // Fetch the results.
+    $results = $query->fetchAll();
+
+    // Log the results to the watchdog for debugging purposes.
+    if (!empty($results)) {
+      foreach ($results as $record) {
+        \Drupal::logger('mymodule')->info('Module found: @module', ['@module' => $record->name]);
+      }
+    } else {
+      \Drupal::logger('mymodule')->warning('No modules found in the "system.schema" collection.');
+    }
+  }
+
+  // Return an informative message.
+  return t('Checked and logged modules in the "system.schema" collection.');
+}
