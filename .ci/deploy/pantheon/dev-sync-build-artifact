@@ -1,0 +1,7 @@
+# Do not run certain build jobs on the template repo.
+if [[ "$CI_PROJECT_REPONAME" == 'mm-drupal-site-template-d9' ]]
+then
+  echo "Template repository does not deploy to Pantheon, nothing to do."
+else
+  rsync -rz /tmp/web /tmp/vendor /tmp/drush .
+fi

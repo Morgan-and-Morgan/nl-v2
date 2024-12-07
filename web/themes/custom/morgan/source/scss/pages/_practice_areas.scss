@@ -1,0 +1,258 @@
+@import "../modules/fonts";
+
+.practice-areas-page {
+  .region-content {
+    padding: 0;
+  }
+
+  h4 {
+    padding: 50px 0;
+  }
+
+  .practice-area {
+    margin: 20px;
+    position: relative;
+    text-align: center;
+    height: 270px;
+    overflow: hidden;
+    padding: 0;
+    background: #041743;
+
+    h3 {
+      position: absolute;
+      top: 115px;
+      width: 100%;
+      font-size: 35px;
+      @include normal-font(600);
+    }
+
+    &:not(.all) {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: .4;
+        background: linear-gradient(135deg, #b01725, #041743);
+      }
+      &:hover {
+        &:before {
+          background: linear-gradient(50deg, #b01725, #b01725);
+        }
+      }
+    }
+  }
+
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+// Practice Area Node
+.practice-area-container {
+  .region-breadcrumb {
+    padding: 0;
+
+    nav ol.breadcrumb {
+      background: none;
+      padding: 0;
+
+      .breadcrumb-item + .breadcrumb-item {
+        &:before {
+          content: ">";
+        }
+      }
+    }
+  }
+
+  .breadcrumbs.row {
+    padding: 0;
+    background: none;
+    border: none;
+
+    li {
+      float: left;
+      padding: 10px 5px 0;
+      list-style: none;
+    }
+  }
+
+  .row.inner {
+    border-top: solid 1px #156d8c;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 10px;
+
+    .center-content {
+      padding: 0;
+
+      .region.region-content {
+        padding: 0;
+      }
+
+      .banner {
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          opacity: .4;
+          background: linear-gradient(135deg, #b01725, #041743);
+        }
+
+        h1 {
+          width: 500px;
+          text-align: center;
+          position: absolute;
+          top: 80px;
+          left: 50%;
+          margin-left: -250px;
+          border-top: solid 2px white;
+          border-bottom: solid 2px white;
+          padding: 20px 0;
+
+          @media screen and (max-width: 991px) {
+            width: 350px;
+            margin-left: -175px;
+            top: 60px;
+            font-size: 35px;
+          }
+
+          @media screen and (max-width: 767px) {
+            font-size: 30px;
+            top: 100px;
+          }
+        }
+      }
+
+      .content {
+        padding: 15px;
+
+        h1, h2, h3, h4 {
+          padding: 20px 0;
+        }
+
+        p {
+          line-height: 1.75em;
+        }
+      }
+    }
+
+    .left-nav {
+      padding-left: 0;
+
+      ul.nav.navbar-nav {
+        li.nav-item {
+          a {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+
+      a {
+        color: #041743;
+        display: block;
+        padding: 6px 0 0 0;
+        font-size: 15px;
+      }
+
+      a.active {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .left-nav.hidden-sm-down {
+        display: none !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    padding: 0;
+
+    .region-content {
+      padding: 0;
+    }
+
+    .row.inner {
+      padding-top: 0;
+    }
+  }
+}
+
+
+.page-node-type-practice-area {
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.view-practice-areas {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  a {
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: 100%;
+    color: #464a4c;
+    @include normal-font(400);
+
+    &:first-child {
+      border-top-right-radius: 0.25rem;
+      border-top-left-radius: 0.25rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom-right-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    &:hover,
+    &:focus {
+      color: #464a4c;
+      text-decoration: none;
+      background-color: #f7f7f9;
+    }
+  }
+}
+
+.block-views-blockpractice-areas-practice-areas {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  padding: 50px 0;
+}

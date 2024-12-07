@@ -1,0 +1,387 @@
+@import "../modules/fonts";
+
+// Generic
+.medium-headline {
+  @include headline-font(800);
+
+  &.light {
+    @include normal-font(100);
+  }
+}
+
+.large-headline {
+  @include headline-font(800);
+}
+
+.small-headline {
+  @include normal-font(100);
+}
+
+.container-fluid {
+  padding: 0;
+
+  .panel {
+    text-align: center;
+  }
+
+  .panel.banner {
+    background: url(/themes/custom/nl/images/hero-min.jpg) no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    padding: 30px;
+    position: relative;
+
+    .content {
+      z-index: 1;
+      background: transparent;
+    }
+
+    img#protect-and-serve {
+      width: 250px;
+      padding-bottom: 30px;
+    }
+
+    .banner-header {
+      margin-top: 20px;
+      line-height: 1.3em;
+
+      h2 {
+        font-size: 3em;
+      }
+    }
+
+    .banner-subtext {
+      text-transform: uppercase;
+      margin-top: 20px;
+      font-size: 1.4em;
+
+      .svg-inline--fa {
+        display: block;
+        margin: 25px auto;
+        font-size: 1.4em;
+      }
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+
+    .stars-container {
+      margin-top: 10px;
+    }
+  }
+
+  .panel.red-stripe {
+    background: #b01725;
+    color: #ffffff;
+
+    a {
+      padding: 15px;
+      display: block;
+      color: #ffffff;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        display: inline-block;
+        font-size: 20px;
+        @include headline-font($weight: 400);
+
+        @media screen and (max-width: 767px) {
+          font-size: 12px;
+        }
+      }
+
+      .svg-inline--fa {
+        font-size: 20px;
+        margin-left: 20px;
+
+        @media screen and (max-width: 767px) {
+          font-size: 12px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  .panel.results {
+    background: white;
+    color: black;
+    padding: 40px 0 80px 0;
+
+    .litigation-results {
+      margin: 60px 0;
+
+      .litigation-result {
+        h2 {
+          font-size: 70px;
+        }
+
+        h4 {
+          letter-spacing: 7px;
+        }
+
+        .result-description {
+          padding-top: 15px;
+
+          p {
+            color: #b1b1b1;
+          }
+        }
+
+        //&:not(.slick-slide) {
+        //  display: none;
+        //}
+      }
+    }
+
+    .button {
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+  }
+
+  .panel.protect-and-serve {
+    background: url(/themes/custom/nl/images/banners/map_bg-min.jpg) no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 90px 0;
+
+    .panel-inner {
+      width: 70%;
+      margin: auto;
+
+      @media screen and (max-width: 991px) {
+        width: 90%;
+      }
+
+      h3 {
+        font-size: 60px;
+        width: 80%;
+        margin: auto;
+        padding: 10px 0;
+
+        @media screen and (max-width: 991px) {
+          font-size: 30px;
+          width: 95%;
+        }
+      }
+
+      h4 {
+        padding: 10px 0;
+      }
+
+      h5 {
+        padding: 10px 0;
+        font-weight: 100;
+      }
+
+      img {
+        padding-bottom: 50px;
+      }
+    }
+  }
+
+  .panel.quote {
+    background: url(/themes/custom/nl/images/banners/flag-min.jpg) no-repeat;
+    background-size: cover;
+
+    .image-container {
+      position: relative;
+      right: -50px;
+      text-align: right;
+
+      img {
+        max-height: 500px;
+      }
+
+      @media screen and (max-width: 767px) {
+        right: 0;
+
+        img {
+          max-height: 350px;
+        }
+      }
+
+      @media screen and (max-width: 575px) {
+        right: 70px;
+
+        img {
+          max-height: 280px;
+        }
+      }
+    }
+
+    .text-container {
+      background: transparent;
+      text-align: right;
+      padding-top: 80px;
+
+      @media screen and (max-width: 420px) {
+        padding: 20px 20px 10px 50px;
+      }
+
+      h3 {
+        font-weight: bold;
+        letter-spacing: inherit;
+
+        @media screen and (max-width: 420px) {
+          font-size: 13px;
+          padding: 0 25px;
+        }
+      }
+
+      p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+
+        @media screen and (max-width: 420px) {
+          font-size: 13px;
+        }
+
+        .svg-inline--fa {
+          color: #b01725;
+          font-size: 25px;
+          padding: 0 15px 0 0;
+          position: relative;
+          top: -15px;
+          width: auto;
+
+          @media screen and (max-width: 767px) {
+            font-size: 18px;
+          }
+
+          @media screen and (max-width: 420px) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        text-align: center;
+        padding: 50px 25px 10px 25px;
+
+        h3 {
+          font-size: 15px;
+        }
+      }
+
+      @media screen and (max-width: 575px) {
+        text-align: center;
+        padding: 30px 20px 10px 25px;
+
+        h3 {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .panel.video {
+    background: url(/themes/custom/nl/images/banners/bg-img-we-the-people-min.jpg) no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+
+    iframe {
+      margin-top: 40px;
+      width: 50%;
+
+      @media screen and (max-width: 991px) {
+        width: 90%;
+      }
+    }
+  }
+}
+
+// Content Bottom Region
+.trust-container {
+  padding: 60px 0 !important;
+  text-align: center;
+
+  h3 {
+    padding: 10px 0;
+  }
+
+  .logos-container {
+    padding: 40px 10px 40px 10px;
+    align-items: center;
+
+    .col-3 {
+      margin: 0 10px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin: 0 0;
+      }
+    }
+  }
+}
+
+.button.clear {
+  background: transparent;
+  border-radius: 5px;
+  text-align: center;
+  color: #ffffff !important;
+  padding: 10px;
+  border: solid 1px #ffffff;
+  cursor: pointer;
+
+  @media screen and (max-width: 991px) {
+    font-size: 12px;
+  }
+}
+
+.button.red {
+  background: #b01725 !important;
+  border-radius: 5px;
+  text-align: center;
+  color: #ffffff !important;
+  padding: 10px;
+  border: solid 1px #ffffff;
+  cursor: pointer;
+  margin-right: 0;
+  margin-left: 10px;
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
+
+.buttons-container {
+  .button.red {
+    @media screen and (max-width: 991px) {
+      font-size: 12px;
+    }
+  }
+}
+
+* {
+  scroll-behavior: smooth !important;
+}
+
+.slick-dots {
+  li {
+    @media screen and (max-width: 420px) {
+      margin: 0 3px;
+    }
+  }
+}
+
+.litigation-results {
+  .slick-dots {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}

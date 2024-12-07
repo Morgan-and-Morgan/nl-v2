@@ -1,0 +1,78 @@
+@import "../modules/fonts";
+
+.path-video-gallery {
+  .region-content {
+    padding: 0;
+  }
+
+  .videos {
+    padding: 40px 0;
+
+    .video {
+      cursor: pointer;
+      padding: 5px 5px;
+      height: 200px;
+      margin: 5px 0;
+
+      .yt-container {
+        position: relative;
+        height: 100%;
+
+        .overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #b01725;
+          opacity: .6;
+          display: none;
+        }
+
+        .title {
+          position: absolute;
+          display: none;
+          padding-left: 10px;
+          padding-right: 10px;
+          top: 50px;
+          color: white;
+          text-align: center;
+          width: 100%;
+          font-size: 30px;
+          @include normal-font(600);
+        }
+
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+
+        &:hover {
+          .overlay {
+            display: block;
+          }
+          .title {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .case-evaluation-form-container {
+    h1 {
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.video-popup-container {
+  .modal-body {
+    padding: 0;
+
+    iframe {
+      width: 100%;
+      height: 300px;
+    }
+  }
+}

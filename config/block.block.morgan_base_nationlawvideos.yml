@@ -1,0 +1,31 @@
+uuid: 0ba4ca19-fc9f-4c49-a2f7-6e61388f61d7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:video:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
+  module:
+    - block_content
+    - system
+  theme:
+    - morgan_base
+id: morgan_base_nationlawvideos
+theme: morgan_base
+region: content
+weight: -8
+provider: null
+plugin: 'block_content:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
+settings:
+  id: 'block_content:226ea86c-71ab-4d48-9e71-cf614bfce6f6'
+  label: 'Nation Law Videos'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /video-gallery

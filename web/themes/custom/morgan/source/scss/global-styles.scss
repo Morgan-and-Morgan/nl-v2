@@ -1,0 +1,27 @@
+// Sub theme styling.
+// These styles are relevant to every page and therefore
+// compiled into a single global-styles.css file located
+// at dist/css/global/global-styles.css
+// @see morgan.libraries.yml - global-styling
+
+// The global styles from the Morgan base theme are included via
+// the morgan_base.info.yml file.
+
+// Override Morgan base styles.
+// Components
+@import "components/footer";
+@import "components/forms";
+@import "components/header";
+@import "components/nav_menu";
+@import "components/sidebar_form";
+
+// Global
+@import "overrides/global";
+
+// Modules
+@import "modules/breakpoints";
+@import "modules/fonts";
+
+// Lib
+@import "lib/slick";
+@import "lib/slick-theme";
