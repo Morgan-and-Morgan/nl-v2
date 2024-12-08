@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: results
 label: Results
-revision: 0
-description: 'Use ''Results'' block on Our Results page'
+revision: false
+description: "Use 'Results' block on Our Results page"
