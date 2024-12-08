@@ -1,0 +1,161 @@
+uuid: 48029f62-a0ea-4580-99ae-2e5c0f726a62
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.results
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.article
+    - node.type.attorney
+    - node.type.page
+    - node.type.practice_area
+    - node.type.results
+    - node.type.testimonial
+    - taxonomy.vocabulary.practice_area_categories
+    - taxonomy.vocabulary.tags
+  module:
+    - block
+    - block_content
+    - comment
+    - contact
+    - contextual
+    - feeds
+    - file
+    - filter
+    - google_tag
+    - help
+    - language
+    - media
+    - node
+    - path
+    - pathauto
+    - redirect
+    - search
+    - shortcut
+    - system
+    - taxonomy
+    - tfa
+    - toolbar
+id: editor
+label: Editor
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access feed overview'
+  - 'access files overview'
+  - 'access help pages'
+  - 'access media overview'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer block content'
+  - 'administer block types'
+  - 'administer blocks'
+  - 'administer contact forms'
+  - 'administer google_tag_container'
+  - 'administer languages'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer shortcuts'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'bypass node access'
+  - 'create article content'
+  - 'create attorney content'
+  - 'create audio media'
+  - 'create document media'
+  - 'create image media'
+  - 'create media'
+  - 'create page content'
+  - 'create practice_area content'
+  - 'create remote_video media'
+  - 'create results content'
+  - 'create terms in practice_area_categories'
+  - 'create terms in tags'
+  - 'create testimonial content'
+  - 'create url aliases'
+  - 'create video media'
+  - 'delete any article content'
+  - 'delete any attorney content'
+  - 'delete any audio media'
+  - 'delete any document media'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any page content'
+  - 'delete any practice_area content'
+  - 'delete any remote_video media'
+  - 'delete any results content'
+  - 'delete any testimonial content'
+  - 'delete any video media'
+  - 'delete media'
+  - 'delete own article content'
+  - 'delete own attorney content'
+  - 'delete own audio media'
+  - 'delete own document media'
+  - 'delete own files'
+  - 'delete own image media'
+  - 'delete own page content'
+  - 'delete own practice_area content'
+  - 'delete own remote_video media'
+  - 'delete own results content'
+  - 'delete own testimonial content'
+  - 'delete own video media'
+  - 'delete terms in practice_area_categories'
+  - 'delete terms in tags'
+  - 'edit any article content'
+  - 'edit any attorney content'
+  - 'edit any audio media'
+  - 'edit any document media'
+  - 'edit any image media'
+  - 'edit any page content'
+  - 'edit any practice_area content'
+  - 'edit any remote_video media'
+  - 'edit any results content'
+  - 'edit any testimonial content'
+  - 'edit any video media'
+  - 'edit own article content'
+  - 'edit own attorney content'
+  - 'edit own audio media'
+  - 'edit own comments'
+  - 'edit own document media'
+  - 'edit own image media'
+  - 'edit own page content'
+  - 'edit own practice_area content'
+  - 'edit own remote_video media'
+  - 'edit own results content'
+  - 'edit own testimonial content'
+  - 'edit own video media'
+  - 'edit terms in practice_area_categories'
+  - 'edit terms in tags'
+  - 'setup own tfa'
+  - 'update any media'
+  - 'update media'
+  - 'use advanced search'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view article revisions'
+  - 'view attorney revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view practice_area revisions'
+  - 'view results feeds'
+  - 'view results revisions'
+  - 'view testimonial revisions'
+  - 'view the administration theme'
