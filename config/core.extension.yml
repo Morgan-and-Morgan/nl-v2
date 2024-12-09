@@ -19,7 +19,6 @@ module:
   dblog: 0
   devel: 0
   devel_kint_extras: 0
-  drupal_ftp_global_vars: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -33,7 +32,6 @@ module:
   file: 0
   filter: 0
   fontawesome: 0
-  ga_login: 0
   google_tag: 0
   help: 0
   history: 0
@@ -48,6 +46,8 @@ module:
   menu_ui: 0
   metatag: 0
   metatag_open_graph: 0
+  mysql: 0
+  nl_updates: 0
   node: 0
   options: 0
   page_cache: 0
