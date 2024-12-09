@@ -1,3 +1,4 @@
+@use "sass:meta";
 @charset "UTF-8";
 
 // Default Variables
@@ -22,7 +23,7 @@ $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
 
 @function slick-image-url($url) {
-    @if function-exists(image-url) {
+    @if meta.function-exists(image-url) {
         @return image-url($url);
     }
     @else {

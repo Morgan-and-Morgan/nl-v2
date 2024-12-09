@@ -1,4 +1,5 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 .lower-container {
   padding: 40px 0;
@@ -64,7 +65,7 @@
   }
 
   .text-container h4 {
-    @include normal-font(600);
+    @include mixins.normal-font(600);
     font-size: 16px;
 
     span {

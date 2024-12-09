@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const sourcemaps = require("gulp-sourcemaps");
 const webpack = require("webpack-stream");
@@ -35,7 +35,17 @@ gulp.task("js:build-main-js", function (cb) {
         mode: "production",
         optimization: {
           minimize: true,
-        }
+        },
+        plugins: [
+          new (require("webpack")).ProvidePlugin({
+            process: "process/browser", // Polyfill process for browser
+          }),
+        ],
+        resolve: {
+          fallback: {
+            process: require.resolve("process/browser"), // Add process fallback
+          },
+        },
       })
     )
     .pipe(gulp.dest("./dist"));

@@ -1,0 +1,21 @@
+@mixin normal-font($weight: 400) {
+  @if $weight == 100 {
+    font-family: 'OpenSans Light';
+  } @else if $weight == 400 {
+    font-family: 'OpenSans Regular';
+  } @else if $weight == 600 {
+    font-family: 'OpenSans Bold';
+  } @else {
+    font-family: 'OpenSans Regular';
+  }
+}
+
+@mixin headline-font($weight: 400) {
+  @if $weight == 400 {
+    font-family: 'Old Standard Regular';
+  } @else if $weight == 800 {
+    font-family: 'Old Standard TT Bold';
+  } @else {
+    font-family: 'Old Standard Regular';
+  }
+}

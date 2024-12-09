@@ -1,20 +1,21 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 // Generic
 .medium-headline {
-  @include headline-font(800);
+  @include mixins.headline-font(800);
 
   &.light {
-    @include normal-font(100);
+    @include mixins.normal-font(100);
   }
 }
 
 .large-headline {
-  @include headline-font(800);
+  @include mixins.headline-font(800);
 }
 
 .small-headline {
-  @include normal-font(100);
+  @include mixins.normal-font(100);
 }
 
 .container-fluid {
@@ -90,7 +91,7 @@
         text-transform: uppercase;
         display: inline-block;
         font-size: 20px;
-        @include headline-font($weight: 400);
+        @include mixins.headline-font($weight: 400);
 
         @media screen and (max-width: 767px) {
           font-size: 12px;
