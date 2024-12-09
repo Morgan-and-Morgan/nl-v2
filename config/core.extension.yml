@@ -8,7 +8,7 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
-  ckeditor: 0
+  ckeditor5: 0
   color: 0
   comment: 0
   config: 0
@@ -19,7 +19,6 @@ module:
   dblog: 0
   devel: 0
   devel_kint_extras: 0
-  drupal_ftp_global_vars: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -33,7 +32,6 @@ module:
   file: 0
   filter: 0
   fontawesome: 0
-  ga_login: 0
   google_tag: 0
   help: 0
   history: 0
@@ -48,11 +46,14 @@ module:
   menu_ui: 0
   metatag: 0
   metatag_open_graph: 0
+  mysql: 0
+  nl_updates: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
+  phpass: 0
   prevnext: 0
   rdf: 0
   real_aes: 0
@@ -82,8 +83,7 @@ module:
   views: 10
   standard: 1000
 theme:
-  stable: 0
-  classy: 0
+  stable9: 0
   bartik: 0
   seven: 0
   bootstrap4: 0
