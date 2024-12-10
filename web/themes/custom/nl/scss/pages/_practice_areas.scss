@@ -1,4 +1,5 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 .practice-areas-page {
   .region-content {
@@ -23,7 +24,7 @@
       top: 115px;
       width: 100%;
       font-size: 35px;
-      @include normal-font(600);
+      @include mixins.normal-font(600);
     }
 
     &:not(.all) {
@@ -228,7 +229,7 @@
     border: 1px solid rgba(0, 0, 0, 0.125);
     width: 100%;
     color: #464a4c;
-    @include normal-font(400);
+    @include mixins.normal-font(400);
 
     &:first-child {
       border-top-right-radius: 0.25rem;

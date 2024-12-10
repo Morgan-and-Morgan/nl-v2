@@ -1,4 +1,5 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 .path-video-gallery {
   .region-content {
@@ -37,7 +38,7 @@
           text-align: center;
           width: 100%;
           font-size: 30px;
-          @include normal-font(600);
+          @include mixins.normal-font(600);
         }
 
         iframe {

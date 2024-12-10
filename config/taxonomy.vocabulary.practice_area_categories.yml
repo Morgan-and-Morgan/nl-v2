@@ -6,3 +6,4 @@ name: Categories
 vid: practice_area_categories
 description: 'Use it to add Practice Area Category'
 weight: 0
+new_revision: false

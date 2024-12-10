@@ -1,31 +1,32 @@
 // Components
-@import "components/footer";
-@import "components/forms";
-@import "components/header";
-@import "components/nav_menu";
-@import "components/sidebar_form";
+@use "components/footer";
+@use "components/forms";
+@use "components/header";
+@use "components/nav_menu";
+@use "components/sidebar_form";
 
 // Global
-@import "overrides/global";
+@use "overrides/global";
 
 // Modules
-@import "modules/breakpoints";
-@import "modules/fonts";
+@use "modules/breakpoints";
+@use "modules/fonts";
+@use "modules/mixins";
 
 // Lib
-@import "lib/slick";
-@import "lib/slick-theme";
+@use "lib/slick";
+@use "lib/slick-theme";
 
 // Pages
-@import "pages/article";
-@import "pages/attorneys";
-@import "pages/basic_page";
-@import "pages/blog";
-@import "pages/blog_node";
-@import "pages/contact_us";
-@import "pages/front";
-@import "pages/menu";
-@import "pages/our_results";
-@import "pages/practice_areas";
-@import "pages/testimonials";
-@import "pages/video";
+@use "pages/article";
+@use "pages/attorneys";
+@use "pages/basic_page";
+@use "pages/blog";
+@use "pages/blog_node";
+@use "pages/contact_us";
+@use "pages/front";
+@use "pages/menu";
+@use "pages/our_results";
+@use "pages/practice_areas";
+@use "pages/testimonials";
+@use "pages/video";
