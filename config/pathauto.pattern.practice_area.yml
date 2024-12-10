@@ -10,7 +10,7 @@ type: 'canonical_entities:node'
 pattern: '/practice-areas/[node:title]'
 selection_criteria:
   cda69824-3a97-46a5-8c01-af93a0981a02:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: cda69824-3a97-46a5-8c01-af93a0981a02
     context_mapping:
