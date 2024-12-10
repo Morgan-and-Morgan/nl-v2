@@ -1,4 +1,5 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 .path-blog {
   .region-content {
@@ -57,7 +58,7 @@
 
         .field--name-body {
           margin-top: 0;
-          @include normal-font($weight: 100);
+          @include mixins.normal-font($weight: 100);
         }
 
         .red.caps.bold {
@@ -130,7 +131,7 @@
           padding: 5px;
           padding-right: 30px;
           cursor: pointer;
-          @include headline-font($weight: 400);
+          @include mixins.headline-font($weight: 400);
         }
       }
 
@@ -140,7 +141,7 @@
         padding: 5px;
         padding-right: 30px;
         cursor: pointer;
-        @include headline-font($weight: 400);
+        @include mixins.headline-font($weight: 400);
       }
     }
   }

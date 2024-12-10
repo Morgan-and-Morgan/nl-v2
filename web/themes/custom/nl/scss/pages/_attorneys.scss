@@ -1,4 +1,5 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 .path-attorneys {
   .region-content {
@@ -64,7 +65,7 @@
 
       .mn-description {
         padding: 80px 0 30px;
-        @include normal-font(100);
+        @include mixins.normal-font(100);
 
         @media screen and (max-width: 767px) {
           padding-top: 0;
@@ -146,19 +147,19 @@
         }
 
         .field--name-body {
-          @include normal-font(100);
+          @include mixins.normal-font(100);
         }
 
         span svg {
           padding-right: 3px;
           min-width: 1.5rem;
-          @include normal-font(100);
+          @include mixins.normal-font(100);
         }
 
         .email {
           a {
             color: #292b2c;
-            @include normal-font(100);
+            @include mixins.normal-font(100);
 
             &:focus,
             &:hover {
