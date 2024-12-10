@@ -17,6 +17,7 @@
 /web/profiles/contrib/
 /web/profiles/README.txt
 /web/private/scripts/quicksilver
+/web/libraries
 /console/
 
 # Ignore scaffold files
