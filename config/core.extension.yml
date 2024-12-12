@@ -48,6 +48,7 @@ module:
   mm_design_system: 0
   mm_extras: 0
   mm_forms_icarus: 0
+  mm_ftp_global_vars: 0
   mm_utilities: 0
   mysql: 0
   nl_updates: 0
