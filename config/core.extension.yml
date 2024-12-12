@@ -55,6 +55,7 @@ module:
   path_alias: 0
   phpass: 0
   prevnext: 0
+  profile_switcher: 0
   rdf: 0
   real_aes: 0
   redirect: 0
@@ -81,11 +82,11 @@ module:
   pathauto: 1
   trailing_slash: 1
   views: 10
-  standard: 1000
+  mm_drupal_core_d9_shared_infra: 1000
 theme:
   stable9: 0
   bartik: 0
   seven: 0
   bootstrap4: 0
   nl: 0
-profile: standard
+profile: mm_drupal_core_d9_shared_infra
