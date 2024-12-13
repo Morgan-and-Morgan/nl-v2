@@ -1,4 +1,5 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 .path-about {
   .region-content {
@@ -19,7 +20,7 @@
 
         h3 {
           padding-bottom: 20px;
-          @include normal-font($weight: 600);
+          @include mixins.normal-font($weight: 600);
         }
       }
 

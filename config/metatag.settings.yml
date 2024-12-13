@@ -16,3 +16,4 @@ entity_type_groups:
       basic: basic
       advanced: advanced
       open_graph: open_graph
+tag_trim_end: '|.,-:;/+&([{"'''
