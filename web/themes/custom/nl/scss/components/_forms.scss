@@ -57,7 +57,7 @@
 
 .container-fluid {
   .case-evaluation-form-container {
-    h1 {
+    h2 {
       font-weight: bold;
       padding-bottom: 20px;
       @include mixins.normal-font($weight: 400);
