@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.attorney.body
     - field.field.node.attorney.field_attorney_image
+    - field.field.node.attorney.field_attorney_metatags
     - field.field.node.attorney.field_badges
     - field.field.node.attorney.field_email
     - field.field.node.attorney.field_header_text
@@ -13,6 +14,7 @@ dependencies:
     - node.type.attorney
   module:
     - media
+    - metatag
     - text
     - user
 id: node.attorney.default
@@ -35,6 +37,13 @@ content:
       image_style: ''
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_attorney_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
     region: content
   field_badges:
     type: string
