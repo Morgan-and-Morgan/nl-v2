@@ -36,7 +36,7 @@
         "dmore/behat-chrome-extension": "^1.4"
     },
     "conflict": {
-            "drupal/drupal": "*"
+        "drupal/drupal": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -75,18 +75,43 @@
             "@build-theme-nl"
         ],
         "build-theme-nl": [
-            "cd web/themes/custom/nl && npm ci; npm run build;"
+            "cd web/themes/custom/nl; npm -v; node -v; npm install --unsafe-perm; npm rebuild node-sass; npm run build;"
+        ],
+        "nuke-profile": [
+            "rm -Rf web/profiles/contrib/ vendor/ composer.lock"
+        ],
+        "nuke-site": [
+            "rm -Rf web/profiles/contrib/ vendor/ composer.lock web/themes/contrib web/theme/custom/nl/dist web/theme/custom/nl/node_modules"
+        ],
+        "nuke-rebuild": [
+            "composer nuke-site",
+            "composer install",
+            "composer build-theme-nl"
         ]
     },
     "extra": {
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/private/scripts/quicksilver/{$name}/": [
+                "type:quicksilver-script"
+            ]
         },
         "build-env": {
             "install-cms": [

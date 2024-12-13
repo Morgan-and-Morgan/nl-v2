@@ -1,33 +1,25 @@
 const gulp = require("gulp");
 const sass = require('gulp-sass')(require('sass'));
-const concat = require('gulp-concat');
-const sourcemaps = require("gulp-sourcemaps");
 const webpack = require("webpack-stream");
 
 /** SASS TASKS **/
-gulp.task("sass:build", function (cb) {
-  gulp
+function buildSass() {
+  return gulp
     .src("./scss/style.scss")
-    // .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }).on("error", sass.logError))
-    // .pipe(sourcemaps.write())
-    // .pipe(concat('index.css'))
     .pipe(gulp.dest("./dist"));
-  cb();
-});
+}
 
-gulp.task("sass:watch", function (cb) {
-  gulp.watch(["./scss/style.scss", "./scss/*/*.scss"], gulp.series("sass:build"));
-  cb();
-});
+function watchSass() {
+  gulp.watch(["./scss/style.scss", "./scss/**/*.scss"], buildSass);
+}
 
 /** JS TASKS **/
-gulp.task("js:build-main-js", function (cb) {
-  gulp
+function buildJS() {
+  return gulp
     .src("./js/main.js")
     .pipe(
       webpack({
-        //config options
         entry: "./js/main.js",
         output: {
           filename: "main-min.js"
@@ -49,36 +41,20 @@ gulp.task("js:build-main-js", function (cb) {
       })
     )
     .pipe(gulp.dest("./dist"));
-  cb();
-});
+}
 
-/* watch js directory for changes */
-gulp.task("js:watch", function (cb) {
-  gulp.watch(
-    "./js/*.js",
-    gulp.series(
-      "js:build-main-js"
-    )
-  );
-  cb();
-});
+function watchJS() {
+  gulp.watch("./js/*.js", buildJS);
+}
 
-/** ASSETS WATCH **/
-gulp.task(
-  "assets:watch",
-  gulp.series(
-    "sass:build",
-    "sass:watch",
-    "js:build-main-js",
-    "js:watch"
-  )
-);
+/** ASSETS TASKS **/
+const watchAssets = gulp.parallel(watchSass, watchJS);
+const buildAssets = gulp.series(buildSass, buildJS);
 
-/** ASSETS BUILD **/
-gulp.task(
-  "assets:build",
-  gulp.series(
-    "sass:build",
-    "js:build-main-js",
-  )
-);
+/** EXPORT TASKS **/
+exports["sass:build"] = buildSass;
+exports["sass:watch"] = watchSass;
+exports["js:build-main-js"] = buildJS;
+exports["js:watch"] = watchJS;
+exports["assets:watch"] = watchAssets;
+exports["assets:build"] = buildAssets;
