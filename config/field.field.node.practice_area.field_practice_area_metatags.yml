@@ -1,0 +1,21 @@
+uuid: 5589bef0-b000-4915-b425-4944864145d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_practice_area_metatags
+    - node.type.practice_area
+  module:
+    - metatag
+id: node.practice_area.field_practice_area_metatags
+field_name: field_practice_area_metatags
+entity_type: node
+bundle: practice_area
+label: 'Practice Area Metatags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

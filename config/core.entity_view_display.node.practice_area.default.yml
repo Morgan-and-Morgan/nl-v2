@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.practice_area.field_image_thumbnail
     - field.field.node.practice_area.field_meta_tags
     - field.field.node.practice_area.field_name
+    - field.field.node.practice_area.field_practice_area_metatags
     - node.type.practice_area
   module:
     - media
@@ -34,6 +35,8 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 2
     region: content
@@ -43,6 +46,8 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content
@@ -57,4 +62,5 @@ hidden:
   field_highlighted: true
   field_meta_tags: true
   field_name: true
+  field_practice_area_metatags: true
   langcode: true

@@ -14,7 +14,6 @@ dependencies:
     - node.type.attorney
   module:
     - media
-    - metatag
     - text
     - user
 id: node.attorney.default
@@ -27,7 +26,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_attorney_image:
     type: media_thumbnail
@@ -35,15 +34,10 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_attorney_metatags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 102
+    weight: 5
     region: content
   field_badges:
     type: string
@@ -51,14 +45,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 101
+    weight: 7
     region: content
   field_email:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_header_text:
     type: string
@@ -66,7 +60,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_name:
     type: string
@@ -74,7 +68,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_phone:
     type: string
@@ -82,12 +76,13 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 6
     region: content
 hidden:
+  field_attorney_metatags: true
   langcode: true

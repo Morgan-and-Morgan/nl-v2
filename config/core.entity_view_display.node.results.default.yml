@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.results.field_amount
     - field.field.node.results.field_amount_short
     - field.field.node.results.field_amount_short_qualifier
+    - field.field.node.results.field_results_metatags
     - node.type.results
   module:
     - text
@@ -55,4 +56,5 @@ content:
     region: content
 hidden:
   feeds_item: true
+  field_results_metatags: true
   langcode: true
