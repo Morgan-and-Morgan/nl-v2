@@ -23,6 +23,25 @@
   }
 }
 
+.path-practice-areas {
+  .case-evaluation-form-container {
+    .large-headline {
+      color: #b01725;
+      font-size: 2.5rem;
+      padding-bottom: 0;
+      font-family: "Old Standard TT Bold";
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      line-height: 1.1;
+
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
 .path-frontpage .case-evaluation-form-container {
   background: url("/themes/custom/nl/images/bg-img-courthouse-min.jpg") no-repeat;
   background-size: cover;
