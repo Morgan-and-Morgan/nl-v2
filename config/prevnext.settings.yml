@@ -1,3 +1,13 @@
+prevnext_enabled_entity_types:
+  node: node
+prevnext_enabled_entity_bundles:
+  node:
+    article: article
+    attorney: attorney
+    page: page
+    practice_area: practice_area
+    results: results
+    testimonial: testimonial
 prevnext_enabled_nodetypes:
   article: article
   attorney: 0

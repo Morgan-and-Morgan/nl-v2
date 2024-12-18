@@ -52,6 +52,8 @@ content:
     settings:
       image_link: ''
       image_style: large
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content
@@ -81,3 +83,5 @@ hidden:
   field_header_text: true
   field_phone: true
   langcode: true
+  prevnext_next: true
+  prevnext_previous: true

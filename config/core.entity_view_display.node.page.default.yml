@@ -49,3 +49,5 @@ content:
 hidden:
   field_basic_page_metatags: true
   langcode: true
+  prevnext_next: true
+  prevnext_previous: true

@@ -26,12 +26,24 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
+  field_featured_post:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_image:
     type: media_thumbnail
     label: hidden
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
@@ -40,25 +52,16 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  prevnext_next:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 50
-    region: content
-  prevnext_previous:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 50
-    region: content
 hidden:
   body: true
   field_attorney: true
   field_blog_posts_metatags: true
   field_email: true
-  field_featured_post: true
   field_header_text: true
   field_name: true
   field_phone: true
   field_popular_post: true
   field_tags: true
   langcode: true
+  prevnext_next: true
+  prevnext_previous: true

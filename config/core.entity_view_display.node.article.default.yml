@@ -116,12 +116,12 @@ content:
   prevnext_next:
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   prevnext_previous:
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 11
     region: content
 hidden:
   field_blog_posts_metatags: true

@@ -86,3 +86,5 @@ content:
 hidden:
   field_attorney_metatags: true
   langcode: true
+  prevnext_next: true
+  prevnext_previous: true
