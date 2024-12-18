@@ -1,15 +1,14 @@
-uuid: e5c92fad-5546-4078-9a27-9c3d8c40355d
+uuid: 4b8fe631-3060-4171-8897-cf0e47dc84d6
 langcode: en
 status: true
-dependencies:
-  module:
-    - ctools
+dependencies: {  }
 id: nation_law
 label: 'Nation Law'
 weight: 0
 container_id: GTM-PT53QK8
+hostname: www.googletagmanager.com
 data_layer: dataLayer
-include_classes: false
+include_classes: true
 whitelist_classes: |-
   google
   nonGooglePixels
@@ -36,10 +35,4 @@ status_toggle: 'exclude listed'
 status_list: |-
   403
   404
-conditions:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles: {  }
+conditions: {  }

@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_basic_page_metatags
     - field.field.node.page.field_header_subtext
     - field.field.node.page.field_header_text
     - node.type.page
   module:
+    - metatag
     - path
     - text
 _core:
@@ -32,6 +34,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_basic_page_metatags:
+    type: metatag_firehose
+    weight: 123
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_header_subtext:
     type: string_textfield
@@ -68,6 +78,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

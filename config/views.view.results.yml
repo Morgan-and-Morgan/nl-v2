@@ -276,13 +276,13 @@ display:
             trim_suffix: ...
             wrap_output: false
             wrap_class: trimmed
-            more_link: false
-            more_class: more-link
-            more_text: More
             summary_handler: trim
             trim_options:
               text: true
               trim_zero: false
+            more_link: false
+            more_class: more-link
+            more_text: More
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -521,7 +521,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<h3 class=\"medium-headline light\">Verdicts & Settlement Success</h3>\r\n<h3 class=\"medium-headline caps\">We're committed to helping you win</h3>"
+          content: '<h2 class="medium-headline caps">We''re committed to helping you win</h2>'
           tokenize: false
       footer:
         area_text_custom:
@@ -905,13 +905,13 @@ display:
             trim_suffix: ''
             wrap_output: false
             wrap_class: trimmed
-            more_link: false
-            more_class: more-link
-            more_text: More
             summary_handler: full
             trim_options:
               text: false
               trim_zero: false
+            more_link: false
+            more_class: more-link
+            more_text: More
           group_column: value
           group_columns: {  }
           group_rows: true

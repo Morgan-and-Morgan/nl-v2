@@ -1,0 +1,21 @@
+uuid: 0c3a456e-0f6e-4326-a123-122b9cfe469b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attorney_metatags
+    - node.type.attorney
+  module:
+    - metatag
+id: node.attorney.field_attorney_metatags
+field_name: field_attorney_metatags
+entity_type: node
+bundle: attorney
+label: 'Attorney metatags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

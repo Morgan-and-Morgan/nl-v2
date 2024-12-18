@@ -1,20 +1,30 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 // Generic
 .medium-headline {
-  @include headline-font(800);
+  @include mixins.headline-font(800);
 
   &.light {
-    @include normal-font(100);
+    @include mixins.normal-font(100);
   }
 }
 
 .large-headline {
-  @include headline-font(800);
+  @include mixins.headline-font(800);
 }
 
 .small-headline {
-  @include normal-font(100);
+  @include mixins.normal-font(100);
+}
+
+h2.medium-headline {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  font-size: 1.75rem;
 }
 
 .container-fluid {
@@ -45,8 +55,20 @@
       margin-top: 20px;
       line-height: 1.3em;
 
-      h2 {
+      .banner-header-title {
         font-size: 3em;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+        font-family: "Old Standard Regular";
+
+        .banner-header-title-br {
+          display: block;
+          height: 0.5rem;
+          width: auto;
+        }
       }
     }
 
@@ -90,7 +112,7 @@
         text-transform: uppercase;
         display: inline-block;
         font-size: 20px;
-        @include headline-font($weight: 400);
+        @include mixins.headline-font($weight: 400);
 
         @media screen and (max-width: 767px) {
           font-size: 12px;
@@ -120,6 +142,7 @@
       .litigation-result {
         h2 {
           font-size: 70px;
+          font-family: 'Old Standard Regular';
         }
 
         h4 {
@@ -172,8 +195,16 @@
         }
       }
 
-      h4 {
+      span.medium-headline {
         padding: 10px 0;
+        font-family: 'OpenSans Light';
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+        font-size: 1.5rem;
+        display: block;
+        margin-top: 0;
+        margin-bottom: .5rem;
       }
 
       h5 {
@@ -305,6 +336,17 @@
 
   h3 {
     padding: 10px 0;
+  }
+
+  .trusted-partners-desc {
+    display: block;
+    padding: 10px 0;
+    font-family: 'Old Standard Regular';
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 1.75rem;
   }
 
   .logos-container {

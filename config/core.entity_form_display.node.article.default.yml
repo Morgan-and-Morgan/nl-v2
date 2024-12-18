@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_attorney
+    - field.field.node.article.field_blog_posts_metatags
     - field.field.node.article.field_email
     - field.field.node.article.field_featured_post
     - field.field.node.article.field_header_text
@@ -16,6 +17,7 @@ dependencies:
     - node.type.article
   module:
     - media_library
+    - metatag
     - path
     - text
 _core:
@@ -46,6 +48,14 @@ content:
     weight: 8
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_blog_posts_metatags:
+    type: metatag_firehose
+    weight: 51
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_email:
     type: email_default
@@ -129,6 +139,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

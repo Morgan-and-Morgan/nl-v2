@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.practice_area.field_image_thumbnail
     - field.field.node.practice_area.field_meta_tags
     - field.field.node.practice_area.field_name
+    - field.field.node.practice_area.field_practice_area_metatags
     - node.type.practice_area
   module:
     - media_library
@@ -91,6 +92,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_practice_area_metatags:
+    type: metatag_firehose
+    weight: 52
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -110,6 +119,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

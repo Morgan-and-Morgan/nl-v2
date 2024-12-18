@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.featured
     - field.field.node.article.body
     - field.field.node.article.field_attorney
+    - field.field.node.article.field_blog_posts_metatags
     - field.field.node.article.field_email
     - field.field.node.article.field_featured_post
     - field.field.node.article.field_header_text
@@ -35,9 +36,13 @@ content:
       trim_suffix: ...
       wrap_output: false
       wrap_class: trimmed
-      more_link: true
-      more_class: 'red caps bold'
-      more_text: 'Continue Reading'
+      more:
+        display_link: true
+        target_blank: false
+        link_trim_only: false
+        class: 'red caps bold'
+        text: 'Continue Reading'
+        aria_label: 'Read more about [node:title]'
       summary_handler: full
       trim_options:
         text: true
@@ -51,6 +56,8 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
@@ -59,18 +66,9 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  prevnext_next:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 50
-    region: content
-  prevnext_previous:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 50
-    region: content
 hidden:
   field_attorney: true
+  field_blog_posts_metatags: true
   field_email: true
   field_featured_post: true
   field_header_text: true
@@ -79,3 +77,5 @@ hidden:
   field_popular_post: true
   field_tags: true
   langcode: true
+  prevnext_next: true
+  prevnext_previous: true

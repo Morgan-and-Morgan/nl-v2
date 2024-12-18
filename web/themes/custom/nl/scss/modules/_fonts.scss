@@ -1,3 +1,5 @@
+@use "./mixins";
+
 // sizes
 $small-font: .8em;
 $medium-font: 1.4em;
@@ -28,32 +30,8 @@ $large-font: 3em;
   src: url("../fonts/OpenSans-Light.ttf");
 }
 
-// fonts
-@mixin normal-font($weight: 400) {
-  @if $weight == 100 {
-    font-family: 'OpenSans Light';
-  } @else if $weight == 400 {
-    font-family: 'OpenSans Regular';
-  } @else if $weight == 600 {
-    font-family: 'OpenSans Bold';
-  } @else {
-    font-family: 'OpenSans Regular';
-  }
-}
-
-
-@mixin headline-font($weight: 400) {
-  @if $weight == 400 {
-    font-family: 'Old Standard Regular';
-  } @else if $weight == 800 {
-    font-family: 'Old Standard TT Bold';
-  } @else {
-    font-family: 'Old Standard Regular';
-  }
-}
-
 p, span, .light {
-  @include normal-font($weight: 100);
+  @include mixins.normal-font($weight: 100);
 }
 
 // default fonts
@@ -63,15 +41,15 @@ a {
 }
 
 a, button {
-  @include normal-font($weight: 400);
+  @include mixins.normal-font($weight: 400);
 }
 
 strong {
-  @include normal-font($weight: 600);
+  @include mixins.normal-font($weight: 600);
 }
 
 h1, h2, h3, h4, h5, h6, .headline {
-  @include headline-font;
+  @include mixins.headline-font;
 }
 
 // font weight

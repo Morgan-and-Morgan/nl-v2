@@ -8,8 +8,10 @@ dependencies:
     - field.field.node.results.field_amount
     - field.field.node.results.field_amount_short
     - field.field.node.results.field_amount_short_qualifier
+    - field.field.node.results.field_results_metatags
     - node.type.results
   module:
+    - metatag
     - path
     - text
 id: node.results.default
@@ -57,6 +59,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_results_metatags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -76,6 +86,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

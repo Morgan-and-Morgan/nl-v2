@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.testimonial.body
     - field.field.node.testimonial.field_name
+    - field.field.node.testimonial.field_testimonials_metatags
     - node.type.testimonial
   module:
     - smart_trim
@@ -24,9 +25,13 @@ content:
       trim_suffix: ''
       wrap_output: false
       wrap_class: trimmed
-      more_link: false
-      more_class: more-link
-      more_text: More
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
       summary_handler: ignore
       trim_options:
         text: false
@@ -41,4 +46,5 @@ content:
     region: content
 hidden:
   field_name: true
+  field_testimonials_metatags: true
   langcode: true
