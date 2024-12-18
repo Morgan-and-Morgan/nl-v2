@@ -63,7 +63,7 @@ permissions:
   - 'administer block types'
   - 'administer blocks'
   - 'administer contact forms'
-  - 'administer google_tag_container'
+  - 'administer google tag manager'
   - 'administer languages'
   - 'administer menu'
   - 'administer nodes'

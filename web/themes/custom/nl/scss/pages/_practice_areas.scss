@@ -27,27 +27,29 @@
       @include mixins.normal-font(600);
     }
 
-    &:not(.all) {
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        opacity: .4;
-        background: linear-gradient(135deg, #b01725, #041743);
-      }
-      &:hover {
+    .practice-area-link {
+      &:not(.all) {
         &:before {
-          background: linear-gradient(50deg, #b01725, #b01725);
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          opacity: .4;
+          background: linear-gradient(135deg, #b01725, #041743);
+        }
+        &:hover {
+          &:before {
+            background: linear-gradient(50deg, #b01725, #b01725);
+          }
         }
       }
     }
   }
 
   .case-evaluation-form-container {
-    h1 {
+    h2 {
       @media screen and (max-width: 767px) {
         font-size: 30px;
       }
@@ -203,7 +205,7 @@
 
 .page-node-type-practice-area {
   .case-evaluation-form-container {
-    h1 {
+    h2 {
       @media screen and (max-width: 767px) {
         font-size: 30px;
       }
