@@ -9,8 +9,11 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
+  ckeditor5_plugin_pack: 0
+  ckeditor5_plugin_pack_link_attributes: 0
   comment: 0
   config: 0
+  config_import_single: 0
   contact: 0
   contextual: 0
   ctools: 0
@@ -21,6 +24,7 @@ module:
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
+  editor_advanced_link: 0
   encrypt: 0
   entity_type_clone: 0
   feeds: 0
