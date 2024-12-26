@@ -19,33 +19,38 @@
     padding: 0;
     background: #041743;
 
-    h3 {
+    a {
       position: absolute;
       top: 115px;
-      width: 100%;
+      left: 0;
+      right: 0;
       font-size: 35px;
       @include mixins.normal-font(600);
+
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+      }
     }
 
-    .practice-area-link {
-      &:not(.all) {
+    &:not(.all) {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: .4;
+        background: linear-gradient(135deg, #b01725, #041743);
+      }
+      &:hover {
         &:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          opacity: .4;
-          background: linear-gradient(135deg, #b01725, #041743);
-        }
-        &:hover {
-          &:before {
-            background: linear-gradient(50deg, #b01725, #b01725);
-          }
+          background: linear-gradient(50deg, #b01725, #b01725);
         }
       }
     }
+
   }
 
   .case-evaluation-form-container {
