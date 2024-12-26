@@ -103,7 +103,7 @@ settings:
       attributes:
         -
           label: 'Allow Link Attr'
-          attributes: 'style|background: url'
+          attributes: style|background-image
     ckeditor5_sourceEditing:
       allowed_tags: {  }
     editor_advanced_link_link:
