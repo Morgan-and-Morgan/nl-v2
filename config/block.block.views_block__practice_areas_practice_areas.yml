@@ -12,7 +12,7 @@ dependencies:
 id: views_block__practice_areas_practice_areas
 theme: nl
 region: content
-weight: 0
+weight: -2
 provider: null
 plugin: 'views_block:practice_areas-practice_areas'
 settings:

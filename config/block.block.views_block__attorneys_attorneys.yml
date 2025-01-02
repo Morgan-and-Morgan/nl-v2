@@ -12,7 +12,7 @@ dependencies:
 id: views_block__attorneys_attorneys
 theme: nl
 region: content
-weight: -1
+weight: -5
 provider: null
 plugin: 'views_block:attorneys-attorneys'
 settings:

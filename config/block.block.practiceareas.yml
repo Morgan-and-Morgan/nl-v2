@@ -12,7 +12,7 @@ dependencies:
 id: practiceareas
 theme: nl
 region: content
-weight: -5
+weight: -9
 provider: null
 plugin: 'block_content:ee1a62f3-a462-4a3a-9c9d-6b54297e8209'
 settings:

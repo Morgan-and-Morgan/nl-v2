@@ -94,15 +94,10 @@
         <div class="row justify-content-center">
           <h2 class="large-headline">Get a FREE Case Evaluation</h2>
         </div>
-
         <div class="form-container">
-
+          {{ drupal_entity('block', 'nl_editableapolloform', check_access=false) }}
         </div>
       </div>
-    </div>
-
-    <div class="hidden">
-      {% include '@nl/includes/intake-form.html.twig' with {'id': 3, 'class': '.case-evaluation-form-container .form-container'} %}
     </div>
 
     <div class="row">

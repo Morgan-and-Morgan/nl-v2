@@ -12,7 +12,7 @@ dependencies:
 id: views_block__results_our_results
 theme: nl
 region: content
-weight: 0
+weight: -4
 provider: null
 plugin: 'views_block:results-our_results'
 settings:
