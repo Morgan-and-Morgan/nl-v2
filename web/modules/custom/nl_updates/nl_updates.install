@@ -13,8 +13,7 @@
 /**
  * Remove the all needed $modules_to_delete from the system.
  */
-function nl_updates_update_9001()
-{
+function nl_updates_update_9001() {
   $modules_to_remove = [
     'drupal_ftp_global_vars'
   ];
@@ -42,4 +41,125 @@ function nl_updates_update_9001()
 
   // Return an informative message.
   return t('Checked and logged modules in the "system.schema" collection.');
+}
+
+/**
+ * Create a reports table.
+ */
+function nl_updates_update_9004() {
+  // Create database table.
+  $table = [
+    'description' => 'Apollo Submissions Backup Report Data',
+    'fields' => [
+      'date' => [
+        'description' => 'Date',
+        'type' => 'varchar',
+        'mysql_type' => 'datetime',
+        'not null' => TRUE,
+      ],
+      'count' => [
+        'description' => 'The count of spam submissions for a given day',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['date'],
+  ];
+
+  $db = \Drupal::service('database');
+  $schema = $db->schema();
+  $schema->createTable('mm_apollo_submissions_backup_report_data', $table);
+
+  // Check that table was created.
+  if ($schema->tableExists('mm_apollo_submissions_backup_report_data')) {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+
+}
+
+/**
+ * Create a success reports table.
+ */
+function nl_updates_update_9003() {
+  // Create database table.
+  $table = [
+    'description' => 'Apollo Submissions Success Report Data',
+    'fields' => [
+      'date' => [
+        'description' => 'Date',
+        'type' => 'varchar',
+        'mysql_type' => 'datetime',
+        'not null' => TRUE,
+      ],
+      'count' => [
+        'description' => 'The count of successful submissions for a given day',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['date'],
+  ];
+
+  $db = \Drupal::service('database');
+  $schema = $db->schema();
+  $schema->createTable('mm_apollo_submissions_success_report_data', $table);
+
+  // Check that table was created.
+  if ($schema->tableExists('mm_apollo_submissions_success_report_data')) {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+
+  $state_service = \Drupal::service('state');
+
+  // Set the apollo report email.
+  $state_service->set('apollo_submission_report_email', 'developers@classaction.com');
+
+}
+
+/**
+ * Create a spam table for GA Client ID table.
+ */
+function nl_updates_update_9002() {
+  // Create database table.
+  $table = [
+    'description' => 'Apollo Submissions GA Client ID Data',
+    'fields' => [
+      'ga_client_id' => [
+        'description' => 'GA Client ID',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'date' => [
+        'description' => 'Date',
+        'type' => 'varchar',
+        'mysql_type' => 'datetime',
+        'not null' => TRUE,
+      ],
+      'count' => [
+        'description' => 'The count of successful submissions for a given day',
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['ga_client_id'],
+  ];
+
+  $db = \Drupal::service('database');
+  $schema = $db->schema();
+  $schema->createTable('mm_apollo_submissions_ga_client_id', $table);
+
+  // Check that table was created.
+  if ($schema->tableExists('mm_apollo_submissions_ga_client_id')) {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
 }
