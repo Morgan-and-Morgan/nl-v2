@@ -25,11 +25,21 @@ const SelectVideoView = Backbone.View.extend({
 
 
 const SelectedVideoPopup = Backbone.View.extend({
-    template: _.template($('#video-template').html()),
+    template: null,
 
     initialize() {
-        this.model.on('change:id', this.render, this);
-        this.$el.on('hide.bs.modal', () => this.model.set({id: null}));
+      const templateElement = $('#video-template');
+
+      // Check if #video-template exists
+      if (templateElement.length === 0) {
+        return;
+      }
+
+      // Compile the template
+      this.template = _.template(templateElement.html());
+
+      this.model.on('change:id', this.render, this);
+      this.$el.on('hide.bs.modal', () => this.model.set({id: null}));
     },
 
     render() {
