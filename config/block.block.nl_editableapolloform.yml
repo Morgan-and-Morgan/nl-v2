@@ -1,0 +1,48 @@
+uuid: 19da93a3-802f-4653-8b62-fc7ce82fcd0f
+langcode: en
+status: false
+dependencies:
+  module:
+    - mm_forms_icarus
+  theme:
+    - nl
+id: nl_editableapolloform
+theme: nl
+region: content
+weight: 0
+provider: null
+plugin: editable_apollo_form_block
+settings:
+  id: editable_apollo_form_block
+  label: 'Editable Apollo Form'
+  label_display: '0'
+  provider: mm_forms_icarus
+  context_mapping: {  }
+  en:
+    fields:
+      field_icarus_section_heading: 'How Can We Help You Today?'
+      field_icarus_form_title: 'Free Case Evaluation'
+      field_icarus_form_body_text: "Tell us about your situation so we can get started fighting for you. We tailor each case to meet our clients' needs."
+    apollo_form_id: 189
+  es:
+    fields:
+      field_icarus_section_heading: '¿Cómo te podemos ayudar hoy?'
+      field_icarus_form_title: 'Evaluación gratuita de caso'
+      field_icarus_form_body_text: 'Cuéntenos su situación para empezar a luchar por usted. Ajustamos cada caso para satisfacer las necesidades de nuestros clientes.'
+    apollo_form_id: 192
+  form_display: apollo_form_only
+  additional_wrapper_classes: ''
+  default_text_overrides:
+    en:
+      fields:
+        field_icarus_section_heading: 'How Can We Help You Today?'
+        field_icarus_form_title: 'Free Case Evaluation'
+        field_icarus_form_body_text: "Tell us about your situation so we can get started fighting for you. We tailor each case to meet our clients' needs."
+    es:
+      fields:
+        field_icarus_section_heading: '¿Cómo te podemos ayudar hoy?'
+        field_icarus_form_title: 'Evaluación gratuita de caso'
+        field_icarus_form_body_text: 'Cuéntenos su situación para empezar a luchar por usted. Ajustamos cada caso para satisfacer las necesidades de nuestros clientes.'
+  en_apollo_form_id: '189'
+  es_apollo_form_id: '192'
+visibility: {  }

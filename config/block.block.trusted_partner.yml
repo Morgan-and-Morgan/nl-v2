@@ -11,12 +11,12 @@ dependencies:
 id: trusted_partner
 theme: nl
 region: content_bottom
-weight: 0
+weight: -15
 provider: null
 plugin: 'block_content:6d5c435e-951a-4b1e-843d-d76e6f6a9aa3'
 settings:
   id: 'block_content:6d5c435e-951a-4b1e-843d-d76e6f6a9aa3'
-  label: 'We''re your trusted partner'
+  label: "We're your trusted partner"
   label_display: visible
   provider: block_content
   status: true

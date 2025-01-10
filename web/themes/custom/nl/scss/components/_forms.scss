@@ -1,12 +1,14 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 .case-evaluation-form-container {
   padding: 30px 0;
   text-align: center;
   background: #c3c3c3;
 
-  h1 {
+  h2 {
     color: #b01725;
+    font-size: 2.5rem;
   }
 
   .richtext-body {
@@ -20,6 +22,95 @@
   button {
     background: #b01725;
   }
+
+  .form-type-checkbox {
+    display: inline-flex;
+    gap: 5px;
+    margin: 0;
+
+    input {
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+    }
+
+    label {
+      display: inline-block;
+      font-size: 13px;
+      color: #292b2c;
+
+      .custom-para-blog {
+        margin-bottom: 0;
+        line-height: 1rem;
+        color: #292b2c;
+
+        a {
+          text-decoration: underline;
+
+          &:hover {
+            color: #292b2c;
+          }
+        }
+      }
+    }
+  }
+
+  .apollo-field--submit-button {
+    display: block;
+    margin: auto;
+    margin: 20px auto 15px auto;
+    width: 50%;
+    color: white !important;
+    padding: 10px;
+    cursor: pointer;
+    background: #b01725;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .form-item-extra-info {
+    display: none;
+  }
+}
+
+.path-frontpage {
+  .form-type-checkbox {
+    label {
+      color: white;
+
+      .custom-para-blog {
+        color: white;
+
+        a {
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .apollo-field--submit-button {
+    background: #082857;
+  }
+}
+
+.path-practice-areas {
+  .case-evaluation-form-container {
+    .large-headline {
+      color: #b01725;
+      font-size: 2.5rem;
+      padding-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      line-height: 1.1;
+
+      @media screen and (max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+  }
 }
 
 .path-frontpage .case-evaluation-form-container {
@@ -28,7 +119,7 @@
   padding: 80px 0;
   text-align: center;
 
-  h1 {
+  h2 {
     font-size: 60px;
     color: white;
 
@@ -56,10 +147,10 @@
 
 .container-fluid {
   .case-evaluation-form-container {
-    h1 {
+    h2 {
       font-weight: bold;
       padding-bottom: 20px;
-      @include normal-font($weight: 400);
+      @include mixins.normal-font($weight: 400);
     }
 
     .icarus-form {

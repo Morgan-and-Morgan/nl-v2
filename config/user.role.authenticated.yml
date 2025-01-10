@@ -7,11 +7,14 @@ dependencies:
   module:
     - comment
     - contact
+    - file
     - filter
+    - fontawesome
     - media
     - search
     - shortcut
     - system
+    - tfa
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated
@@ -21,10 +24,13 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access fontawesome additional settings'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'delete own files'
   - 'post comments'
   - 'search content'
+  - 'setup own tfa'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'

@@ -59,7 +59,7 @@
           <h4 class="white light caps small header-subtext">{{ node.field_header_subtext.value }}</h4>
         {% endif %}
 
-        <h2 class="white caps header-main">
+        <h1 class="white caps header-main">
           {% if node.field_header_text.value %}
             {{ node.field_header_text.value }}
           {% elseif node.title.value %}
@@ -67,7 +67,7 @@
           {% elseif page['#title'] %}
             {{ page['#title'] }}
           {% endif %}
-        </h2>
+        </h1>
 
         <div class="row justify-content-center">
           <div class="col-sm-5 bar blue"></div>
@@ -92,17 +92,12 @@
     <div class="case-evaluation-form-container">
       <div class="container">
         <div class="row justify-content-center">
-          <h1 class="large-headline">Get a FREE Case Evaluation</h1>
+          <h2 class="large-headline">Get a FREE Case Evaluation</h2>
         </div>
-
         <div class="form-container">
-
+          {{ drupal_entity('block', 'nl_editableapolloform', check_access=false) }}
         </div>
       </div>
-    </div>
-
-    <div class="hidden">
-      {% include '@nl/includes/intake-form.html.twig' with {'id': 3, 'class': '.case-evaluation-form-container .form-container'} %}
     </div>
 
     <div class="row">

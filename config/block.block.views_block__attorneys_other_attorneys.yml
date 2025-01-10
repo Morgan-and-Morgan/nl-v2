@@ -5,7 +5,6 @@ dependencies:
   config:
     - views.view.attorneys
   module:
-    - ctools
     - node
     - views
   theme:
@@ -13,7 +12,7 @@ dependencies:
 id: views_block__attorneys_other_attorneys
 theme: nl
 region: content
-weight: 0
+weight: -3
 provider: null
 plugin: 'views_block:attorneys-other_attorneys'
 settings:

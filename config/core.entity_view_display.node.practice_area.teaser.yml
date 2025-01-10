@@ -34,6 +34,16 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  prevnext_next:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
+  prevnext_previous:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
 hidden:
   field_buried: true
   field_categories: true

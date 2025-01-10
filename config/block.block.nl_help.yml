@@ -11,7 +11,7 @@ _core:
 id: nl_help
 theme: nl
 region: content
-weight: -3
+weight: -7
 provider: null
 plugin: help_block
 settings:

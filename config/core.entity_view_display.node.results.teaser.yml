@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.results.field_amount
     - field.field.node.results.field_amount_short
     - field.field.node.results.field_amount_short_qualifier
+    - field.field.node.results.field_results_metatags
     - node.type.results
   module:
     - smart_trim
@@ -27,9 +28,13 @@ content:
       trim_suffix: ''
       wrap_output: false
       wrap_class: trimmed
-      more_link: false
-      more_class: more-link
-      more_text: More
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
       summary_handler: full
       trim_options:
         text: false
@@ -68,4 +73,5 @@ content:
     region: content
 hidden:
   feeds_item: true
+  field_results_metatags: true
   langcode: true

@@ -12,7 +12,7 @@ dependencies:
 id: moreresults
 theme: nl
 region: content
-weight: -6
+weight: 0
 provider: null
 plugin: 'block_content:9cc5f580-f5d8-4a79-beae-48d904c4623c'
 settings:

@@ -1,4 +1,5 @@
-@import "../modules/fonts";
+@use "../modules/fonts";
+@use "../modules/mixins";
 
 .lower-container {
   padding: 40px 0;
@@ -32,6 +33,57 @@
     }
 
     .contact-form-container {
+
+
+      .form-type-checkbox {
+        display: inline-flex;
+        gap: 5px;
+        margin: 0;
+
+        input {
+          display: inline-block;
+          height: 15px;
+          width: 15px;
+        }
+
+        label {
+          display: inline-block;
+          font-size: 13px;
+          color: #292b2c;
+
+          .custom-para-blog {
+            margin-bottom: 0;
+            line-height: 1rem;
+            color: #292b2c;
+
+            a {
+              text-decoration: underline;
+
+              &:hover {
+                color: #292b2c;
+              }
+            }
+          }
+        }
+      }
+
+      .apollo-field--submit-button {
+        display: block;
+        margin: auto;
+        margin: 20px auto 15px auto;
+        width: 100%;
+        color: white !important;
+        padding: 10px;
+        cursor: pointer;
+        background: #b01725;
+        border: 0;
+        border-radius: 5px;
+      }
+
+      .form-item-extra-info {
+        display: none;
+      }
+
       .icarus .icarus-form .icarus-layout .icarus-layout-static {
 
         .icarus-field {
@@ -64,7 +116,7 @@
   }
 
   .text-container h4 {
-    @include normal-font(600);
+    @include mixins.normal-font(600);
     font-size: 16px;
 
     span {

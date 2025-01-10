@@ -107,11 +107,11 @@
   {% set attorney_img_url = '/sites/default/files/styles/large/public/2021-09/MarkNation-small.jpg' %}
 {% endif %}
 
-{{ attach_library('classy/node') }}
+{{ attach_library('stable/node') }}
 
 <article{{ attributes.addClass(classes) }}>
 
-  <h2>{{ node.label }}</h2>
+  <h1 class="node-title">{{ node.label }}</h1>
 
   <div class="row title-row">
     <div class="col-sm-6 title-subheader">
