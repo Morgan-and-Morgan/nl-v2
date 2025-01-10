@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Provides functionality for NL updates module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function nl_updates_form_apollo_dynamic_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) : void {
+  $form['marketing_source']['#value'] = t('Nation Law');
+}
