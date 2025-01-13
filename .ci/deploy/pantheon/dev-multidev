@@ -23,6 +23,7 @@ then
 else
   # Push to the dev environment
   MDE_ENVIRONMENT='dev'
+  terminus -n build:env:push "$TERMINUS_SITE.dev" --yes
 fi
 
 # Update the Drupal database
