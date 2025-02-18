@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: vCJ-85AGAgA07nN5Skv432TCc19rbXDZfr3KXBImHdg
+slack_webhook_url: 'https://hooks.slack.com/services/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'
+slack_channel: '#ftp-intake-monitor'
+slack_username: 'Apollo Backup Monitor'
+slack_icon_type: none
+slack_icon_emoji: ''
+slack_icon_url: ''
+slack_link_names: false
