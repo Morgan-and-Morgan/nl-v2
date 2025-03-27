@@ -33,7 +33,7 @@
         "drupal/tamper": "^1.0@alpha",
         "drupal/upgrade_status": "4.3.6",
         "friends-of-behat/mink-extension": "^2.7",
-        "morgan-and-morgan/mm_drupal_core_d9_shared_infra": "2.0.50"
+        "morgan-and-morgan/mm_drupal_core_d9_shared_infra": "2.1.13"
     },
     "require-dev": {
         "dmore/behat-chrome-extension": "^1.4"
