@@ -1,0 +1,7 @@
+testimonials-page:
+  js:
+    js/testimonials-page.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

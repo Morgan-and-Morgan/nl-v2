@@ -129,7 +129,8 @@
                 "web-root": "./web"
             },
             "file-mapping": {
-                "[project-root]/.editorconfig": false
+                "[project-root]/.editorconfig": false,
+                "[web-root]/robots.txt": false
             }
         },
         "enable-patching": "true"
