@@ -72,4 +72,4 @@ Disallow: /index.php/user/logout
 Disallow: /index.php/media/oembed
 Disallow: /index.php/*/media/oembed
 # Sitemap
-Sitemap: https://www.forthepeople.com/sitemap.xml
+Sitemap: https://www.nationlaw.com/sitemap.xml
