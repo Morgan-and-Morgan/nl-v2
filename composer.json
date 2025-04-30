@@ -1,158 +1,179 @@
 {
-    "name": "pantheon-systems/example-drops-8-composer",
-    "description": "Install drops-8 with Composer on Pantheon.",
-    "type": "project",
-    "license": "MIT",
-    "repositories": {
-        "drupal": {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        },
-        "mm-drupal-core-d9": {
-            "type": "git",
-            "url": "git@github.com:morgan-and-morgan/mm-drupal-core-d9-shared-infra.git"
-        },
-        "bower-asset": {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
+  "name": "pantheon-systems/example-drops-8-composer",
+  "description": "Install drops-8 with Composer on Pantheon.",
+  "type": "project",
+  "license": "MIT",
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
     },
-    "require": {
-        "drupal/betterlt": "2.0.1",
-        "drupal/ckeditor5_plugin_pack": "^1.2",
-        "drupal/config_import_single": "^2.0",
-        "drupal/editor_advanced_link": "^2.2",
-        "drupal/feeds": "3.0.0-rc3",
-        "drupal/feeds_ex": "1.0.0-beta5",
-        "drupal/feeds_tamper": "^2.0@beta",
-        "drupal/fontawesome": "^2.19",
-        "drupal/prevnext": "3.0.0",
-        "drupal/stable": "^2.1",
-        "drupal/superfish": "^1.4",
-        "drupal/tamper": "^1.0@alpha",
-        "drupal/upgrade_status": "4.3.6",
-        "friends-of-behat/mink-extension": "^2.7",
-        "morgan-and-morgan/mm_drupal_core_d9_shared_infra": "2.1.21"
+    "mm-drupal-core-d9": {
+      "type": "git",
+      "url": "git@github.com:morgan-and-morgan/mm-drupal-core-d9-shared-infra.git"
     },
-    "require-dev": {
-        "dmore/behat-chrome-extension": "^1.4"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
-    "scripts": {
-        "build-assets": [
-            "@prepare-for-pantheon",
-            "composer install --optimize-autoloader --no-dev",
-            "@build-theme-nl"
-        ],
-        "dev": [
-            "composer install",
-            "@build-theme-nl"
-        ],
-        "lint": "find web/modules/custom web/themes/custom -name '*.php' -exec php -l {} \\;",
-        "code-sniff": [
-            "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,fonts,bower_components,vendor ./web/modules/custom",
-            "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,fonts,bower_components,vendor ./web/themes/custom",
-            "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,fonts,bower_components,vendor ./web/modules/custom",
-            "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,fonts,bower_components,vendor ./web/themes/custom"
-        ],
-        "unit-test": "echo 'No unit test step defined.'",
-        "prepare-for-pantheon": "DrupalProject\\composer\\ScriptHandler::prepareForPantheon",
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-create-project-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "@build-theme-nl"
-        ],
-        "build-theme-nl": [
-            "cd web/themes/custom/nl; npm -v; node -v; npm install --unsafe-perm; npm rebuild node-sass; npm run build;"
-        ],
-        "nuke-profile": [
-            "rm -Rf web/profiles/contrib/ vendor/ composer.lock"
-        ],
-        "nuke-site": [
-            "rm -Rf web/profiles/contrib/ vendor/ composer.lock web/themes/contrib web/theme/custom/nl/dist web/theme/custom/nl/node_modules"
-        ],
-        "nuke-rebuild": [
-            "composer nuke-site",
-            "composer install",
-            "composer build-theme-nl"
-        ]
-    },
-    "extra": {
-        "installer-paths": {
-            "web/core": [
-                "type:drupal-core"
-            ],
-            "web/libraries/{$name}": [
-                "type:drupal-library"
-            ],
-            "web/modules/contrib/{$name}": [
-                "type:drupal-module"
-            ],
-            "web/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "web/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "drush/Commands/contrib/{$name}": [
-                "type:drupal-drush"
-            ],
-            "web/private/scripts/quicksilver/{$name}/": [
-                "type:quicksilver-script"
-            ]
-        },
-        "build-env": {
-            "install-cms": [
-                "drush site-install standard --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
-            ],
-            "export-configuration": "drush config-export --yes"
-        },
-        "drupal-scaffold": {
-            "allowed-packages": [
-                "pantheon-systems/drupal-integrations"
-            ],
-            "locations": {
-                "web-root": "./web"
-            },
-            "file-mapping": {
-                "[project-root]/.editorconfig": false,
-                "[web-root]/robots.txt": false
-            }
-        },
-        "enable-patching": "true"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "platform": {
-            "php": "8.1"
-        },
-        "allow-plugins": {
-            "composer/installers": true,
-            "cweagans/composer-patches": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true,
-            "oomphinc/composer-installers-extender": true,
-            "php-http/discovery": true,
-            "phpstan/extension-installer": true,
-            "tbachert/spi": true,
-            "zaporylie/composer-drupal-optimizations": true
-        }
+    "bower-asset": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
+  },
+  "require": {
+    "drupal/betterlt": "2.0.1",
+    "drupal/ckeditor5_plugin_pack": "^1.2",
+    "drupal/config_import_single": "^2.0",
+    "drupal/editor_advanced_link": "^2.2",
+    "drupal/feeds": "3.0.0-rc3",
+    "drupal/feeds_ex": "1.0.0-beta5",
+    "drupal/feeds_tamper": "^2.0@beta",
+    "drupal/fontawesome": "^2.19",
+    "drupal/prevnext": "3.0.0",
+    "drupal/stable": "^2.1",
+    "drupal/superfish": "^1.4",
+    "drupal/tamper": "^1.0@alpha",
+    "drupal/upgrade_status": "4.3.6",
+    "morgan-and-morgan/mm_drupal_core_d9_shared_infra": "2.1.22"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ]
+  },
+  "scripts": {
+    "build-assets": [
+      "@prepare-for-pantheon",
+      "composer install --optimize-autoloader --no-dev",
+      "@build-theme-nl"
+    ],
+    "dev": [
+      "composer install",
+      "@build-theme-nl"
+    ],
+    "prepare-for-pantheon": "DrupalProject\\composer\\ScriptHandler::prepareForPantheon",
+    "build-theme-nl": [
+      "cd web/themes/custom/nl; npm -v; node -v; npm install --unsafe-perm; npm rebuild node-sass; npm run build;"
+    ],
+    "nuke-profile": [
+      "rm -Rf web/profiles/contrib/ vendor/ composer.lock"
+    ],
+    "nuke-site": [
+      "rm -Rf web/profiles/contrib/ vendor/ composer.lock web/themes/contrib web/theme/custom/nl/dist web/theme/custom/nl/node_modules"
+    ],
+    "nuke-rebuild": [
+      "composer nuke-site",
+      "composer install",
+      "composer build-theme-nl"
+    ],
+    "lint": "find web/modules/custom web/themes/custom -name '*.php' -exec php -l {} \\;",
+    "code-sniff": [
+      "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,fonts,bower_components,vendor ./web/modules/custom",
+      "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,fonts,bower_components,vendor ./web/themes/custom",
+      "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,fonts,bower_components,vendor ./web/modules/custom",
+      "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,fonts,bower_components,vendor ./web/themes/custom"
+    ],
+    "code-sniff-si": [
+      "@code-sniff",
+      "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor,dist ./web/profiles/contrib/mm_drupal_core_d9_shared_infra",
+      "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor,dist ./web/profiles/contrib/mm_drupal_core_d9_shared_infra/modules"
+    ],
+    "code-sniff-fix": [
+      "./vendor/bin/phpcbf --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
+      "./vendor/bin/phpcbf --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor,dist ./web/themes/custom",
+      "./vendor/bin/phpcbf --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
+      "./vendor/bin/phpcbf --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor,dist ./web/themes/custom"
+    ],
+    "code-sniff-si-fix": [
+      "./vendor/bin/phpcbf --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/profiles/contrib/mm_drupal_core_d9_shared_infra",
+      "./vendor/bin/phpcbf --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/profiles/contrib/mm_drupal_core_d9_shared_infra/modules"
+    ]
+  },
+  "extra": {
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
+    "merge-plugin": {
+      "include": [
+        "web/profiles/contrib/mm_drupal_core_d9_shared_infra/composer.json"
+      ],
+      "ignore-duplicates": true,
+      "merge-dev": true,
+      "merge-extra": true,
+      "merge-scripts": true,
+      "recurse": true,
+      "replace": false
+    },
+    "enable-patching": true,
+    "composer-exit-on-patch-failure": false,
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/Commands/contrib/{$name}": [
+        "type:drupal-drush"
+      ],
+      "web/private/scripts/quicksilver/{$name}/": [
+        "type:quicksilver-script"
+      ]
+    },
+    "build-env": {
+      "install-cms": [
+        "drush site-install mm_drupal_core_d9_shared_infra --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
+      ],
+      "export-configuration": "drush config-export --yes"
+    },
+    "drupal-scaffold": {
+      "allowed-packages": [
+        "pantheon-systems/drupal-integrations"
+      ],
+      "locations": {
+        "web-root": "./web"
+      },
+      "file-mapping": {
+        "[project-root]/.editorconfig": false,
+        "[web-root]/robots.txt": false,
+        "[web-root]/web.config": false
+      }
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "platform": {
+      "php": "8.1"
+    },
+    "allow-plugins": {
+      "composer/installers": true,
+      "drupal/core-project-message": true,
+      "cweagans/composer-patches": true,
+      "drupal/core-composer-scaffold": true,
+      "zaporylie/composer-drupal-optimizations": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "wikimedia/composer-merge-plugin": true,
+      "oomphinc/composer-installers-extender": true,
+      "php-http/discovery": true
+    }
+  }
 }
