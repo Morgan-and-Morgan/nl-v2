@@ -31,7 +31,9 @@
     "drupal/superfish": "^1.4",
     "drupal/tamper": "^1.0@alpha",
     "drupal/upgrade_status": "4.3.6",
-    "morgan-and-morgan/mm_drupal_core_d9_shared_infra": "2.1.22"
+    "morgan-and-morgan/mm_drupal_core_d9_shared_infra": "2.1.22",
+    "symfony/http-client": "^6.4",
+    "wikimedia/composer-merge-plugin": "^2.0.1"
   },
   "conflict": {
     "drupal/drupal": "*"
