@@ -77,6 +77,32 @@ jobs:
           paths:
             - bash_env.txt
 
+  static_tests:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - composer-cache-{{ checksum "composer.lock" }}
+            - composer-cache-
+
+      - run:
+          # Set TERMINUS_ENV and related environment variables.
+          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
+          name: setup-environment-vars
+          command: /build-tools-ci/scripts/set-environment
+
+      - run:
+          name: run static tests
+          command: ./.ci/test/static/run
+
+      - save_cache:
+          key: composer-cache-{{ checksum "composer.lock" }}
+          paths:
+            - $HOME/.composer/cache
+
   build_php:
     <<: *defaults
     steps:
@@ -209,70 +235,16 @@ jobs:
           path: /tmp/artifacts
           destination: artifacts
 
-  composer_lock_updater:
-    <<: *defaults
-    steps:
-      - checkout
-
-      - run:
-          # Set TERMINUS_ENV and related environment variables.
-          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
-          name: setup-environment-vars
-          command: /build-tools-ci/scripts/set-environment
-
-      - run:
-          name: Authenticate with Terminus
-          command: terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
-
-      - run:
-          name: run composer lock updater
-          command: set -e && terminus project:clu $TERMINUS_SITE
-
-  npm_build_theme:
-    docker:
-      - image: node:18.12.0
-    steps:
-      - checkout
-      - run:
-          name: NPM login
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-
-      - run:
-          name: Swap node versions
-          command: |
-            ls /usr/bin
-            node -v
-            set +e
-            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-            nvm install v18.12.0
-            nvm alias default v18.12.0
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
-
-      - run:
-          name: install npm dependencies in a custom Drupal theme
-          command: cd web/themes/custom/nl && npm ci
-
-      - run:
-          name: Compile Assets
-          command: cd web/themes/custom/nl && npm run build
-
-      - persist_to_workspace:
-          root: .
-          paths:
-            - web/themes/custom/nl/dist
-
 workflows:
   version: 2
   build_deploy_and_test:
     jobs:
+      - static_tests
       - configure_env_vars
       - build_php
       - deploy_to_pantheon:
           requires:
+            - static_tests
             - build_php
       - visual_regression_test:
           requires:
@@ -285,4 +257,3 @@ workflows:
       - behat_test:
           requires:
             - deploy_to_pantheon
-            - visual_regression_test

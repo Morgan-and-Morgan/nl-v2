@@ -15,7 +15,7 @@
  */
 function nl_updates_update_9001() {
   $modules_to_remove = [
-    'drupal_ftp_global_vars'
+    'drupal_ftp_global_vars',
   ];
 
   foreach ($modules_to_remove as $module_name) {
@@ -34,7 +34,8 @@ function nl_updates_update_9001() {
       foreach ($results as $record) {
         \Drupal::logger('mymodule')->info('Module found: @module', ['@module' => $record->name]);
       }
-    } else {
+    }
+    else {
       \Drupal::logger('mymodule')->warning('No modules found in the "system.schema" collection.');
     }
   }

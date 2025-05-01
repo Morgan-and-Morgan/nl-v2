@@ -5,7 +5,7 @@
 #
 
 # Authenticate with Terminus
-terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+#terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
 
 # Source $BASH_ENV
 source $BASH_ENV
@@ -13,24 +13,57 @@ source $BASH_ENV
 # Verbose mode and exit on errors
 set -ex
 
-# Create a drush alias file so that Behat tests can be executed against Pantheon.
-terminus alpha:aliases --no-db-url --only=$TERMINUS_SITE
-drush sa @pantheon.$TERMINUS_SITE.$TERMINUS_ENV
-
-# Drush Behat driver fails without this option.
-echo "\$options['strict'] = 0;" >> ~/.drush/pantheon.aliases.drushrc.php
+# Figure out if we're on master or not.
+if [[ $CI_BRANCH != $DEFAULT_BRANCH ]]
+then
+  MDE_ENVIRONMENT=${CI_BRANCH}
+else
+  # Push to the dev environment.
+  MDE_ENVIRONMENT='dev'
+fi
 
 # Dynamically set Behat configuration parameters
-export BEHAT_PARAMS='{"extensions" : {"Behat\\MinkExtension" : {"base_url" : "https://'$TERMINUS_ENV'-'$TERMINUS_SITE'.pantheonsite.io/"}, "Drupal\\DrupalExtension" : {"drush" :   {  "alias":  "@pantheon.'$TERMINUS_SITE'.'$TERMINUS_ENV'" }}}}'
+export BEHAT_PARAMS='{"extensions": {"Behat\\MinkExtension": {"base_url" : "https://'$MDE_ENVIRONMENT'-'$TERMINUS_SITE'.pantheonsite.io/"}}}'
 
 # Start headless Chrome
-echo "\n Starting Chrome in headless mode ..."
-google-chrome --disable-gpu --headless --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 --no-sandbox </dev/null &>/dev/null &
-
-echo "::::::::::::::::::::::::::::::::::::::::::::::::"
-echo "Behat test site: $TERMINUS_SITE.$TERMINUS_ENV"
-echo "::::::::::::::::::::::::::::::::::::::::::::::::"
-echo
+./vendor/bin/bdi detect drivers
+./drivers/chromedriver -v
 
 # Run the Behat tests
-./vendor/bin/behat --config=tests/behat/behat-pantheon.yml --strict --colors  "$@"
+
+# Non desktop tests.
+NARROW='verify-narrow'
+MOBILE='verify-mobile'
+
+# Install the AMP validator NPM package.
+npm install -g amphtml-validator
+
+# Single thread, no CCI parallelism.
+# ./vendor/bin/behat --config=tests/behat/behat-pantheon.yml --strict --colors  --tags narrow
+
+# Multi thread, aka CCI parallelism.
+# Parallelism configured at .circleci/config.yml -> behat_test -> parallelism.
+TEST_FILES=($(circleci tests glob "tests/behat/features/*.feature" | circleci tests split --split-by=timings))
+for FILE in "${TEST_FILES[@]}";
+do
+  if [[ ${FILE} == *"${NARROW}"* ]]; then
+    # Ensure the right behat params are exported.
+    export BEHAT_PARAMS='{"extensions": {"Behat\\MinkExtension": {"base_url" : "https://'$MDE_ENVIRONMENT'-'$TERMINUS_SITE'.pantheonsite.io/"}}}'
+    BEHAT_TAGS="narrow"
+    ./vendor/bin/behat --config=tests/behat/behat-pantheon.yml --strict --colors --tags ${BEHAT_TAGS} ${FILE}
+  else
+    # Ensure the right behat params are exported.
+    # Figure out if we're on master or not.
+    if [[ $CI_BRANCH != $DEFAULT_BRANCH ]]
+    then
+      # Run dev tests.
+      BEHAT_TAGS="dev"
+    else
+      # Run prod tests.
+      BEHAT_TAGS="prod"
+    fi
+    export BEHAT_PARAMS='{"extensions": {"Behat\\MinkExtension": {"base_url" : "https://'$MDE_ENVIRONMENT'-'$TERMINUS_SITE'.pantheonsite.io/"}}}'
+    ./vendor/bin/behat --config=tests/behat/behat-pantheon.yml --strict --colors --tags ${BEHAT_TAGS} ${FILE}
+  fi
+
+done

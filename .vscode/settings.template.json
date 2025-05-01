@@ -1,0 +1,14 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "files.trimTrailingWhitespace": true,
+  "phpSniffer.autoDetect": true,
+  "phpcs.standard": "/LOCAL_ABSOLUTE_PATH_TO/ftp-v2/vendor/drupal/coder/coder_sniffer/Drupal",
+  "phpcbf.standard": "/LOCAL_ABSOLUTE_PATH_TO/ftp-v2/vendor/drupal/coder/coder_sniffer/Drupal",
+  "phpcbf.onsave": true,
+  "phpcs.executablePath": "/LOCAL_ABSOLUTE_PATH_TO/ftp-v2/vendor/bin/phpcs",
+  "phpcbf.executablePath": "/LOCAL_ABSOLUTE_PATH_TO/ftp-v2/vendor/bin/phpcbf",
+  "[php]": {
+    "editor.defaultFormatter": "persoderlind.vscode-phpcbf"
+  }
+}
