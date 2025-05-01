@@ -12,13 +12,11 @@ set -eo pipefail
 # Run composer install to get the vendor directory
 composer install --no-ansi --no-interaction --optimize-autoloader --no-progress
 
-# Delete and reset the web directory
-# This is necessary so that third-party
-# dependencies are not tested
-git clean -fdX web
+# # Run unit tests
+# composer -n run-script unit-test
 
 # Lint php code for syntax errors
-composer -n lint
+composer -n run-script lint
 
 # Check coding standards
-composer -n code-sniff
+composer -n run-script code-sniff
