@@ -11,15 +11,14 @@ use Drupal\views\ViewExecutable;
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function nl_updates_form_apollo_dynamic_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) : void {
+function nl_updates_form_apollo_dynamic_form_alter(&$form, FormStateInterface $form_state, $form_id) : void {
   $form['marketing_source']['#value'] = t('Nation Law');
 }
 
 /**
  * Implements hook_views_pre_render().
  */
-function nl_updates_views_pre_render(ViewExecutable $view)
-{
+function nl_updates_views_pre_render(ViewExecutable $view) {
   if (!\Drupal::service('router.admin_context')->isAdminRoute()) {
     // Attach read-more library to the Testimonials view.
     if ($view->id() == 'testimonials') {
