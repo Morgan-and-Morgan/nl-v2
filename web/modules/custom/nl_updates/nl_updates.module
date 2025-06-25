@@ -20,10 +20,18 @@ function nl_updates_form_apollo_dynamic_form_alter(&$form, \Drupal\Core\Form\For
  */
 function nl_updates_views_pre_render(ViewExecutable $view)
 {
+  print_r($view->current_display);
+  print_r($view->id());
   if (!\Drupal::service('router.admin_context')->isAdminRoute()) {
     // Attach read-more library to the Testimonials view.
-    if ($view->id() == 'testimonials') {
-      if ($view->current_display == 'testimonials_list') {
+    if (
+      $view->id() == 'testimonials'
+      || $view->id() == 'results'
+    ) {
+      if (
+        $view->current_display == 'testimonials_list'
+        || $view->current_display == 'our_results'
+      ) {
         $view->element['#attached']['library'][] = 'nl_updates/testimonials-page';
       }
     }
