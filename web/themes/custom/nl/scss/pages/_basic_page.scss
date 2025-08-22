@@ -18,6 +18,11 @@
           text-align: left;
         }
 
+        h1 {
+          font-size: 1.75rem;
+        }
+
+        h1,
         h3 {
           padding-bottom: 20px;
           @include mixins.normal-font($weight: 600);
