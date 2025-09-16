@@ -52,7 +52,18 @@
     <script type="text/javascript">
       function OptanonWrapper() { }
     </script>
+      <link rel="preload" as="font" href="/themes/custom/nl/fonts/OpenSans-Regular.woff2" type="font/woff2" crossorigin>
 
+      <link rel="preload" as="image"
+          imagesrcset="/themes/custom/nl/images/hero/hero-min-360.avif 360w,
+             /themes/custom/nl/images/hero/hero-min-480.avif 480w,
+             /themes/custom/nl/images/hero/hero-min-640.avif 640w,
+             /themes/custom/nl/images/hero/hero-min-800.avif 800w,
+             /themes/custom/nl/images/hero/hero-min-960.avif 960w,
+             /themes/custom/nl/images/hero/hero-min-1280.avif 1280w,
+             /themes/custom/nl/images/hero/hero-min-1920.avif 1920w"
+          imagesizes="(min-width:1200px) 1200px, (min-width:768px) 90vw, 100vw"
+          href="/themes/custom/nl/images/hero/hero-min-640.avif">
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     {#

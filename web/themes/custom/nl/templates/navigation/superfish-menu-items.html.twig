@@ -18,11 +18,9 @@
  * @ingroup themeable
  */
 #}
-
 {% set classes = [] %}
-{% set output = '' %}  {# Initialize an empty string to store the output #}
-
 {% for item in menu_items %}
+
   {% if item.children is not empty %}
     {% set item_class = item.item_class ~ ' menuparent' %}
     {% if item.multicolumn_column %}
@@ -30,21 +28,21 @@
     {% endif %}
   {% endif %}
 
-<li{{ item.attributes }}>
+<li{{ item.attributes }} role="none">
   {% if item.multicolumn_column %}
   <div class="sf-multicolumn-column">
     {% endif %}
     {% if item.children is not empty %}
-      {{ item.link_menuparent }}
+      {{ item.link_menuparent|merge({'#attributes': {'role': 'menuitem', 'aria-haspopup': 'true', 'aria-expanded': 'false'}}) }}
       <span class="arrow-down"></span>
     {% else %}
-      {{ item.link }}
+      {{ item.link|merge({'#attributes': {'role': 'menuitem'}}) }}
     {% endif %}
-    {% if item.multicolumn_wrapper %}<ul class="sf-multicolumn">
-      <li class="sf-multicolumn-wrapper {{ item.item_class }}">
+    {% if item.multicolumn_wrapper %}<ul class="sf-multicolumn" role="menu">
+      <li class="sf-multicolumn-wrapper {{ item.item_class }}" role="none">
         {% endif %}
         {% if item.children is not empty %}
-        {% if item.multicolumn_content %}<ol>{% else %}<ul>{% endif %}
+        {% if item.multicolumn_content %}<ol role="menu">{% else %}<ul role="menu">{% endif %}
             {{ item.children }}
           {% if item.multicolumn_content %}</ol>{% else %}</ul>{% endif %}
     {% endif %}
@@ -52,7 +50,4 @@
   {% if item.multicolumn_column %}</div>{% endif %}
   </li>
 
-  {% set output = output ~ _context['output'] %}
 {% endfor %}
-
-{{ output|trim }} {# Output all items, joined without spaces, and trim the result #}

@@ -7,27 +7,51 @@ $large-font: 3em;
 
 @font-face {
   font-family: "Old Standard TT Bold";
-  src: url("../fonts/OldStandard-Bold.ttf");
+  src: url("../fonts/OldStandard-Bold.woff2");
+  font-display:swap;
+  size-adjust: 100%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
 }
 
 @font-face {
   font-family: "Old Standard Regular";
-  src: url("../fonts/OldStandard-Regular.ttf");
+  src: url("../fonts/OldStandard-Regular.woff2");
+  font-weight:400; font-style:normal;
+  font-display:swap;
+  size-adjust: 100%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
 }
 
 @font-face {
   font-family: "OpenSans Bold";
-  src: url("../fonts/OpenSans-Bold.ttf");
+  src: url("../fonts/OpenSans-Bold.woff2");
+  font-weight:700; font-style:normal;
+  font-display:swap;
+  size-adjust: 100%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
 }
 
 @font-face {
   font-family: "OpenSans Regular";
-  src: url("../fonts/OpenSans-Regular.ttf");
+  src: url("../fonts/OpenSans-Regular.woff2");
+  font-weight:400; font-style:normal;
+  font-display:swap;
+  size-adjust: 105%;
+  ascent-override: 88%;
+  descent-override: 22%;
+  line-gap-override: 0%;
 }
 
 @font-face {
   font-family: "OpenSans Light";
-  src: url("../fonts/OpenSans-Light.ttf");
+  src: url("../fonts/OpenSans-Light.woff2");
+  font-display:swap;
 }
 
 p, span, .light {

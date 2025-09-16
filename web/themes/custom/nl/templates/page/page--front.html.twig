@@ -52,21 +52,58 @@
 
     <div class="container-fluid">
       <div class="panel banner row">
+
         <div class="content col-sm-12">
+          <picture class="hero-media">
+            <!-- AVIF -->
+            <source
+              type="image/avif"
+              srcset="/themes/custom/nl/images/hero/hero-min-360.avif 360w,
+            /themes/custom/nl/images/hero/hero-min-480.avif 480w,
+            /themes/custom/nl/images/hero/hero-min-640.avif 640w,
+            /themes/custom/nl/images/hero/hero-min-800.avif 800w,
+            /themes/custom/nl/images/hero/hero-min-960.avif 960w,
+            /themes/custom/nl/images/hero/hero-min-1280.avif 1280w,
+            /themes/custom/nl/images/hero/hero-min-1920.avif 1920w"
+              sizes="(min-width:1200px) 1200px, (min-width:768px) 90vw, 100vw">
+
+            <!-- WEBP -->
+            <source
+              type="image/webp"
+              srcset="/themes/custom/nl/images/hero/hero-min-360.webp 360w,
+            /themes/custom/nl/images/hero/hero-min-480.webp 480w,
+            /themes/custom/nl/images/hero/hero-min-640.webp 640w,
+            /themes/custom/nl/images/hero/hero-min-800.webp 800w,
+            /themes/custom/nl/images/hero/hero-min-960.webp 960w,
+            /themes/custom/nl/images/hero/hero-min-1280.webp 1280w,
+            /themes/custom/nl/images/hero/hero-min-1920.webp 1920w"
+              sizes="(min-width:1200px) 1200px, (min-width:768px) 90vw, 100vw">
+
+            <!-- Fallback -->
+            <img
+              src="/themes/custom/nl/images/hero/hero-min-960.webp"
+              alt="Hero video cover image"
+              width="1920" height="800" style="aspect-ratio:1920/800"
+              decoding="async" fetchpriority="high">
+          </picture>
+
           <div class="banner-image">
-            <img id="protect-and-serve" alt="Liberty and Justice For You Banner" src="/themes/custom/nl/images/liberty-and-justice-for-you-min.png" />
+            <picture>
+              <img id="protect-and-serve"
+                   src="/themes/custom/nl/images/liberty-and-justice-for-you-min.webp"
+                   width="250" height="23" style="aspect-ratio:250/23"
+                   alt="Liberty and Justice For You Banner"
+                   decoding="async" fetchpriority="hight"
+              />
+            </picture>
           </div>
 
           <div class="banner-header">
-            <h1 class="banner-header-title">Injured?
-              <br>
-              <span class="banner-header-title-br"></span>
-            Wrongful Death?</h1>
+            <h1 class="banner-header-title">Injured?<br><span class="banner-header-title-br"></span>Wrongful Death?</h1>
           </div>
 
           <div class="banner-subtext">
             <strong>Mark Nation</strong> can help.
-
             <i class="fa fa-chevron-down"></i>
           </div>
 
@@ -88,7 +125,7 @@
       <div class="panel red-stripe row">
         <div class="col-sm-12">
           <a href="/verdicts-and-settlements" class="white">
-            <h3 class="medium-headline">You owe it to yourself to see our results</h3>
+            <span class="h3 medium-headline">You owe it to yourself to see our results</span>
             <i class="fa fa-chevron-right"></i>
           </a>
         </div>
@@ -102,24 +139,43 @@
 
       <div class="panel protect-and-serve row">
         <div class="panel-inner col-sm-12">
-          <img src="/themes/custom/nl/images/florida_icon-min.png" alt="Florida Lawyers" />
+          <img src="/themes/custom/nl/images/florida_icon-min.png" alt="Florida Lawyers" loading="lazy" width="91" height="129"/>
 
           <span class="medium-headline light caps">To Protect and Serve</span>
 
-          <h3 class="large-headline">
+          <span class="h3 large-headline">
             Accomplished Orlando Lawyers Fighting for your Rights
-          </h3>
+          </span>
 
-          <h5 class="medium-headline light">
+          <span class="h5 medium-headline light">
             We're committed to helping injury victims and family members in wrongful death cases recover
             financially from serious accidents
-          </h5>
+          </span>
         </div>
       </div>
 
       <div class="panel quote row">
         <div class="col-3 col-sm-5 image-container">
-          <img src="/themes/custom/nl/images/MarkNation-min.png" alt="Mark Nation" />
+          <picture>
+            <!-- For mobile devices (max width: 576px) -->
+            <source
+              media="(max-width: 576px)"
+              type="image/webp"
+              srcset="/themes/custom/nl/images/MarkNation-min-mobile.webp">
+            <!-- For tablets (min width: 576px, max width: 992px) -->
+            <source
+              media="(min-width: 576px) and (max-width: 992px)"
+              type="image/webp"
+              srcset="/themes/custom/nl/images/MarkNation-min-tablet.webp">
+            <!-- Default image for larger screens -->
+            <img
+              src="/themes/custom/nl/images/MarkNation-min-desktop.webp"
+              alt="Mark Nation"
+              width="400" height="500"
+              loading="lazy" decoding="async" fetchpriority="low"
+              style="height:auto;aspect-ratio:4/5"
+            />
+          </picture>
         </div>
 
         <div class="col-9 col-sm-7 col-md-6 col-lg-4 text-container">

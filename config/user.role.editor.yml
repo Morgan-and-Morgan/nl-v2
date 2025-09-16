@@ -40,7 +40,6 @@ dependencies:
     - shortcut
     - system
     - taxonomy
-    - tfa
     - toolbar
 id: editor
 label: Editor
@@ -141,7 +140,6 @@ permissions:
   - 'edit own video media'
   - 'edit terms in practice_area_categories'
   - 'edit terms in tags'
-  - 'setup own tfa'
   - 'update any media'
   - 'update media'
   - 'use advanced search'

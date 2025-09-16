@@ -305,7 +305,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"litigation-result\">\r\n  <h2 class=\"large red bold\">{{ field_amount_short }}</h2>\r\n  <h4 class=\"medium-headline light caps red\">{{ field_amount_short_qualifier }}</h4>\r\n\r\n  <div class=\"result-description\">\r\n    <h5 class=\"black small caps\">{{ title }}</h5>\r\n    <p class=\"small\">\r\n      {{ body }}\r\n    </p>\r\n  </div>\r\n</div>"
+            text: "<div class=\"litigation-result\">\r\n  <span class=\"h2 large red bold\">{{ field_amount_short }}</span>\r\n  <span class=\"h4 medium-headline light caps red\">{{ field_amount_short_qualifier }}</span>\r\n\r\n  <div class=\"result-description\">\r\n    <span class=\"h5 black small caps\">{{ title }}</span>\r\n    <p class=\"small\">\r\n      {{ body }}\r\n    </p>\r\n  </div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
