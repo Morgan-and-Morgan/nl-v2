@@ -80,3 +80,14 @@ function nl_preprocess_node(&$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_js_alter().
+ */
+function nl_js_alter(array &$javascript) {
+  foreach ($javascript as &$item) {
+    if (($item['type'] ?? '') !== 'inline') {
+      $item['attributes']['defer'] = 'defer';
+    }
+  }
+}

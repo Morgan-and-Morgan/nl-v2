@@ -35,23 +35,43 @@ h2.medium-headline {
   }
 
   .panel.banner {
-    background: url(/themes/custom/nl/images/hero-min.jpg) no-repeat;
-    background-size: cover;
-    color: #ffffff;
+    color: #fff;
     padding: 30px;
     position: relative;
+    overflow: hidden;
+    margin: -30px;
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
 
     .content {
       z-index: 1;
-      background: transparent;
+      position: relative;
     }
 
     img#protect-and-serve {
       width: 250px;
-      padding-bottom: 30px;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    .banner-image {
+      position: relative;
+      margin-top: 30px;
     }
 
     .banner-header {
+      position: relative;
       margin-top: 20px;
       line-height: 1.3em;
 
@@ -73,6 +93,7 @@ h2.medium-headline {
     }
 
     .banner-subtext {
+      position: relative;
       text-transform: uppercase;
       margin-top: 20px;
       font-size: 1.4em;
@@ -85,13 +106,17 @@ h2.medium-headline {
     }
 
     .buttons-container {
+      position: relative;
       display: flex;
       justify-content: center;
       text-transform: uppercase;
+      padding: 0 15px;
     }
 
     .stars-container {
       margin-top: 10px;
+      position: relative;
+      margin-bottom: 30px;
     }
   }
 
@@ -108,7 +133,7 @@ h2.medium-headline {
         text-decoration: none;
       }
 
-      h3 {
+      .h3 {
         text-transform: uppercase;
         display: inline-block;
         font-size: 20px;
@@ -132,28 +157,43 @@ h2.medium-headline {
   }
 
   .panel.results {
-    background: white;
-    color: black;
     padding: 40px 0 80px 0;
 
     .litigation-results {
       margin: 60px 0;
 
       .litigation-result {
-        h2 {
+        .h2 {
           font-size: 70px;
-          font-family: 'Old Standard Regular';
+          font-family: 'Old Standard Regular', serif;
+          margin-top: 0;
+          margin-bottom: 0.5rem;
+          line-height: 1.1;
+          display: block;
         }
 
-        h4 {
+        .h4 {
           letter-spacing: 7px;
+          margin-top: 0;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+          line-height: 1.1;
+          display: block;
         }
 
         .result-description {
           padding-top: 15px;
 
+          .h5 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            font-family: 'Old Standard Regular', serif;
+            display: block;
+          }
+
           p {
-            color: #b1b1b1;
+            color: #595959;
           }
         }
 
@@ -170,7 +210,7 @@ h2.medium-headline {
   }
 
   .panel.protect-and-serve {
-    background: url(/themes/custom/nl/images/banners/map_bg-min.jpg) no-repeat;
+    background: url(/themes/custom/nl/images/banners/map_bg-min.webp) no-repeat;
     background-size: cover;
     color: white;
     padding: 90px 0;
@@ -183,11 +223,15 @@ h2.medium-headline {
         width: 90%;
       }
 
-      h3 {
+      .h3 {
         font-size: 60px;
         width: 80%;
         margin: auto;
         padding: 10px 0;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+        display: block;
 
         @media screen and (max-width: 991px) {
           font-size: 30px;
@@ -207,8 +251,8 @@ h2.medium-headline {
         margin-bottom: .5rem;
       }
 
-      h5 {
-        padding: 10px 0;
+      span.medium-headline.h5 {
+        font-size: 1.25rem;
         font-weight: 100;
       }
 
@@ -228,6 +272,7 @@ h2.medium-headline {
       text-align: right;
 
       img {
+        width: auto;
         max-height: 500px;
       }
 
@@ -314,7 +359,7 @@ h2.medium-headline {
   }
 
   .panel.video {
-    background: url(/themes/custom/nl/images/banners/bg-img-we-the-people-min.jpg) no-repeat;
+    background: url(/themes/custom/nl/images/banners/bg-img-we-the-people-min.webp) no-repeat;
     background-size: cover;
     padding: 100px 0;
 
@@ -426,4 +471,62 @@ h2.medium-headline {
     flex-direction: row;
     justify-content: center;
   }
+}
+
+/* 1) Footer disclaimer: raise to readable size everywhere */
+.footer-container .disclaimer {
+  font-size: 0.875rem;        /* 14px */
+  line-height: 1.5;
+}
+
+/* If you want it smaller on big desktops only, you can keep 14px on mobile and scale up: */
+@media (min-width: 992px) {
+  .footer-container .disclaimer {
+    font-size: 0.9375rem;     /* 15px (optional) */
+  }
+}
+
+/* 2) OneTrust settings button: override inline 11px */
+#ot-sdk-btn,
+button#ot-sdk-btn {
+  font-size: 0.875rem !important;  /* 14px, beats inline */
+  line-height: 1.2 !important;
+}
+
+/* 3) Slick controls/tap targets: make them legible & tappable */
+.slick-prev,
+.slick-next {
+  font-size: 0.875rem;         /* give them a non-zero size */
+  width: 40px;                 /* adequate tap target */
+  height: 40px;
+  line-height: 40px;
+}
+
+/* If you render arrows via ::before, also ensure the pseudo has size */
+.slick-prev::before,
+.slick-next::before {
+  font-size: 20px;             /* typical arrow size */
+}
+
+/* Dots: keep the visual dot small but make the button itself readable/tappable */
+.slick-dots li button {
+  font-size: 0.75rem;          /* 12px (meets Lighthouse minimum) */
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+
+/* Many slick themes use text-indent to hide text; ensure pseudo-dot still shows */
+.slick-dots li button::before {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border-radius: 50%;
+  content: "";
+}
+
+/* 4) Global mobile base: ensure default mobile text is ≥ 16px */
+@media (max-width: 767.98px) {
+  html { font-size: 100%; }    /* 16px default */
+  body { font-size: 1rem; line-height: 1.5; }
 }

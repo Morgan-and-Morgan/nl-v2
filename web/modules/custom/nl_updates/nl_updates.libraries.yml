@@ -5,3 +5,11 @@ testimonials-page:
     - core/drupal
     - core/jquery
     - core/once
+
+superfish_toggle:
+  js:
+    js/superfish_toggle.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
